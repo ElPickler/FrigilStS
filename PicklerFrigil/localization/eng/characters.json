@@ -1,0 +1,16 @@
+{
+  "PICKLERFRIGIL-PICKLER_FRIGIL.title": "Frigil",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.titleObject": "Frigil",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.description": "A curious kobold stumbles upon the spire.\nSpeeding ahead, he leaves glaciers in his wake",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.pronounObject": "him",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.possessiveAdjective": "his",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.pronounPossessive": "his",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.pronounSubject": "he",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.cardsModifierTitle": "Frigil Cards",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.cardsModifierDescription": "Frigil'σ cards will now appear in rewards and shops.",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.aromaPrinciple": "[sine]Awawa[/sine]",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.eventDeathPrevention": "That would be unwise...",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.banter.alive.endTurnPing": "Go on...",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.banter.dead.endTurnPing": "...",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.goldMonologue": ""
+}

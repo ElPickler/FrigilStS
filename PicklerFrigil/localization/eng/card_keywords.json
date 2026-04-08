@@ -1,0 +1,14 @@
+{
+  "PICKLERFRIGIL-ICYKEYWORD.title": "Icy",
+  "PICKLERFRIGIL-ICYKEYWORD.description": "Attacks apply [blue]1[/blue] [gold]Hypothermia[/gold] on hit.\nAttacks deal additional damage equal to target's [gold]Hypothermia[/gold].",
+  "PICKLERFRIGIL-ICY_KEYWORD.description": "Attacks apply [blue]1[/blue] [gold]Hypothermia[/gold] on hit.\nAttacks deal additional damage equal to target's [gold]Hypothermia[/gold].",
+  "PICKLERFRIGIL-ICY_KEYWORD.title": "Icy",
+  "PICKLERFRIGIL-ACCUMULATEKEYWORD.description": "Create or move any existing Cryospears to hand.\nIncrease Cryospear damage by value.\nCombine duplicate Cryospears.",
+  "PICKLERFRIGIL-ACCUMULATEKEYWORD.title": "Accumulate",
+  "PICKLERFRIGIL-ACCUMULATE_KEYWORD.description": "Create or move any existing Cryospears to hand. Additional Cryospears are exhausted and their damage is added to existing Cryospear.",
+  "PICKLERFRIGIL-ACCUMULATE_KEYWORD.title": "Accumulate",
+  "PICKLERFRIGIL-GEMSTONE_KEYWORD.description": "Unplayable cards which have have benefits when Exhausted",
+  "PICKLERFRIGIL-GEMSTONE_KEYWORD.title": "Gemstone",
+  "PICKLERFRIGIL-GEMSTONEKEYWORD.description": "Unplayable cards which have have benefits when Exhausted",
+  "PICKLERFRIGIL-GEMSTONEKEYWORD.title": "Gemstone"
+}

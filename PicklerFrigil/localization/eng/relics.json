@@ -1,0 +1,8 @@
+{
+  "PICKLERFRIGIL-GLISTENING_AMETHYST.description": "At the start of your turn, applies {HypothermiaPower:diff()} [gold]Hypothermia[/gold] to a random enemy.",
+  "PICKLERFRIGIL-GLISTENING_AMETHYST.flavor": "",
+  "PICKLERFRIGIL-GLISTENING_AMETHYST.title": "Glistening Amethyst",
+  "PICKLERFRIGIL-RADIANT_BISMUTH.description": "At the start of your turn, applies {HypothermiaPower:diff()} [gold]Hypothermia[/gold] to a random enemy 3 times.",
+  "PICKLERFRIGIL-RADIANT_BISMUTH.flavor": "",
+  "PICKLERFRIGIL-RADIANT_BISMUTH.title": "Radiant Bismuth"
+}
