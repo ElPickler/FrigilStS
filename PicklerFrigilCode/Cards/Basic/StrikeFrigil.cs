@@ -12,7 +12,7 @@ public class StrikeFrigil() : PicklerFrigilCard(1,
     CardType.Attack, CardRarity.Basic,
     TargetType.AnyEnemy)
 {
-    protected override async Task OnPlay(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, CardPlay play)
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
     }

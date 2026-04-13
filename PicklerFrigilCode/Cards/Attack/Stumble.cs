@@ -19,8 +19,11 @@ public class Stumble() : PicklerFrigilCard(0,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(0, ValueProp.Move),
-        new PowerVar<VulnerablePower>( 2M),
-        new DynamicVar("Multiplier", 3M)
+        new PowerVar<VulnerablePower>( 1M),
+        
+        new CalculationBaseVar(0M),
+        new ExtraDamageVar(1M),
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((card, _) => card.Owner.Creature.GetPowerAmount<FlowPower>() * 2)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -35,25 +38,26 @@ public class Stumble() : PicklerFrigilCard(0,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<VulnerablePower>(Owner.Creature, DynamicVars.Vulnerable.BaseValue * DynamicVars["Multiplier"].BaseValue, Owner.Creature, this);
-        UpdateDamage();
-        await PowerCmd.Remove<FlowPower>(Owner.Creature);
+        await PowerCmd.Apply<VulnerablePower>(Owner.Creature, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this);
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        //UpdateDamage();
+        await PowerCmd.Remove<FlowPower>(Owner.Creature);
+        
         
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Vulnerable.UpgradeValueBy(-1M);
-        DynamicVars["Multiplier"].UpgradeValueBy(1M);
+        //DynamicVars["Multiplier"].UpgradeValueBy(1M);
     }
-    
+    /*
     public override Task AfterPowerAmountChanged(PowerModel power, Decimal amount, Creature? applier, CardModel? cardSource)
     {
         UpdateDamage();
         return Task.CompletedTask;
     }
 
+    
     public override Task AfterCardDrawn(PlayerChoiceContext choiceContext, CardModel card, bool fromHandDraw)
     {
         UpdateDamage();
@@ -77,4 +81,5 @@ public class Stumble() : PicklerFrigilCard(0,
         decimal flow = Owner.Creature.GetPowerAmount<FlowPower>();
         DynamicVars.Damage.BaseValue = flow;
     }
+    */
 }

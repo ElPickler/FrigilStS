@@ -1,6 +1,6 @@
 {
   "PICKLERFRIGIL-HYPOTHERMIA_POWER.description": "[gold]Icy[/gold] attacks do additional damage to the target.",
-  "PICKLERFRIGIL-HYPOTHERMIA_POWER.smartDescription": "[gold]Icy[/gold] attacks do {Amount} additional damage.",
+  "PICKLERFRIGIL-HYPOTHERMIA_POWER.smartDescription": "[gold]Icy[/gold] attacks do {EffDamage:diff()} additional damage.",
   "PICKLERFRIGIL-HYPOTHERMIA_POWER.title": "Hypothermia",
   "PICKLERFRIGIL-FLOW_POWER.description": "Until a skill is played, [gold]Block[/gold] gained from cards is increased.",
   "PICKLERFRIGIL-FLOW_POWER.smartDescription": "Until a skill is played, [gold]Block[/gold] gained from cards is increased by {Amount}.",
@@ -37,5 +37,8 @@
   "PICKLERFRIGIL-ANKLE_CHOMP_POWER.title": "Ankle Chomp",
   "PICKLERFRIGIL-FREE_SKATE_POWER.description": "Playing a card increases its cost by [blue]1[/blue] this turn.",
   "PICKLERFRIGIL-FREE_SKATE_POWER.smartDescription": "Playing a card increases its cost by [blue]{Amount}[/blue] this turn.",
-  "PICKLERFRIGIL-FREE_SKATE_POWER.title": "FreeSkate"
+  "PICKLERFRIGIL-FREE_SKATE_POWER.title": "Free Skate",
+  "PICKLERFRIGIL-FRAZIL_POWER.description": "Gain [gold]Thorns[/gold] until the end of this turn.",
+  "PICKLERFRIGIL-FRAZIL_POWER.smartDescription": "Gain [blue]{Amount}[/blue] [gold]Thorns[/gold] until the end of this turn.",
+  "PICKLERFRIGIL-FRAZIL_POWER.title": "Frazil"
 }

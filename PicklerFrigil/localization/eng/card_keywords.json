@@ -1,7 +1,7 @@
 {
   "PICKLERFRIGIL-ICYKEYWORD.title": "Icy",
-  "PICKLERFRIGIL-ICYKEYWORD.description": "Attacks apply [blue]1[/blue] [gold]Hypothermia[/gold] on hit.\nAttacks deal additional damage equal to target's [gold]Hypothermia[/gold].",
-  "PICKLERFRIGIL-ICY_KEYWORD.description": "Attacks apply [blue]1[/blue] [gold]Hypothermia[/gold] on hit.\nAttacks deal additional damage equal to target's [gold]Hypothermia[/gold].",
+  "PICKLERFRIGIL-ICYKEYWORD.description": "Attacks apply [blue]1[/blue] [gold]Hypothermia[/gold] on hit.\nAttacks deal additional damage equal to half the target's [gold]Hypothermia[/gold].",
+  "PICKLERFRIGIL-ICY_KEYWORD.description": "Attacks apply [blue]1[/blue] [gold]Hypothermia[/gold] on hit.\nAttacks deal additional damage equal to half the target's [gold]Hypothermia[/gold].",
   "PICKLERFRIGIL-ICY_KEYWORD.title": "Icy",
   "PICKLERFRIGIL-ACCUMULATEKEYWORD.description": "Create or move any existing Cryospears to hand.\nIncrease Cryospear damage by value.\nCombine duplicate Cryospears.",
   "PICKLERFRIGIL-ACCUMULATEKEYWORD.title": "Accumulate",

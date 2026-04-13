@@ -12,6 +12,8 @@ public class FreeSkate() : PicklerFrigilCard(3,
     CardType.Skill, CardRarity.Rare,
     TargetType.Self)
 {
+    //FIXME: make cards not go below 0 cost
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new ("EnergyReduction", -1)

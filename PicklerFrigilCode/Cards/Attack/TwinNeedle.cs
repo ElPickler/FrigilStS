@@ -11,7 +11,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Basic;
 
 
-public class TwinNeedle() : PicklerFrigilCard(2,
+public class TwinNeedle() : PicklerFrigilCard(1,
     CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
@@ -26,7 +26,7 @@ public class TwinNeedle() : PicklerFrigilCard(2,
     
     protected override HashSet<CardTag> CanonicalTags => [IcyTag];
     
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(5, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(4, ValueProp.Move)];
     
     protected override async Task OnPlay(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, CardPlay play)
         {

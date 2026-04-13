@@ -19,7 +19,7 @@ public class SnowSpiral() : PicklerFrigilCard(2,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower < HypothermiaPower>(); 
+            yield return HoverTipFactory.FromPower<HypothermiaPower>(); 
         }
     }
     

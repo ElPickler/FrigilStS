@@ -17,8 +17,8 @@ public class DeepChill() : PicklerFrigilCard(1,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<WeakPower>( 2M),
-        new PowerVar<HypothermiaPower>( 1M)
+        new PowerVar<WeakPower>( 1M),
+        new PowerVar<HypothermiaPower>( 2M)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -33,6 +33,7 @@ public class DeepChill() : PicklerFrigilCard(1,
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
+        CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         if (play.Target == null)
             return;
         await PowerCmd.Apply<WeakPower>(play.Target, DynamicVars.Weak.BaseValue, Owner.Creature, this);
@@ -43,6 +44,6 @@ public class DeepChill() : PicklerFrigilCard(1,
     protected override void OnUpgrade()
     {
         DynamicVars.Weak.UpgradeValueBy(1M);
-        
+        DynamicVars["HypothermiaPower"].UpgradeValueBy(1);
     }
 }

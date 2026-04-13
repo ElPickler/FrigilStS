@@ -41,10 +41,14 @@ public class Glaciate() : PicklerFrigilCard(2,
 
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
-        if (cardPlay.Card.Tags.Contains(IcyTag))
+        if (CardPile.GetCards(Owner, PileType.Hand).Contains(this))
         {
-            DynamicVars.Block.BaseValue += 1;
+           if (cardPlay.Card.Tags.Contains(IcyTag))
+           {
+               DynamicVars.Block.BaseValue += 1;
+           } 
         }
+        
     }
     
     

@@ -9,7 +9,6 @@ namespace PicklerFrigil.PicklerFrigilCode.Patches;
 public class ArchaicToothPatch
 {
     [HarmonyPostfix]
-
     public static void Postfix(ref Dictionary<ModelId, CardModel> __result)
     {
         __result[ModelDb.Card<IcicleKick>().Id] = ModelDb.Card<BlizzardKick>();

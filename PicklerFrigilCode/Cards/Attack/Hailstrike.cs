@@ -11,7 +11,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
-[Pool(typeof(PicklerFrigilCardPool))] // FIXME: CAN I MAKE THIS ENCHANTABLE???????
+[Pool(typeof(PicklerFrigilCardPool))]
 public class Hailstrike() : PicklerFrigilCard(-1,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.RandomEnemy)
@@ -21,8 +21,6 @@ public class Hailstrike() : PicklerFrigilCard(-1,
         new DamageVar(5, ValueProp.Move),
     ];
     protected override HashSet<CardTag> CanonicalTags => [IcyTag, CardTag.Strike];
-    
-    //public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

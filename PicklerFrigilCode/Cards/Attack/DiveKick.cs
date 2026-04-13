@@ -15,7 +15,7 @@ public class DiveKick() : PicklerFrigilCard(1,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(5, ValueProp.Move)
+        new DamageVar(4, ValueProp.Move)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -37,6 +37,6 @@ public class DiveKick() : PicklerFrigilCard(1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Damage.UpgradeValueBy(2m);
     }
 }

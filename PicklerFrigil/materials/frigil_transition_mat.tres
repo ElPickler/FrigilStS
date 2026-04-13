@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bukkcs6crol"]
+
+[ext_resource type="Texture2D" uid="uid://d3dol8ci6l7l5" path="res://PicklerFrigil/images/charui/frigil_transition.png" id="1_3wavt"]
+
+[sub_resource type="Shader" id="Shader_m3vof"]
+code = "shader_type canvas_item;
+
+uniform sampler2D transitionTex;
+uniform float threshold : hint_range(0,1);
+
+void fragment() {
+    float falloff = 1.0 - texture(transitionTex, UV).r;
+    
+    // helps with falloff artifacts issues towards the transition extremes
+    float remap  = mix(-0.1, 1.1, threshold);
+    falloff = step(falloff, remap);
+    COLOR.a = falloff;
+}
+"
+
+[resource]
+resource_local_to_scene = true
+shader = SubResource("Shader_m3vof")
+shader_parameter/transitionTex = ExtResource("1_3wavt")
+shader_parameter/threshold = 0.1170000055575

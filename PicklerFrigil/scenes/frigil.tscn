@@ -1,11 +1,84 @@
-[gd_scene load_steps=2 format=3 uid="uid://kfbecv1bv88a"]
+[gd_scene load_steps=7 format=3 uid="uid://kfbecv1bv88a"]
 
 [ext_resource type="Texture2D" uid="uid://deq5jkuls826r" path="res://PicklerFrigil/images/character/tempfrigil.png" id="1_q6pid"]
+[ext_resource type="Texture2D" uid="uid://bfs7oay7ux7pj" path="res://PicklerFrigil/images/character/tempfrigildead.png" id="1_s6fy4"]
+[ext_resource type="Texture2D" uid="uid://lo3lgr7i6stn" path="res://PicklerFrigil/images/character/tempfrigilattack.png" id="2_3f3if"]
+[ext_resource type="Texture2D" uid="uid://sj6mp5dc7sm0" path="res://PicklerFrigil/images/character/tempfrigilcast.png" id="3_nx2mm"]
+[ext_resource type="Texture2D" uid="uid://b1hspj1ualwan" path="res://PicklerFrigil/images/character/tempfrigilrevive.png" id="5_cs247"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3f3if"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("1_q6pid")
+}, {
+"duration": 1.5,
+"texture": ExtResource("2_3f3if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_q6pid")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("1_q6pid")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_nx2mm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_q6pid")
+}],
+"loop": false,
+"name": &"cast",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s6fy4")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q6pid")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("1_s6fy4")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_cs247")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_q6pid")
+}],
+"loop": false,
+"name": &"revive",
+"speed": 10.0
+}]
 
 [node name="Frigil" type="Node2D"]
 
-[node name="Visuals" type="Sprite2D" parent="."]
+[node name="Visuals" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(10, -91)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3f3if")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="VisualsOld" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(10, -91)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_q6pid")
@@ -31,4 +104,4 @@ position = Vector2(0, -195)
 position = Vector2(90, -244)
 
 [node name="OrbPos" type="Marker2D" parent="."]
-position = Vector2(-1, -159)
+position = Vector2(-1, -171)

@@ -48,6 +48,7 @@ public class CrystalNeedles() : PicklerFrigilCard(2,
     protected override void OnUpgrade()
     {
         DynamicVars["RepeatBase"].UpgradeValueBy(1m);
+        DynamicVars["RepeatTotal"].UpgradeValueBy(1m);
     }
     
     protected override void AfterDowngraded()

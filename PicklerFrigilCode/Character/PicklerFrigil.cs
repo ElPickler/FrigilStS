@@ -4,6 +4,8 @@ using BaseLib.Utils.NodeFactories;
 using PicklerFrigil.PicklerFrigilCode.Extensions;
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
 using PicklerFrigil.Cards;
@@ -26,7 +28,7 @@ public class PicklerFrigil : PlaceholderCharacterModel
 
     public override IEnumerable<CardModel> StartingDeck =>
     [
-        ModelDb.Card<StrikeFrigil>(),
+        ModelDb.Card<StrikeFrigil>(), 
         ModelDb.Card<StrikeFrigil>(),
         ModelDb.Card<StrikeFrigil>(),
         ModelDb.Card<StrikeFrigil>(),
@@ -43,10 +45,16 @@ public class PicklerFrigil : PlaceholderCharacterModel
         ModelDb.Relic<GlisteningAmethyst>()
     ];
 
+    public override float AttackAnimDelay => 0.2f;
+    public override float CastAnimDelay => 0.35f;
+    
+    
+    
     public override CardPoolModel CardPool => ModelDb.CardPool<PicklerFrigilCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<PicklerFrigilRelicPool>();
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<PicklerFrigilPotionPool>();
         
+    public override Color MapDrawingColor => new ("482675");
     
     //Already replaced
     
@@ -63,6 +71,11 @@ public class PicklerFrigil : PlaceholderCharacterModel
     
     public override string CustomVisualPath => "res://PicklerFrigil/scenes/frigil.tscn";
     public override string CustomCharacterSelectBg => "res://PicklerFrigil/scenes/char_select_bg_frigil.tscn";
+    
+    
+    public override string CustomCharacterSelectTransitionPath => "res://PicklerFrigil/materials/frigil_transition_mat.tres";
+    
+    
     //public override string CustomRestSiteAnimPath => "res://PicklerFrigil/scenes/frigil_rest_site.tscn"; FUUUCK this
 
     /*
@@ -79,6 +92,9 @@ public class PicklerFrigil : PlaceholderCharacterModel
     
     
     //
+
+
+    
     public override string CustomMerchantAnimPath => "res://PicklerFrigil/scenes/frigilmerchant.tscn";
     
     
@@ -102,10 +118,7 @@ public class PicklerFrigil : PlaceholderCharacterModel
     
     
     
-    public override string CustomCharacterSelectTransitionPath
-    {
-        get => $"res://materials/transitions/{this.PlaceholderID}_transition_mat.tres";
-    }
+    
     
     public override string CustomIconPath
     {

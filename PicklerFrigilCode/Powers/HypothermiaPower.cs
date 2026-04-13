@@ -21,6 +21,10 @@ public class HypothermiaPower : CustomPowerModel
     public override string? CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-hypothermia_power.png";
     public override string? CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-hypothermia_power.png";
 
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new ("EffDamage", 0)
+    ];
+    
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,
         CardModel? cardSource)
     {
@@ -30,14 +34,15 @@ public class HypothermiaPower : CustomPowerModel
             return 0;
         if (!cardSource.Tags.Contains(PicklerFrigilCard.IcyTag))
             return 0;
-        return Amount;
+        return Math.Ceiling(Amount / 2M);
 
     }
 
     public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (power == this) 
+        if (power == this)
         {
+            DynamicVars["EffDamage"].BaseValue = Math.Ceiling(Amount / 2M);
             decimal SnowDancer = applier.GetPowerAmount<SnowDancerPower>();
             if (SnowDancer != 0)
             {
