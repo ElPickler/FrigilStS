@@ -8,23 +8,23 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Power;
 
 
-public class SnowDancer() : PicklerFrigilCard(2,
+public class ColdBlooded() : PicklerFrigilCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<SnowDancerPower>(2M)
+        new PowerVar<ColdBloodedPower>(1M)
     ];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<SnowDancerPower>(Owner.Creature, DynamicVars["SnowDancerPower"].BaseValue , Owner.Creature, this);
+        await PowerCmd.Apply<ColdBloodedPower>(Owner.Creature, DynamicVars["ColdBloodedPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["SnowDancerPower"].UpgradeValueBy(1);
+        DynamicVars["ColdBloodedPower"].UpgradeValueBy(1);
     }
 }

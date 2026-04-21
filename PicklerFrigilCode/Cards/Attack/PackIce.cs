@@ -21,7 +21,6 @@ public class PackIce() : PicklerFrigilCard(1,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower < HypothermiaPower>(); 
         }
     }
     
@@ -41,7 +40,6 @@ public class PackIce() : PicklerFrigilCard(1,
         await CardCmd.Exhaust(choiceContext, card);
         
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        if (play.Target != null) {await PowerCmd.Apply<HypothermiaPower>(play.Target, 1, this.Owner.Creature, this, false);}
     }
 
     protected override void OnUpgrade()

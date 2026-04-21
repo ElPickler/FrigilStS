@@ -28,7 +28,6 @@ public class Cascade() : PicklerFrigilCard(1,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower < HypothermiaPower>(); 
         }
     }
     
@@ -47,8 +46,6 @@ public class Cascade() : PicklerFrigilCard(1,
             {
                 await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
             }
-            
-            if (enemy != null) {await PowerCmd.Apply<HypothermiaPower>(enemy, 1, Owner.Creature, this, false);}
         }
     }
 

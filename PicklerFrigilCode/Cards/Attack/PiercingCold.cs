@@ -25,7 +25,6 @@ public class PiercingCold() : PicklerFrigilCard(2,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower <HypothermiaPower>(); 
         }
     }
     
@@ -39,7 +38,6 @@ public class PiercingCold() : PicklerFrigilCard(2,
         {
             Creature enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
             await CommonActions.CardAttack(this, enemy).Execute(choiceContext);
-            if(enemy != null) await PowerCmd.Apply<HypothermiaPower>(enemy, 1, Owner.Creature, this);
         }
     }
 

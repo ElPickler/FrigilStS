@@ -67,4 +67,15 @@ public static class AccumulateCmd
         }
         //ForgeCmd.PreviewSovereignBlade((IReadOnlyCollection<Cryospear>) list);
     }
+
+    public static decimal GetSpearDamage(Player player)
+    {
+        decimal damage = 0;
+        List<Cryospear> spears = GetCryospears(player, false).ToList();
+        foreach(Cryospear spear in spears)
+        {
+            damage += spear.GetDamage();
+        }
+        return damage;
+    }
 }

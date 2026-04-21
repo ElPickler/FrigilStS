@@ -2,27 +2,30 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Models.Powers;
 using PicklerFrigil.PicklerFrigilCode.Cards;
 using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
-public class FlyingSpin() : PicklerFrigilCard(1,
+
+public class SlipUnder() : PicklerFrigilCard(1,
     CardType.Skill, CardRarity.Uncommon,
-    TargetType.Self)
+    TargetType.AnyEnemy)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-    [
-        new PowerVar<FlowPower>(3),
-        new CardsVar(3)
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new PowerVar<FlowPower>(3M),
+        new ("StrengthLoss", 3M)
     ];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CardCmd.Discard(choiceContext, (await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, Owner)).Where( c => c.Type != CardType.Skill));
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
+        
+        if(play.Target.Monster.IntendsToAttack)
+            await PowerCmd.Apply<DarkShacklesPower>(play.Target,  DynamicVars["StrengthLoss"].BaseValue, Owner.Creature, this);
     }
 
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
@@ -33,6 +36,6 @@ public class FlyingSpin() : PicklerFrigilCard(1,
     
     protected override void OnUpgrade()
     {
-        DynamicVars.Cards.UpgradeValueBy(1);
+        DynamicVars["StrengthLoss"].UpgradeValueBy(2);
     }
 }

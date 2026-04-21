@@ -27,7 +27,6 @@ public class Flurry() : PicklerFrigilCard(2,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower <HypothermiaPower>();
             yield return HoverTipFactory.FromPower<WeakPower>();
         }
     }
@@ -43,7 +42,6 @@ public class Flurry() : PicklerFrigilCard(2,
         {
             if (enemy != null)
             {
-                await PowerCmd.Apply<HypothermiaPower>(enemy, 1, Owner.Creature, this, false);
                 await PowerCmd.Apply<WeakPower>(enemy, DynamicVars["WeakPower"].BaseValue, Owner.Creature, this, false);
             }  
         }

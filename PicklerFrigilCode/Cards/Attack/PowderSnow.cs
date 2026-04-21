@@ -15,7 +15,7 @@ public class PowderSnow() : PicklerFrigilCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(2, ValueProp.Move),
-        new DynamicVar("Repeat", 3M),
+        new ("Repeat", 3M),
         new PowerVar<HypothermiaPower>( 3M)
     ];
     

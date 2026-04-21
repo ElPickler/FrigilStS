@@ -3,6 +3,8 @@ using BaseLib.Abstracts;
 using BaseLib.Utils.NodeFactories;
 using PicklerFrigil.PicklerFrigilCode.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Animation;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -47,9 +49,7 @@ public class PicklerFrigil : PlaceholderCharacterModel
 
     public override float AttackAnimDelay => 0.2f;
     public override float CastAnimDelay => 0.35f;
-    
-    
-    
+
     public override CardPoolModel CardPool => ModelDb.CardPool<PicklerFrigilCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<PicklerFrigilRelicPool>();
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<PicklerFrigilPotionPool>();

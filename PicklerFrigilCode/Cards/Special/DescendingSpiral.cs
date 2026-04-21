@@ -28,7 +28,6 @@ public class DescendingSpiral() : PicklerFrigilCard(0,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower < HypothermiaPower>(); 
         }
     }
     
@@ -41,10 +40,6 @@ public class DescendingSpiral() : PicklerFrigilCard(0,
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        foreach (Creature enemy in CombatState.HittableEnemies)
-        {
-            if (enemy != null) {await PowerCmd.Apply<HypothermiaPower>(enemy, 1, Owner.Creature, this, false);}  
-        }
     }
 
     protected override void OnUpgrade()

@@ -1,5 +1,6 @@
 using BaseLib.Abstracts;
 using BaseLib.Extensions;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -57,6 +58,13 @@ public class FlowPower : CustomPowerModel
             return;
         if (cardPlay.Card.Type != CardType.Skill) //check if card is skill
             return;
+        await Cmd.Wait(0.1f);
+        if (cardPlay.Card.Owner.HasPower<InMotionPower>()) //Check if owner has In Motion
+        {
+            PowerModel inMotion = cardPlay.Card.Owner.Creature.GetPower<InMotionPower>();
+            PowerCmd.Decrement(inMotion);
+            return;
+        }
         await PowerCmd.Remove(this);
     }
 

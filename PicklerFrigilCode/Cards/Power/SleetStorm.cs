@@ -8,7 +8,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Power;
 
   
-public class SleetStorm() : PicklerFrigilCard(2,
+public class SleetStorm() : PicklerFrigilCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {

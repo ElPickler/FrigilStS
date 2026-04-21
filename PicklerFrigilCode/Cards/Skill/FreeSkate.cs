@@ -16,9 +16,10 @@ public class FreeSkate() : PicklerFrigilCard(3,
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new ("EnergyReduction", -1)
+        new ("EnergyReduction", 1)
     ];
     
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -30,19 +31,19 @@ public class FreeSkate() : PicklerFrigilCard(3,
         foreach (CardModel c in PileType.Hand.GetPile(Owner).Cards)
         {
          if(!c.EnergyCost.CostsX)
-             c.EnergyCost.AddThisTurn((int) DynamicVars["EnergyReduction"].BaseValue);
+             c.EnergyCost.AddThisTurn((int) DynamicVars["EnergyReduction"].BaseValue * -1);
         }
         
         foreach (CardModel c in PileType.Draw.GetPile(Owner).Cards)
         {
          if(!c.EnergyCost.CostsX)
-             c.EnergyCost.AddThisTurn((int) DynamicVars["EnergyReduction"].BaseValue);
+             c.EnergyCost.AddThisTurn((int) DynamicVars["EnergyReduction"].BaseValue * -1);
         }
         
         foreach (CardModel c in PileType.Discard.GetPile(Owner).Cards)
         {
          if(!c.EnergyCost.CostsX)
-             c.EnergyCost.AddThisTurn((int) DynamicVars["EnergyReduction"].BaseValue);
+             c.EnergyCost.AddThisTurn((int) DynamicVars["EnergyReduction"].BaseValue );
         }
 
         PowerCmd.Apply<FreeSkatePower>(Owner.Creature, 1, Owner.Creature, this);
@@ -50,6 +51,6 @@ public class FreeSkate() : PicklerFrigilCard(3,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["EnergyReduction"].UpgradeValueBy(-1);
+        DynamicVars["EnergyReduction"].UpgradeValueBy(1);
     }
 }

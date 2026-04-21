@@ -25,7 +25,6 @@ public class PiercingThrust() : PicklerFrigilCard(1,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower < HypothermiaPower>();
             yield return HoverTipFactory.FromKeyword(AccumulateKeyword);
             yield return HoverTipFactory.FromCard<Cryospear>();
         }
@@ -38,7 +37,6 @@ public class PiercingThrust() : PicklerFrigilCard(1,
         CardPlay play)
     {
         AttackCommand attack = await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        if (play.Target != null) {await PowerCmd.Apply<HypothermiaPower>(play.Target, 1, this.Owner.Creature, this, false);}
         
         await AccumulateCmd.Accumulate(attack.Results.Sum(r => r.TotalDamage + r.OverkillDamage), Owner, this);
     }

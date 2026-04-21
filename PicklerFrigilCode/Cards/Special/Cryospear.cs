@@ -1,5 +1,8 @@
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -42,7 +45,13 @@ public class Cryospear() : PicklerFrigilCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        AttackCommand attackCommand = await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+
+        Decimal blockMult = Owner.Creature.GetPowerAmount<ReformationPower>();
+        if (blockMult > 0)
+        {
+             await CreatureCmd.GainBlock(Owner.Creature, attackCommand.Results.Sum( (r => r.TotalDamage + r.OverkillDamage)) * blockMult / 100, ValueProp.Move, play);
+        }
     }
 
     protected override void OnUpgrade()
@@ -55,5 +64,10 @@ public class Cryospear() : PicklerFrigilCard(2,
         DamageVar damage = DynamicVars.Damage;
         damage.BaseValue += amount;
         CurrentDamage = DynamicVars.Damage.BaseValue;
+    }
+
+    public decimal GetDamage()
+    {
+        return DynamicVars.Damage.BaseValue;
     }
 }

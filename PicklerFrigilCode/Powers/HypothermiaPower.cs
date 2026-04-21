@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -14,6 +15,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Powers;
 public class HypothermiaPower : CustomPowerModel
 {
     //private decimal prevAmount;
+    private decimal applied;
     
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Counter;
@@ -25,6 +27,7 @@ public class HypothermiaPower : CustomPowerModel
         new ("EffDamage", 0)
     ];
     
+    //Main functionality
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,
         CardModel? cardSource)
     {
@@ -37,39 +40,24 @@ public class HypothermiaPower : CustomPowerModel
         return Math.Ceiling(Amount / 2M);
 
     }
-
+    
     public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
-        if (power == this)
+        if (power == this && applier != null)
         {
+            //Snow Dancer functionality
             DynamicVars["EffDamage"].BaseValue = Math.Ceiling(Amount / 2M);
-            decimal SnowDancer = applier.GetPowerAmount<SnowDancerPower>();
-            if (SnowDancer != 0)
+            decimal snowDancer = applier.GetPowerAmount<SnowDancerPower>();
+            if (snowDancer != 0)
             {
-                await CreatureCmd.GainBlock(applier, SnowDancer, ValueProp.Unpowered, null);
+                await CreatureCmd.GainBlock(applier, snowDancer, ValueProp.Unpowered, null);
+            }
+            //Draconic Form functionality
+            if (applier.HasPower<DraconicFormPower>()) 
+            {
+                decimal draconicFormAmount = applier.GetPowerAmount<DraconicFormPower>();
+                await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), applier.CombatState.HittableEnemies, amount * draconicFormAmount, ValueProp.Unpowered, Owner);
             }
         }
     }
-    
-    /*
-     Old version of Snow Dancer
-    public override async Task AfterPowerAmountChanged(PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
-    {
-        if (power == this)
-        {
-            if (applier.GetPowerAmount<SnowDancerPower>() != 0)
-            {
-                await CreatureCmd.GainBlock(applier, (amount - prevAmount), ValueProp.Unpowered, null);
-            }
-        }
-    }
-
-    public override Task BeforeApplied(Creature target, decimal amount, Creature? applier, CardModel? cardSource) 
-    {
-        prevAmount = target.GetPowerAmount<HypothermiaPower>();
-        return base.BeforeApplied(target, amount, applier, cardSource);
-    }
-    */
-    
-    //FIXME: reduce hupothermia at the end of every turn by 50% or something
 }

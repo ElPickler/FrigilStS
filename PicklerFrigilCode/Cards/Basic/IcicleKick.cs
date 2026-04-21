@@ -18,7 +18,6 @@ public class IcicleKick() : PicklerFrigilCard(1,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower < HypothermiaPower>(); 
         }
     }
     
@@ -28,7 +27,6 @@ public class IcicleKick() : PicklerFrigilCard(1,
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        if (play.Target != null) {await PowerCmd.Apply<HypothermiaPower>(play.Target, 1, Owner.Creature, this, false);}
     }
 
     protected override void OnUpgrade()

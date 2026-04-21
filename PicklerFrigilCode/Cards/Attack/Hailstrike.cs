@@ -33,7 +33,6 @@ public class Hailstrike() : PicklerFrigilCard(-1,
         get { 
             yield return HoverTipFactory.FromKeyword(CardKeyword.Unplayable);
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower < HypothermiaPower>();
         }
     }
     
@@ -52,6 +51,5 @@ public class Hailstrike() : PicklerFrigilCard(-1,
             Creature enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
             await CommonActions.CardAttack(this, enemy).Execute(choiceContext);
         }
-        
     }
 }

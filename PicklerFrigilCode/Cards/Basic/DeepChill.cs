@@ -33,7 +33,7 @@ public class DeepChill() : PicklerFrigilCard(1,
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         if (play.Target == null)
             return;
         await PowerCmd.Apply<WeakPower>(play.Target, DynamicVars.Weak.BaseValue, Owner.Creature, this);

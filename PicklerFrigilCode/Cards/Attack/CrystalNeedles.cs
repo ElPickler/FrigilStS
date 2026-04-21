@@ -29,7 +29,6 @@ public class CrystalNeedles() : PicklerFrigilCard(2,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower < HypothermiaPower>(); 
         }
     }
     
@@ -38,10 +37,6 @@ public class CrystalNeedles() : PicklerFrigilCard(2,
         for (int i = 0; i < DynamicVars["RepeatTotal"].BaseValue; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-            if (play.Target != null)
-            {
-                await PowerCmd.Apply<HypothermiaPower>(play.Target, 1, this.Owner.Creature, this, false);
-            }
         }
     }
     

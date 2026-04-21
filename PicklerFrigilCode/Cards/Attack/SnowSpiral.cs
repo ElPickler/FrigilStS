@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Powers;
 
@@ -15,11 +16,13 @@ public class SnowSpiral() : PicklerFrigilCard(2,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AllEnemies)
 {
+    //private CardModel preview = ModelDb.Card<ReverseSpiral>();
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower<HypothermiaPower>(); 
+            yield return HoverTipFactory.FromCard<ReverseSpiral>();
         }
     }
     
@@ -32,10 +35,6 @@ public class SnowSpiral() : PicklerFrigilCard(2,
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        foreach (Creature enemy in CombatState.HittableEnemies)
-        {
-            if (enemy != null) {await PowerCmd.Apply<HypothermiaPower>(enemy, 1, Owner.Creature, this, false);}  
-        }
 
         if (!IsUpgraded)
         {

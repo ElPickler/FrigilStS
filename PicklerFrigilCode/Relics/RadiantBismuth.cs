@@ -2,6 +2,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -31,20 +32,17 @@ public class RadiantBismuth() : PicklerFrigilRelic
             yield return HoverTipFactory.FromPower < HypothermiaPower>();
         }
     }
-
-    public override async Task BeforeSideTurnStart(
-        PlayerChoiceContext choiceContext,
-        CombatSide side,
-        CombatState combatState)
+    
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        if (side != Owner.Creature.Side)
-            return;
-        Flash();
-        for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
+        if (Owner == player)
         {
-            Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(combatState.HittableEnemies);
-            if (enemy != null) await PowerCmd.Apply<HypothermiaPower>(enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, null);
+            Flash();
+            for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
+            {
+                Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(player.Creature.CombatState.HittableEnemies);
+                if (enemy != null) await PowerCmd.Apply<HypothermiaPower>(enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, null);
+            }
         }
-        
     }
 }

@@ -8,7 +8,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 
 public class TripleAxel() : PicklerFrigilCard(2,
-    CardType.Skill, CardRarity.Common,
+    CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>

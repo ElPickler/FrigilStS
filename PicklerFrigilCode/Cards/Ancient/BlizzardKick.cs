@@ -19,7 +19,6 @@ public class BlizzardKick() : PicklerFrigilCard(1,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower < HypothermiaPower>(); 
         }
     }
     
@@ -34,7 +33,6 @@ public class BlizzardKick() : PicklerFrigilCard(1,
         for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-            if (play.Target != null) {await PowerCmd.Apply<HypothermiaPower>(play.Target, 1, Owner.Creature, this, false);}
         }
     }
 

@@ -24,7 +24,6 @@ public class DiamondDust() : PicklerFrigilCard(2,
         get { 
             yield return HoverTipFactory.FromPower<FlowPower>();
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower<HypothermiaPower>(); 
         }
     }
     
@@ -37,7 +36,6 @@ public class DiamondDust() : PicklerFrigilCard(2,
         for (int i = 0; i < flow; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-            if (play.Target != null) {await PowerCmd.Apply<HypothermiaPower>(play.Target, 1, this.Owner.Creature, this, false);}
         }
         
     }

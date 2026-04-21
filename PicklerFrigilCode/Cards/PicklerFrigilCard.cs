@@ -10,6 +10,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards;
 
   
 
+
 [Pool(typeof(PicklerFrigilCardPool))]
 public abstract class PicklerFrigilCard(int cost, CardType type, CardRarity rarity, TargetType target) :
     CustomCardModel(cost, type, rarity, target)
