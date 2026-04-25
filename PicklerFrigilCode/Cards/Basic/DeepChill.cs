@@ -36,8 +36,8 @@ public class DeepChill() : PicklerFrigilCard(1,
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         if (play.Target == null)
             return;
-        await PowerCmd.Apply<WeakPower>(play.Target, DynamicVars.Weak.BaseValue, Owner.Creature, this);
-        await PowerCmd.Apply<HypothermiaPower>(play.Target, DynamicVars["HypothermiaPower"].BaseValue , Owner.Creature, this);
+        await PowerCmd.Apply<WeakPower>(choiceContext, play.Target, DynamicVars.Weak.BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<HypothermiaPower>(choiceContext, play.Target, DynamicVars["HypothermiaPower"].BaseValue , Owner.Creature, this);
         
     }
 

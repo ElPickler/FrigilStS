@@ -35,7 +35,7 @@ public class FrozenMaiden() : PicklerFrigilCard(4,
         if (cardSource == this)
         {
             DynamicVars["HypothermiaPower"].BaseValue = result.UnblockedDamage;
-            PowerCmd.Apply<HypothermiaPower>(target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
+            PowerCmd.Apply<HypothermiaPower>(choiceContext, target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
         }
         
     }

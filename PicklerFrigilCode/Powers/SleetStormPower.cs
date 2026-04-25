@@ -16,15 +16,14 @@ public class SleetStormPower : CustomPowerModel
     
     public override string? CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-sleet_storm_power.png";
     public override string? CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-sleet_storm_power.png";
-
-    public override async Task BeforeSideTurnStart(
-        PlayerChoiceContext choiceContext,
-        CombatSide side,
-        CombatState combatState)
+    
+    
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, ICombatState combatState)
     {
         if (side != CombatSide.Player)
         {
-            await PowerCmd.Apply<HypothermiaPower>(combatState.HittableEnemies, Amount, Owner, null);
+            await PowerCmd.Apply<HypothermiaPower>(choiceContext, combatState.HittableEnemies, Amount, Owner, null);
         }
     }
+    
 }

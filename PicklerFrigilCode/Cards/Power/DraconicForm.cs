@@ -25,7 +25,7 @@ public class DraconicForm() : PicklerFrigilCard(3,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<DraconicFormPower>(Owner.Creature, DynamicVars["DraconicFormPower"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<DraconicFormPower>(choiceContext, Owner.Creature, DynamicVars["DraconicFormPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

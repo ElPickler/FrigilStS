@@ -38,7 +38,7 @@ public class Stumble() : PicklerFrigilCard(0,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<VulnerablePower>(Owner.Creature, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<VulnerablePower>(choiceContext, Owner.Creature, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this);
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         //UpdateDamage();
         await PowerCmd.Remove<FlowPower>(Owner.Creature);

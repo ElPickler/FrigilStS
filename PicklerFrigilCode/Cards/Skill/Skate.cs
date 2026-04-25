@@ -35,7 +35,7 @@ public class Skate() : PicklerFrigilCard(1,
     {
         if (cardPlay.Card == this)
         {
-            await PowerCmd.Apply<FlowPower>(Owner.Creature, DynamicVars["FlowPower"].BaseValue, Owner.Creature, this, false);
+            await PowerCmd.Apply<FlowPower>(context, Owner.Creature, DynamicVars["FlowPower"].BaseValue, Owner.Creature, this, false);
         } 
         
     }

@@ -20,7 +20,7 @@ public class CheckPockets() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<CheckPocketsPower>(Owner.Creature, DynamicVars["Gems"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<CheckPocketsPower>(choiceContext, Owner.Creature, DynamicVars["Gems"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

@@ -43,8 +43,8 @@ public class Frazil() : PicklerFrigilCard(-1,
     {
         if (card == this)
         {
-            await PowerCmd.Apply<ThornsPower>(Owner.Creature, DynamicVars["ThornsPower"].BaseValue, Owner.Creature, this);
-            await PowerCmd.Apply<FrazilPower>(Owner.Creature, DynamicVars["FrazilPower"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<ThornsPower>(choiceContext, Owner.Creature, DynamicVars["ThornsPower"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<FrazilPower>(choiceContext, Owner.Creature, DynamicVars["FrazilPower"].BaseValue, Owner.Creature, this);
         }
     }
 

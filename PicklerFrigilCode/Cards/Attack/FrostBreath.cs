@@ -34,7 +34,7 @@ public class FrostBreath() : PicklerFrigilCard(1,
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         foreach (Creature enemy in CombatState.HittableEnemies)
         {
-          if (enemy != null) {await PowerCmd.Apply<HypothermiaPower>(enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this, false);}  
+          if (enemy != null) {await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this, false);}  
         }
         
     }

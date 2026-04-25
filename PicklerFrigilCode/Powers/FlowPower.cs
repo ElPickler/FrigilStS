@@ -46,26 +46,22 @@ public class FlowPower : CustomPowerModel
         if(!props.IsPoweredCardOrMonsterMoveBlock_())
             return 0M;
         return Amount;
-        
-        
-        //return !props.IsPoweredCardOrMonsterMoveBlock() ? 0M : Amount;
-        //return Amount;
     }
 
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
+        PowerModel flowpower = this;
         if(cardPlay.Card.Owner.Creature != Owner) //Check if owner played the card
             return;
         if (cardPlay.Card.Type != CardType.Skill) //check if card is skill
             return;
-        await Cmd.Wait(0.1f);
         if (cardPlay.Card.Owner.HasPower<InMotionPower>()) //Check if owner has In Motion
         {
             PowerModel inMotion = cardPlay.Card.Owner.Creature.GetPower<InMotionPower>();
-            PowerCmd.Decrement(inMotion);
+            await PowerCmd.Decrement(inMotion);
             return;
         }
-        await PowerCmd.Remove(this);
+        await PowerCmd.Remove(flowpower);
     }
 
     

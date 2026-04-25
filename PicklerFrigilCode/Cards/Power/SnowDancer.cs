@@ -20,7 +20,7 @@ public class SnowDancer() : PicklerFrigilCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<SnowDancerPower>(Owner.Creature, DynamicVars["SnowDancerPower"].BaseValue , Owner.Creature, this);
+        await PowerCmd.Apply<SnowDancerPower>(choiceContext, Owner.Creature, DynamicVars["SnowDancerPower"].BaseValue , Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

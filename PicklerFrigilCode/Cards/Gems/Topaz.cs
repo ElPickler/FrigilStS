@@ -33,7 +33,7 @@ public class Topaz() : AbstractGem(-1,
     {
         if (card == this)
         {
-            await PowerCmd.Apply<TopazPower>(Owner.Creature, DynamicVars.Gold.BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<TopazPower>(choiceContext, Owner.Creature, DynamicVars.Gold.BaseValue, Owner.Creature, this);
         }
     }
 }

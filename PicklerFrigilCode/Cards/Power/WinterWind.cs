@@ -29,7 +29,7 @@ public class WinterWind() : PicklerFrigilCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        PowerCmd.Apply<WinterWindPower>(Owner.Creature, DynamicVars["WinterWindPower"].BaseValue, Owner.Creature, this);
+        PowerCmd.Apply<WinterWindPower>(choiceContext, Owner.Creature, DynamicVars["WinterWindPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

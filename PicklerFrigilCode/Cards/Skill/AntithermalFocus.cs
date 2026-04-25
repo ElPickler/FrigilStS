@@ -39,7 +39,7 @@ public class AntithermalFocus() : PicklerFrigilCard(2,
                 await PowerCmd.Remove<HypothermiaPower>(enemy);
             }
         }
-        await PowerCmd.Apply<HypothermiaPower>(play.Target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<HypothermiaPower>(choiceContext, play.Target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

@@ -41,15 +41,12 @@ public class ReverseSpiralPower : CustomPowerModel
         return Amount;
     }
 
-    public override async Task BeforeSideTurnStart(
-        PlayerChoiceContext choiceContext,
-        CombatSide side,
-        CombatState combatState)
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, ICombatState combatState)
     {
         if (side == CombatSide.Player)
         {
             CardModel c = combatState.CreateCard<ReverseSpiral>(Owner.Player);
-            await CardPileCmd.AddGeneratedCardToCombat(c, PileType.Hand, true);
+            await CardPileCmd.AddGeneratedCardToCombat(c, PileType.Hand, Owner.Player);
             await PowerCmd.Remove(this);
         }
     }

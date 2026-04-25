@@ -42,7 +42,7 @@ public class Flurry() : PicklerFrigilCard(2,
         {
             if (enemy != null)
             {
-                await PowerCmd.Apply<WeakPower>(enemy, DynamicVars["WeakPower"].BaseValue, Owner.Creature, this, false);
+                await PowerCmd.Apply<WeakPower>(choiceContext, enemy, DynamicVars["WeakPower"].BaseValue, Owner.Creature, this, false);
             }  
         }
     }

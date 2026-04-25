@@ -21,7 +21,7 @@ public class FrazilPower: CustomPowerModel
     {
         if (side == CombatSide.Player)
             return;
-        await PowerCmd.ModifyAmount(Owner.GetPower<ThornsPower>(), Amount * -1, Owner, null);
+        await PowerCmd.ModifyAmount(choiceContext, Owner.GetPower<ThornsPower>(), Amount * -1, Owner, null);
         await PowerCmd.Remove(this);
     }
 }

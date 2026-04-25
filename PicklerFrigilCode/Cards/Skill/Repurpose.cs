@@ -24,7 +24,7 @@ public class Repurpose() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<RepurposePower>(Owner.Creature, 1, Owner.Creature, this);
+        await PowerCmd.Apply<RepurposePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

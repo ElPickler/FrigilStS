@@ -18,7 +18,7 @@ public class AnkleChomp() : PicklerFrigilCard(2,
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<AnkleChompPower>(1),
+        new PowerVar<AnkleChompPower>(1M),
         new DamageVar(9, ValueProp.Move)
     ];
     
@@ -27,7 +27,7 @@ public class AnkleChomp() : PicklerFrigilCard(2,
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        if(play.Target != null) await PowerCmd.Apply<AnkleChompPower>(play.Target, DynamicVars["AnkleChompPower"].BaseValue , Owner.Creature, this);
+        if(play.Target != null) await PowerCmd.Apply<AnkleChompPower>(choiceContext, play.Target, DynamicVars["AnkleChompPower"].BaseValue , Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

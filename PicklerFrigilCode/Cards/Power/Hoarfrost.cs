@@ -20,7 +20,7 @@ public class Hoarfrost() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<HoarfrostPower>(Owner.Creature, DynamicVars["HoarfrostPower"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<HoarfrostPower>(choiceContext, Owner.Creature, DynamicVars["HoarfrostPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

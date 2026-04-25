@@ -46,7 +46,7 @@ public class FreeSkate() : PicklerFrigilCard(3,
              c.EnergyCost.AddThisTurn((int) DynamicVars["EnergyReduction"].BaseValue );
         }
 
-        PowerCmd.Apply<FreeSkatePower>(Owner.Creature, 1, Owner.Creature, this);
+        PowerCmd.Apply<FreeSkatePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

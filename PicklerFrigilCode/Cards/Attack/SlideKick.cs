@@ -33,7 +33,7 @@ public class SlideKick() : PicklerFrigilCard(1,
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        await PowerCmd.Apply<FlowPower>(Owner.Creature, DynamicVars["FlowPower"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<FlowPower>(choiceContext, Owner.Creature, DynamicVars["FlowPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

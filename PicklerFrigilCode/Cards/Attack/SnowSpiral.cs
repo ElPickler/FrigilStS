@@ -38,10 +38,10 @@ public class SnowSpiral() : PicklerFrigilCard(2,
 
         if (!IsUpgraded)
         {
-            await PowerCmd.Apply<ReverseSpiralPower>(Owner.Creature, 1, Owner.Creature, this, false);
+            await PowerCmd.Apply<ReverseSpiralPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this, false);
             return;
         }
-        await PowerCmd.Apply<RisingSpiralPower>(Owner.Creature, 1, Owner.Creature, this, false);
+        await PowerCmd.Apply<RisingSpiralPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this, false);
         
     }
 

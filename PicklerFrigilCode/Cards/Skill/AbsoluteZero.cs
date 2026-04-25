@@ -31,7 +31,7 @@ public class AbsoluteZero() : PicklerFrigilCard(2,
         CardPlay play)
     {
         DynamicVars["HypothermiaPower"].BaseValue = play.Target.GetPowerAmount<HypothermiaPower>();
-        await PowerCmd.Apply<HypothermiaPower>(play.Target, DynamicVars["HypothermiaPower"].BaseValue * DynamicVars["Multiplier"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<HypothermiaPower>(choiceContext, play.Target, DynamicVars["HypothermiaPower"].BaseValue * DynamicVars["Multiplier"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

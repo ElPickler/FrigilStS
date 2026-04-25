@@ -24,12 +24,12 @@ public class DeepPierce() : PicklerFrigilCard(1,
         await AccumulateCmd.Accumulate(DynamicVars["Accumulate"].BaseValue, Owner, this);
         if (Owner.Creature.GetPowerAmount<DeepPiercePower>() == 0)
         {
-            await PowerCmd.Apply<DeepPiercePower>(Owner.Creature, DynamicVars["DeepPiercePower"].BaseValue + 1,
+            await PowerCmd.Apply<DeepPiercePower>(choiceContext, Owner.Creature, DynamicVars["DeepPiercePower"].BaseValue + 1,
                 Owner.Creature, this);
         }
         else
         {
-            await PowerCmd.Apply<DeepPiercePower>(Owner.Creature, DynamicVars["DeepPiercePower"].BaseValue,
+            await PowerCmd.Apply<DeepPiercePower>(choiceContext, Owner.Creature, DynamicVars["DeepPiercePower"].BaseValue,
                 Owner.Creature, this);
         }
     }

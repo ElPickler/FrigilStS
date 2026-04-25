@@ -25,13 +25,13 @@ public class SlipUnder() : PicklerFrigilCard(1,
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
         
         if(play.Target.Monster.IntendsToAttack)
-            await PowerCmd.Apply<DarkShacklesPower>(play.Target,  DynamicVars["StrengthLoss"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<DarkShacklesPower>(choiceContext, play.Target,  DynamicVars["StrengthLoss"].BaseValue, Owner.Creature, this);
     }
 
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
         if (cardPlay.Card == this)
-            await PowerCmd.Apply<FlowPower>(Owner.Creature, DynamicVars["FlowPower"].BaseValue, Owner.Creature, this, false);
+            await PowerCmd.Apply<FlowPower>(context, Owner.Creature, DynamicVars["FlowPower"].BaseValue, Owner.Creature, this, false);
     }
     
     protected override void OnUpgrade()

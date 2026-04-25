@@ -20,7 +20,7 @@ public class ColdBlooded() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<ColdBloodedPower>(Owner.Creature, DynamicVars["ColdBloodedPower"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<ColdBloodedPower>(choiceContext, Owner.Creature, DynamicVars["ColdBloodedPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

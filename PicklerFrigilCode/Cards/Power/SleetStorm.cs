@@ -20,7 +20,7 @@ public class SleetStorm() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<SleetStormPower>(Owner.Creature, DynamicVars["SleetStorm"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<SleetStormPower>(choiceContext, Owner.Creature, DynamicVars["SleetStorm"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

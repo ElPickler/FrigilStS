@@ -34,8 +34,8 @@ public class Blizzard() : PicklerFrigilCard(1,
     {
         foreach (Creature enemy in CombatState.HittableEnemies)
         {
-            await PowerCmd.Apply<WeakPower>(enemy, DynamicVars["WeakPower"].BaseValue , Owner.Creature, this);
-            await PowerCmd.Apply<HypothermiaPower>(enemy, DynamicVars["HypothermiaPower"].BaseValue , Owner.Creature, this);
+            await PowerCmd.Apply<WeakPower>(choiceContext, enemy, DynamicVars["WeakPower"].BaseValue , Owner.Creature, this);
+            await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue , Owner.Creature, this);
         }
     }
 

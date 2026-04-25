@@ -18,7 +18,7 @@ public class HoardingInstincts() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<HoardingInstinctsPower>(Owner.Creature, DynamicVars.Gold.BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<HoardingInstinctsPower>(choiceContext, Owner.Creature, DynamicVars.Gold.BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

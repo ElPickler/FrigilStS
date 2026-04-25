@@ -22,7 +22,7 @@ public class Reformation() : PicklerFrigilCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        PowerCmd.Apply<ReformationPower>(Owner.Creature, DynamicVars["ReformationPower"].BaseValue, Owner.Creature, this);
+        PowerCmd.Apply<ReformationPower>(choiceContext, Owner.Creature, DynamicVars["ReformationPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

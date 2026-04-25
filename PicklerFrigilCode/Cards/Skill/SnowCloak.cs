@@ -29,7 +29,7 @@ public class SnowCloak() : PicklerFrigilCard(1,
             await CommonActions.CardBlock(this, play);
             
             Creature enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
-            if(enemy != null) await PowerCmd.Apply<HypothermiaPower>(enemy, DynamicVars["HypothermiaPower"].BaseValue , Owner.Creature, this);
+            if(enemy != null) await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue , Owner.Creature, this);
         }
     }
 

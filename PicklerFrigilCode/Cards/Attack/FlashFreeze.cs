@@ -20,7 +20,7 @@ public class FlashFreeze() : PicklerFrigilCard(2,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(14, ValueProp.Move)
+        new DamageVar(14M, ValueProp.Move)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -46,7 +46,7 @@ public class FlashFreeze() : PicklerFrigilCard(2,
             return;
         if (CombatState.HittableEnemies.Count == 1) //If only one is left alive, just give it all to them
         {
-            PowerCmd.Apply<HypothermiaPower>(CombatState.HittableEnemies[0], hypothermia, Owner.Creature, this);
+            PowerCmd.Apply<HypothermiaPower>(choiceContext, CombatState.HittableEnemies[0], hypothermia, Owner.Creature, this);
             return;
         }
 
@@ -57,9 +57,9 @@ public class FlashFreeze() : PicklerFrigilCard(2,
         foreach (Creature enemy in CombatState.HittableEnemies)
         {
             if (enemy == CombatState.HittableEnemies[0])
-                PowerCmd.Apply<HypothermiaPower>(enemy, hypoDiv + hypoModulo, Owner.Creature, this);
+                PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, hypoDiv + hypoModulo, Owner.Creature, this);
             else
-                PowerCmd.Apply<HypothermiaPower>(enemy, hypoDiv, Owner.Creature, this);
+                PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, hypoDiv, Owner.Creature, this);
         }
     }
 

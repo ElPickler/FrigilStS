@@ -16,7 +16,7 @@ public class GemstoneCmd
     {
         IEnumerable<CardModel> c = CardFactory.GetDistinctForCombat(player, gems, count, player.RunState.Rng.Shuffle);
         
-        await CardPileCmd.AddGeneratedCardsToCombat(c, PileType.Hand, true);
+        await CardPileCmd.AddGeneratedCardsToCombat(c, PileType.Hand, player);
     }
     
     public static AbstractGem[] gems =

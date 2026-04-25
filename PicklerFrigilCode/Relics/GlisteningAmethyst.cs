@@ -38,7 +38,7 @@ public class GlisteningAmethyst() : PicklerFrigilRelic
         {
            Flash();
            Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(player.Creature.CombatState.HittableEnemies);
-           if (enemy != null) await PowerCmd.Apply<HypothermiaPower>(enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, null); 
+           if (enemy != null) await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, null); 
         }
         
     }

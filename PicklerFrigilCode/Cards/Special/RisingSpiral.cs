@@ -36,7 +36,7 @@ public class RisingSpiral() : PicklerFrigilCard(1,
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        await PowerCmd.Apply<DescendingSpiralPower>(Owner.Creature, 1, Owner.Creature, this, false);
+        await PowerCmd.Apply<DescendingSpiralPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this, false);
     }
 
     protected override void OnUpgrade()

@@ -27,7 +27,7 @@ public class PowderSnow() : PicklerFrigilCard(1,
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         }
-        if (play.Target != null) {await PowerCmd.Apply<HypothermiaPower>(play.Target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this, false);}
+        if (play.Target != null) {await PowerCmd.Apply<HypothermiaPower>(choiceContext, play.Target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this, false);}
     }
 
     protected override void OnUpgrade()

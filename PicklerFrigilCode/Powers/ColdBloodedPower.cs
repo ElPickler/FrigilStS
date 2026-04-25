@@ -30,7 +30,7 @@ public class ColdBloodedPower : CustomPowerModel
         if (target != Owner || dealer == null || !props.IsPoweredAttack() && !(cardSource is Omnislice))
             return;
         Flash();
-        await PowerCmd.Apply<HypothermiaPower>(dealer, Amount, Owner, null);
+        await PowerCmd.Apply<HypothermiaPower>(choiceContext, dealer, Amount, Owner, null);
         //IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage(choiceContext, dealer, (Decimal) thornsPower.Amount, ValueProp.Unpowered | ValueProp.SkipHurtAnim, thornsPower.Owner, (CardModel) null);
     }
 }

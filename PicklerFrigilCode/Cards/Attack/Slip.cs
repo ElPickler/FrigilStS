@@ -31,7 +31,7 @@ public class Slip() : PicklerFrigilCard(1,
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        if (play.Target != null) {await PowerCmd.Apply<VulnerablePower>(play.Target, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this, false);}
+        if (play.Target != null) {await PowerCmd.Apply<VulnerablePower>(choiceContext, play.Target, DynamicVars.Vulnerable.BaseValue, Owner.Creature, this, false);}
     }
 
     protected override void OnUpgrade()
