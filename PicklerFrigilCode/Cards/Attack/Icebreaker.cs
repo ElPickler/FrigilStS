@@ -28,16 +28,16 @@ public class Icebreaker() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
-        {
-            await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        //for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
+        //{
+        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
             
-        }
+        //}
         if (play.Target != null) await PowerCmd.Remove<HypothermiaPower>(play.Target);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Repeat"].UpgradeValueBy(1);
+        EnergyCost.UpgradeBy(-1);
     }
 }
