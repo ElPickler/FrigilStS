@@ -16,6 +16,7 @@ public abstract class PicklerFrigilCard(int cost, CardType type, CardRarity rari
     CustomCardModel(cost, type, rarity, target)
 {
     [CustomEnum] public static CardTag IcyTag;
+    [CustomEnum] public static CardTag GemTag;
 
     [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)] public static CardKeyword IcyKeyword;
     [CustomEnum, KeywordProperties(AutoKeywordPosition.Before)] public static CardKeyword AccumulateKeyword;
