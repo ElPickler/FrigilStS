@@ -22,6 +22,8 @@ public class FrozenMaiden() : PicklerFrigilCard(4,
         new PowerVar<HypothermiaPower>(0)
     ];
     
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
@@ -35,7 +37,7 @@ public class FrozenMaiden() : PicklerFrigilCard(4,
         if (cardSource == this)
         {
             DynamicVars["HypothermiaPower"].BaseValue = result.UnblockedDamage;
-            PowerCmd.Apply<HypothermiaPower>(choiceContext, target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<HypothermiaPower>(choiceContext, target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
         }
         
     }
