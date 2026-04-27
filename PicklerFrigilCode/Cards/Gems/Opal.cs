@@ -45,10 +45,8 @@ public class Opal() : AbstractGem(-1,
     {
         if (card == this)
         {
-            foreach (Creature enemy in CombatState.HittableEnemies)
-            {
-                if (enemy != null) {await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this, false);}  
-            }
+            foreach (Creature enemy in CombatState!.HittableEnemies)
+                await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this); 
         }
     }
 }
