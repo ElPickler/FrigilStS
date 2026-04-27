@@ -62,7 +62,7 @@ public class PicklerFrigil : PlaceholderCharacterModel
     public override string CustomIconTexturePath => "res://PicklerFrigil/images/charui/character_icon_frigil2.png";
     public override string CustomCharacterSelectIconPath => "char_select_frigil.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
-    public override string CustomMapMarkerPath => "character_icon_frigil.png".CharacterUiPath();
+    public override string CustomMapMarkerPath => "map_marker_frigil.png".CharacterUiPath();
 
     public override string CustomArmPointingTexturePath => "res://PicklerFrigil/images/character/ui/hand_point.png";
     public override string CustomArmRockTexturePath => "res://PicklerFrigil/images/character/ui/hand_rock.png";
@@ -78,7 +78,7 @@ public class PicklerFrigil : PlaceholderCharacterModel
     
     //public override string CustomRestSiteAnimPath => "res://PicklerFrigil/scenes/frigil_rest_site.tscn"; FUUUCK this
 
-    /*
+    
     public override Control CustomIcon
     {
         get
@@ -88,7 +88,7 @@ public class PicklerFrigil : PlaceholderCharacterModel
             return icon;
         }
     }
-    */
+    
     
     
     //
