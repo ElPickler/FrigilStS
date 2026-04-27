@@ -20,7 +20,7 @@ public class HoarfrostPower:CustomPowerModel
         if (Owner.Player == player)
         {
             Flash();
-            AccumulateCmd.Accumulate(Amount, Owner.Player, this);
+            await AccumulateCmd.Accumulate(Amount, Owner.Player, this);
         }
         
     }

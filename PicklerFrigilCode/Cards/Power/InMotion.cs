@@ -19,7 +19,7 @@ public class InMotion() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        PowerCmd.Apply<InMotionPower>(choiceContext, Owner.Creature, DynamicVars["InMotionPower"].BaseValue, Owner.Creature, this);
+        await PowerCmd.Apply<InMotionPower>(choiceContext, Owner.Creature, DynamicVars["InMotionPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

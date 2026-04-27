@@ -42,11 +42,11 @@ public class FlashFreeze() : PicklerFrigilCard(2,
         AttackCommand attack = await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         if (!shouldTriggerFatal || !attack.Results.Any(r => r.WasTargetKilled))
             return;
-        if (CombatState.HittableEnemies.Count == 0) //If no one is left alive, do nothing
+        if (CombatState!.HittableEnemies.Count == 0) //If no one is left alive, do nothing
             return;
         if (CombatState.HittableEnemies.Count == 1) //If only one is left alive, just give it all to them
         {
-            PowerCmd.Apply<HypothermiaPower>(choiceContext, CombatState.HittableEnemies[0], hypothermia, Owner.Creature, this);
+            await PowerCmd.Apply<HypothermiaPower>(choiceContext, CombatState.HittableEnemies[0], hypothermia, Owner.Creature, this);
             return;
         }
 
@@ -57,9 +57,9 @@ public class FlashFreeze() : PicklerFrigilCard(2,
         foreach (Creature enemy in CombatState.HittableEnemies)
         {
             if (enemy == CombatState.HittableEnemies[0])
-                PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, hypoDiv + hypoModulo, Owner.Creature, this);
+                await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, hypoDiv + hypoModulo, Owner.Creature, this);
             else
-                PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, hypoDiv, Owner.Creature, this);
+                await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, hypoDiv, Owner.Creature, this);
         }
     }
 

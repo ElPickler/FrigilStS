@@ -61,7 +61,7 @@ public class FreeSkate() : PicklerFrigilCard(3,
             }
         }
 
-        PowerCmd.Apply<FreeSkatePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
+        await PowerCmd.Apply<FreeSkatePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
