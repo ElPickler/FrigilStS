@@ -16,11 +16,11 @@ public class CrystalNeedles() : PicklerFrigilCard(2,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(2, ValueProp.Move),
+        new DamageVar(3, ValueProp.Move),
         new DynamicVar("Hypothermia", 1M),
         new DynamicVar("RepeatBase", 2M),
         new DynamicVar("RepeatMod", 0M),
-        new DynamicVar("RepeatTotal", 2M) //FIXME: FIX THE DESCRIPTION FOR THISO SO THAT IT FUCKING SAYS WHAT IT DEOS ON UPGRADE
+        new DynamicVar("RepeatTotal", 2M) 
     ];
 
     
