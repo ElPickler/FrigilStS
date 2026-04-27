@@ -22,7 +22,7 @@ public class Diamond() : AbstractGem(-1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Energy.UpgradeValueBy(4);
+        DynamicVars.Block.UpgradeValueBy(4);
     }
     
     protected override async Task OnPlay(
