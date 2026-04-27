@@ -36,7 +36,7 @@ public class Cascade() : PicklerFrigilCard(1,
         CardPlay play)
     {
         
-        foreach (Creature enemy in CombatState.HittableEnemies)
+        foreach (Creature enemy in CombatState!.HittableEnemies)
         {
             if (enemy != play.Target)
             {

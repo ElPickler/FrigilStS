@@ -19,10 +19,10 @@ public static class AccumulateCmd
         List<Cryospear> spears = GetCryospears(player, false).ToList();
         if (spears.Count == 0)
         {
-            Cryospear spear = player.Creature.CombatState.CreateCard<Cryospear>(player);
+            Cryospear spear = player.Creature.CombatState!.CreateCard<Cryospear>(player);
             CardPileAddResult combat = await CardPileCmd.AddGeneratedCardToCombat((CardModel) spear, PileType.Hand, player);
             spears.Add(spear);
-            spear = null;
+            spear = null!;
         }
         else
         {
@@ -45,7 +45,7 @@ public static class AccumulateCmd
         Player player,
         bool includeExhausted)
     {
-        return player.PlayerCombatState.AllCards.Where<CardModel>((Func<CardModel, bool>) (c =>
+        return player.PlayerCombatState!.AllCards.Where<CardModel>((Func<CardModel, bool>) (c =>
         {
             if (c.IsDupe)
                 return false;

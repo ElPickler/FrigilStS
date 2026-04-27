@@ -16,7 +16,7 @@ public class TopazPower : CustomPowerModel
     
     public override Task AfterCombatEnd(CombatRoom room)
     {
-        room.AddExtraReward(Owner.Player, new GoldReward(Amount, Owner.Player));
+        room.AddExtraReward(Owner.Player!, new GoldReward(Amount, Owner.Player!));
         return Task.CompletedTask;
     }
 }

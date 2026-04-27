@@ -36,7 +36,7 @@ public class PiercingCold() : PicklerFrigilCard(2,
     {
         for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
         {
-            Creature enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
+            Creature enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState!.HittableEnemies)!;
             await CommonActions.CardAttack(this, enemy).Execute(choiceContext);
         }
     }
