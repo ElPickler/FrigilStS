@@ -19,7 +19,7 @@ public class ColdBloodedPower : CustomPowerModel
     //public override string? CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-hypothermia_power.png";
     //public override string? CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-hypothermia_power.png";
     
-    public override async Task BeforeDamageReceived(
+    /*public override async Task BeforeDamageReceived(
         PlayerChoiceContext choiceContext,
         Creature target,
         Decimal amount,
@@ -32,5 +32,13 @@ public class ColdBloodedPower : CustomPowerModel
         Flash();
         await PowerCmd.Apply<HypothermiaPower>(choiceContext, dealer, Amount, Owner, null);
         //IEnumerable<DamageResult> damageResults = await CreatureCmd.Damage(choiceContext, dealer, (Decimal) thornsPower.Amount, ValueProp.Unpowered | ValueProp.SkipHurtAnim, thornsPower.Owner, (CardModel) null);
+    }*/
+    public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
+        Creature? dealer, CardModel? cardSource)
+    {
+        if (target != Owner || dealer == null || !props.IsPoweredAttack() && !(cardSource is Omnislice))
+            return;
+        Flash();
+        await PowerCmd.Apply<HypothermiaPower>(choiceContext, dealer, Amount, Owner, null);
     }
 }
