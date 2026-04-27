@@ -14,7 +14,7 @@ public class SlipUnder() : PicklerFrigilCard(1,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<FlowPower>(3M),
+        new PowerVar<FlowPower>(4M),
         new ("StrengthLoss", 3M)
     ];
     

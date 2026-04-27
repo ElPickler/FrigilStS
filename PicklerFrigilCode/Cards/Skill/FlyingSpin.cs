@@ -14,7 +14,7 @@ public class FlyingSpin() : PicklerFrigilCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<FlowPower>(3),
+        new PowerVar<FlowPower>(5),
         new CardsVar(3)
     ];
     

@@ -25,25 +25,40 @@ public class FreeSkate() : PicklerFrigilCard(3,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        //I am too stupid to know how to do this to all the piles at once, so I iterate through them all mantually
+        //I am too stupid to know how to do this to all the piles at once, so I iterate through them all manually
         //I could probably just make a big ienumerable but alas, I am lazy
         
         foreach (CardModel c in PileType.Hand.GetPile(Owner).Cards)
         {
-         if(!c.EnergyCost.CostsX)
-             c.EnergyCost.AddThisTurn((int) DynamicVars["EnergyReduction"].BaseValue * -1);
+            if (!c.EnergyCost.CostsX)
+            {
+                if (EnergyCost.Canonical < (int)DynamicVars["EnergyReduction"].BaseValue)
+                    EnergyCost.SetThisTurn(0);
+                else
+                    c.EnergyCost.AddThisTurn((int)DynamicVars["EnergyReduction"].BaseValue * -1);
+            }
         }
         
         foreach (CardModel c in PileType.Draw.GetPile(Owner).Cards)
         {
-         if(!c.EnergyCost.CostsX)
-             c.EnergyCost.AddThisTurn((int) DynamicVars["EnergyReduction"].BaseValue * -1);
+            if (!c.EnergyCost.CostsX)
+            {
+                if (EnergyCost.Canonical < (int)DynamicVars["EnergyReduction"].BaseValue)
+                    EnergyCost.SetThisTurn(0);
+                else
+                    c.EnergyCost.AddThisTurn((int)DynamicVars["EnergyReduction"].BaseValue * -1);
+            }
         }
         
         foreach (CardModel c in PileType.Discard.GetPile(Owner).Cards)
         {
-         if(!c.EnergyCost.CostsX)
-             c.EnergyCost.AddThisTurn((int) DynamicVars["EnergyReduction"].BaseValue );
+            if (!c.EnergyCost.CostsX)
+            {
+                if (EnergyCost.Canonical < (int)DynamicVars["EnergyReduction"].BaseValue)
+                    EnergyCost.SetThisTurn(0);
+                else
+                    c.EnergyCost.AddThisTurn((int)DynamicVars["EnergyReduction"].BaseValue * -1);
+            }
         }
 
         PowerCmd.Apply<FreeSkatePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);

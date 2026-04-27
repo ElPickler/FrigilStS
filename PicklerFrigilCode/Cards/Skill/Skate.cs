@@ -15,7 +15,7 @@ public class Skate() : PicklerFrigilCard(1,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new CardsVar(2),
-        new PowerVar<FlowPower>(2M)
+        new PowerVar<FlowPower>(5M)
     ];
     
     protected override async Task OnPlay(

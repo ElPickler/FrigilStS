@@ -17,7 +17,7 @@ public class Twirl() : PicklerFrigilCard(1,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new BlockVar(4, ValueProp.Move),
-        new PowerVar<FlowPower>(3),
+        new PowerVar<FlowPower>(4),
         new ("Repeat", 2)
     ];
     
