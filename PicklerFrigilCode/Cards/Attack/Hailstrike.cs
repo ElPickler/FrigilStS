@@ -18,7 +18,7 @@ public class Hailstrike() : PicklerFrigilCard(-1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(5, ValueProp.Move),
+        new DamageVar(6, ValueProp.Move),
     ];
     protected override HashSet<CardTag> CanonicalTags => [IcyTag, CardTag.Strike];
     

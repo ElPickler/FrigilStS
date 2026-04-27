@@ -19,7 +19,7 @@ public class Flurry() : PicklerFrigilCard(2,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(4, ValueProp.Move),
+        new DamageVar(5, ValueProp.Move),
         new PowerVar<WeakPower>(1)
     ];
     
@@ -38,12 +38,10 @@ public class Flurry() : PicklerFrigilCard(2,
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        foreach (Creature enemy in CombatState.HittableEnemies)
+        foreach (Creature enemy in CombatState!.HittableEnemies)
         {
-            if (enemy != null)
-            {
-                await PowerCmd.Apply<WeakPower>(choiceContext, enemy, DynamicVars["WeakPower"].BaseValue, Owner.Creature, this, false);
-            }  
+            
+            await PowerCmd.Apply<WeakPower>(choiceContext, enemy, DynamicVars["WeakPower"].BaseValue, Owner.Creature, this, false);
         }
     }
 

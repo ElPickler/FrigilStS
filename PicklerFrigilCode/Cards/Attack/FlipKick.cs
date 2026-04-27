@@ -17,7 +17,7 @@ public class FlipKick() : PicklerFrigilCard(1,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(10, ValueProp.Move),
+        new DamageVar(8, ValueProp.Move),
         new CardsVar(1),
         new PowerVar<FlowPower>(2M)
     ];
