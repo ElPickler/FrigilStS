@@ -18,15 +18,21 @@ public class IcicleKick() : PicklerFrigilCard(1,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
+            yield return HoverTipFactory.FromPower<FlowPower>();
         }
     }
     
     protected override HashSet<CardTag> CanonicalTags => [IcyTag];
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(4, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new DamageVar(3, ValueProp.Move),
+        new PowerVar<FlowPower>(2)
+    ];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        await PowerCmd.Apply<FlowPower>(choiceContext, Owner.Creature, DynamicVars["FlowPower"].BaseValue,
+            Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
