@@ -14,6 +14,8 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Special;
 public abstract class AbstractGem(int cost, CardType type, CardRarity rarity, TargetType target) :
     PicklerFrigilCard(cost, type, rarity, target)
 {
+    protected override HashSet<CardTag> CanonicalTags => [GemTag];
+    
     /*
     //Image size:
     //Normal art: 1000x760 (Using 500x380 should also work, it will simply be scaled.)
