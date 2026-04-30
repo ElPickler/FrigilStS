@@ -136,6 +136,8 @@
   "PICKLERFRIGIL-ANTITHERMAL_FOCUS.title": "Antithermia",
   "PICKLERFRIGIL-LAUNCH.description": "On Draw, gain {Energy:energyIcons()}.\nEnergy gain is decreased by 1 each time this card is drawn.",
   "PICKLERFRIGIL-LAUNCH.title": "Launch",
+  "PICKLERFRIGIL-ENDOTHERMIA.description": "[gold]Accumulate[/gold] {EndothermiaPower:diff()}% of damage dealt by Cryospear.",
+  "PICKLERFRIGIL-ENDOTHERMIA.title": "Endothermia",
   
   
   

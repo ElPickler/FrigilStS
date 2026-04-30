@@ -67,5 +67,11 @@
   "PICKLERFRIGIL-RUBY_BLOOD_POWER.title": "Ruby Blood",
   "PICKLERFRIGIL-IN_MOTION_POWER.description": "The next [blue]3[/blue] times you play a skill, do not lose [gold]Flow[/gold].",
   "PICKLERFRIGIL-IN_MOTION_POWER.smartDescription": "The next [blue]{Amount}[/blue] times you play a skill, do not lose [gold]Flow[/gold].",
-  "PICKLERFRIGIL-IN_MOTION_POWER.title": "In Motion"
+  "PICKLERFRIGIL-IN_MOTION_POWER.title": "In Motion",
+  "PICKLERFRIGIL-ENDOTHERMIA_POWER.description": "[gold]Accumulate[/gold] [blue]40%[/blue] of damage dealt by Cryospear.",
+  "PICKLERFRIGIL-ENDOTHERMIA_POWER.smartDescription": "[gold]Accumulate[/gold] [blue]{Amount}%[/blue] of damage dealt by Cryospear.",
+  "PICKLERFRIGIL-ENDOTHERMIA_POWER.title": "Endothermia",
+  "PICKLERFRIGIL-ACCUMULATE_NEXT_TURN_POWER.description": "[gold]Accumulate[/gold] at the start of next turn.",
+  "PICKLERFRIGIL-ACCUMULATE_NEXT_TURN_POWER.smartDescription": "[gold]Accumulate[/gold] [blue]{Amount}[/blue] at the start of next turn.",
+  "PICKLERFRIGIL-ACCUMULATE_NEXT_TURN_POWER.title": "Accumulating"
 }
