@@ -26,7 +26,7 @@ public class TwinNeedle() : PicklerFrigilCard(1,
     protected override HashSet<CardTag> CanonicalTags => [IcyTag];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(5, ValueProp.Move),
+        new DamageVar(4, ValueProp.Move),
         new ("Repeat", 2M),
         new PowerVar<HypothermiaPower>(1)
     ];
