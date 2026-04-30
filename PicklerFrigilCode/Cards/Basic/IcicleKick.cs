@@ -24,7 +24,7 @@ public class IcicleKick() : PicklerFrigilCard(1,
     
     protected override HashSet<CardTag> CanonicalTags => [IcyTag];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(3, ValueProp.Move),
+        new DamageVar(4, ValueProp.Move),
         new PowerVar<FlowPower>(2)
     ];
     
@@ -37,6 +37,6 @@ public class IcicleKick() : PicklerFrigilCard(1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(2m);
+        DynamicVars["FlowPower"].UpgradeValueBy(2m);
     }
 }
