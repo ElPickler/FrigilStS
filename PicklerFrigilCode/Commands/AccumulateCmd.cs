@@ -43,7 +43,8 @@ public static class AccumulateCmd
     
     private static IEnumerable<Cryospear> GetCryospears(
         Player player,
-        bool includeExhausted)
+        bool includeExhausted
+        )
     {
         return player.PlayerCombatState!.AllCards.Where<CardModel>((Func<CardModel, bool>) (c =>
         {
@@ -68,7 +69,7 @@ public static class AccumulateCmd
         //ForgeCmd.PreviewSovereignBlade((IReadOnlyCollection<Cryospear>) list);
     }
 
-    public static decimal GetSpearDamage(Player player)
+    public static decimal GetSpearDamage(Player player, AbstractModel? source)
     {
         decimal damage = 0;
         List<Cryospear> spears = GetCryospears(player, false).ToList();
