@@ -1,8 +1,8 @@
+using BaseLib.Extensions;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -18,6 +18,7 @@ public class Cryospear() : PicklerFrigilCard(2,
     TargetType.AnyEnemy)
 {
     private Decimal _currentDamage = 0M;
+    //private AttackCommand attackCommand;
     
     private Decimal CurrentDamage
     {
@@ -52,7 +53,14 @@ public class Cryospear() : PicklerFrigilCard(2,
         {
              await CreatureCmd.GainBlock(Owner.Creature, attackCommand.Results.Sum( (r => r.TotalDamage + r.OverkillDamage)) * blockMult / 100, ValueProp.Move, play);
         }
+
+        if (Owner.HasPower<EndothermiaPower>())
+            await PowerCmd.Apply<AccumulateNextTurnPower>(choiceContext, Owner.Creature,
+                // ReSharper disable once PossibleLossOfFraction
+                attackCommand.Results.Sum(r => r.TotalDamage + r.OverkillDamage) *
+                Owner.Creature.GetPowerAmount<EndothermiaPower>() / 100, Owner.Creature, this);
     }
+    
 
     protected override void OnUpgrade()
     {
