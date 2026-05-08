@@ -8,6 +8,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Cards;
+using PicklerFrigil.PicklerFrigilCode.Cards.Power;
 
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
@@ -34,6 +35,8 @@ public class HypothermiaPower : CustomPowerModel
         if (cardSource == null)
             return 0;
         if (target != Owner)
+            return 0;
+        if (dealer.HasPower<HyperthermiaPower>())
             return 0;
         if (!cardSource.Tags.Contains(PicklerFrigilCard.IcyTag))
             return 0;
