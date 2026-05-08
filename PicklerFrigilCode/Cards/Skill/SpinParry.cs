@@ -1,3 +1,4 @@
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -9,15 +10,13 @@ using PicklerFrigil.PicklerFrigilCode.Commands;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 
-public class SpinParry() : PicklerFrigilCard(2,
-    CardType.Skill, CardRarity.Token,
+public class SpinParry() : PicklerFrigilCard(1,
+    CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [ //TODO: EVERYTHING
-        new ("Accumulate", 5M),
-        new CalculationBaseVar(0M),
-        new ExtraDamageVar(1M),
-        new CalculatedBlockVar(ValueProp.Move).WithMultiplier((Func<CardModel, Creature, Decimal>) ((_, target) => target != null ? AccumulateCmd.GetSpearDamage(Owner) : 0))
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new ("Accumulate", 6M),
+        new BlockVar(8, ValueProp.Move)
     ];
     
     protected override async Task OnPlay(
@@ -25,12 +24,12 @@ public class SpinParry() : PicklerFrigilCard(2,
         CardPlay play)
     {
         await AccumulateCmd.Accumulate(DynamicVars["Accumulate"].BaseValue, Owner, this);
-
-        decimal block = AccumulateCmd.GetSpearDamage(Owner);
+        await CommonActions.CardBlock(this, play);
     }
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
+        DynamicVars["Accumulate"].UpgradeValueBy(3);
+        DynamicVars.Block.UpgradeValueBy(3);
     }
 }
