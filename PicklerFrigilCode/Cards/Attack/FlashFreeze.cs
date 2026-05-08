@@ -40,7 +40,7 @@ public class FlashFreeze() : PicklerFrigilCard(2,
         
         bool shouldTriggerFatal = play.Target.Powers.All(p => p.ShouldOwnerDeathTriggerFatal()); //Do they have any powers that shouldn't trigger fatal (Minion)
         AttackCommand attack = await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        if (!shouldTriggerFatal || !attack.Results.Any(r => r.WasTargetKilled))
+        if (!shouldTriggerFatal || !attack.Results.SelectMany(r => r).Any(r => r.WasTargetKilled))
             return;
         if (CombatState!.HittableEnemies.Count == 0) //If no one is left alive, do nothing
             return;

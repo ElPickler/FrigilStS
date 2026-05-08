@@ -51,13 +51,13 @@ public class Cryospear() : PicklerFrigilCard(2,
         Decimal blockMult = Owner.Creature.GetPowerAmount<ReformationPower>();
         if (blockMult > 0)
         {
-             await CreatureCmd.GainBlock(Owner.Creature, attackCommand.Results.Sum( (r => r.TotalDamage + r.OverkillDamage)) * blockMult / 100, ValueProp.Move, play);
+             await CreatureCmd.GainBlock(Owner.Creature, attackCommand.Results.SelectMany(r => r).Sum( (r => r.TotalDamage + r.OverkillDamage)) * blockMult / 100, ValueProp.Move, play);
         }
 
         if (Owner.HasPower<EndothermiaPower>())
             await PowerCmd.Apply<AccumulateNextTurnPower>(choiceContext, Owner.Creature,
                 // ReSharper disable once PossibleLossOfFraction
-                attackCommand.Results.Sum(r => r.TotalDamage + r.OverkillDamage) *
+                attackCommand.Results.SelectMany(r => r).Sum(r => r.TotalDamage + r.OverkillDamage) *
                 Owner.Creature.GetPowerAmount<EndothermiaPower>() / 100, Owner.Creature, this);
     }
     
