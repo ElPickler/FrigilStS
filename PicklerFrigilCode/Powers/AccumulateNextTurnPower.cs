@@ -9,7 +9,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 public class AccumulateNextTurnPower: CustomPowerModel
 {
-    public override PowerType Type => PowerType.Debuff;
+    public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
 
     public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
