@@ -73,5 +73,14 @@
   "PICKLERFRIGIL-ENDOTHERMIA_POWER.title": "Endothermia",
   "PICKLERFRIGIL-ACCUMULATE_NEXT_TURN_POWER.description": "[gold]Accumulate[/gold] at the start of next turn.",
   "PICKLERFRIGIL-ACCUMULATE_NEXT_TURN_POWER.smartDescription": "[gold]Accumulate[/gold] [blue]{Amount}[/blue] at the start of next turn.",
-  "PICKLERFRIGIL-ACCUMULATE_NEXT_TURN_POWER.title": "Accumulating"
+  "PICKLERFRIGIL-ACCUMULATE_NEXT_TURN_POWER.title": "Accumulating",
+  "PICKLERFRIGIL-FROST_LILY_POWER.description": "[gold]Hypothermia[/gold] from cards applied to this target is applied to all targets.",
+  "PICKLERFRIGIL-FROST_LILY_POWER.smartDescription": "[gold]Hypothermia[/gold] from cards applied to this target is applied to all targets.",
+  "PICKLERFRIGIL-FROST_LILY_POWER.title": "Frost Lily",
+  "PICKLERFRIGIL-TWIZZLE_POWER.description": "When you play a card, gain [blue]2[/blue] [gold]Flow[/gold].",
+  "PICKLERFRIGIL-TWIZZLE_POWER.smartDescription": "When you play a card, gain [blue]{Amount}[/blue] [gold]Flow[/gold].",
+  "PICKLERFRIGIL-TWIZZLE_POWER.title": "Twizzle",
+  "PICKLERFRIGIL-HYPERTHERMIA_POWER.description": "Gain [blue]1[/blue] [gold]Energy[/gold] at the start of each turn.",
+  "PICKLERFRIGIL-HYPERTHERMIA_POWER.smartDescription": "Gain {Amount:energyIcons()} at the start of each turn.",
+  "PICKLERFRIGIL-HYPERTHERMIA_POWER.title": "Hyperthermia"
 }
