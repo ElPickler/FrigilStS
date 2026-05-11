@@ -22,7 +22,7 @@ public class GemstoneCmd
         if (player.Creature.HasPower<RubyBloodPower>())
         {
             moddedCount++;
-            //TODO: Make this flash ruby blood somehow
+            player.Creature.GetPower<RubyBloodPower>()!.InvokeFlash();
         }
             
             
