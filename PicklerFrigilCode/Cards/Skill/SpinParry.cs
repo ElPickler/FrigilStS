@@ -15,7 +15,7 @@ public class SpinParry() : PicklerFrigilCard(1,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ("Accumulate", 6M),
+        new ("Accumulate", 8M),
         new BlockVar(8, ValueProp.Move)
     ];
     
