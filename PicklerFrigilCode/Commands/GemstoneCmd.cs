@@ -6,25 +6,42 @@ using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.Models;
 using PicklerFrigil.PicklerFrigilCode.Cards.Gems;
 using PicklerFrigil.PicklerFrigilCode.Cards.Special;
+using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Commands;
 
 public class GemstoneCmd
 {
     public static async Task GenerateGemstone(
-        Player player, int count)
+        Player player, int count, PileType pileType = PileType.Hand)
     {
-        IEnumerable<CardModel> c = CardFactory.GetDistinctForCombat(player, gems, count, player.RunState.Rng.Shuffle);
+        int moddedCount = count;
+
         
-        await CardPileCmd.AddGeneratedCardsToCombat(c, PileType.Hand, player);
+        
+        if (player.Creature.HasPower<RubyBloodPower>())
+        {
+            moddedCount++;
+            //TODO: Make this flash ruby blood somehow
+        }
+            
+            
+        
+        IEnumerable<CardModel> c = CardFactory.GetDistinctForCombat(player, Gems, moddedCount, player.RunState.Rng.Shuffle);
+        
+        if(pileType == PileType.Draw)
+            await CardPileCmd.AddGeneratedCardsToCombat(c, pileType, player, CardPilePosition.Random);
+        else
+            await CardPileCmd.AddGeneratedCardsToCombat(c, pileType, player);
     }
-    
-    public static AbstractGem[] gems =
+
+    private static readonly AbstractGem[] Gems =
     {
         ModelDb.Card<Topaz>(),
         ModelDb.Card<Amethyst>(),
         ModelDb.Card<Diamond>(),
         ModelDb.Card<Opal>(),
-        ModelDb.Card<Emerald>()
+        ModelDb.Card<Emerald>(),
+        ModelDb.Card<Quartz>()
     };
 }
