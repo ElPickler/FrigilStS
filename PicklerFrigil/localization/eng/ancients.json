@@ -5,5 +5,20 @@
   "THE_ARCHITECT.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1r.char": "What?",
   "THE_ARCHITECT.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1r.ancient": "You ought to stay out of matters which do not concern you.",
   "THE_ARCHITECT.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1r.next": "Defend yourself!",
-  "THE_ARCHITECT.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-attack": "Both"
+  "THE_ARCHITECT.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-attack": "Both",
+
+  
+  "PAEL.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-0.ancient": "[thinky_dots]A kobold? How novel.[/thinky_dots]",
+  "PAEL.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-0.next": "Respond",
+  "PAEL.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1.char": "Hold on, I have no intention of-.",
+  "PAEL.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1.next": "Continue",
+  "PAEL.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-2.ancient": "[thinky_dots]Be at ease. I am not interested in creating a warren.\nTake a piece of me as a parting gift.[/thinky_dots]",
+
+  "PAEL.talk.PICKLERFRIGIL-PICKLER_FRIGIL.1-0r.ancient": "[thinky_dots]The small dragon returns.[/thinky_dots]",
+
+  "TANX.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-0.ancient": "LIZARD!! WHERE IS YOUR WEAPON!!",
+  "TANX.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-0.next": "Respond",
+  "TANX.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1.char": "Don't need one.",
+  "TANX.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1.next": "Continue",
+  "TANX.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-2.ancient": "WHAT!!"
 }
