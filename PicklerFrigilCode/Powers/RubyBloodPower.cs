@@ -61,4 +61,9 @@ public class RubyBloodPower : PicklerFrigilPower
             InvokeDisplayAmountChanged();
         }
     }
+
+    public void InvokeFlash()
+    {
+        Flash();
+    }
 }
