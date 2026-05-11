@@ -1,14 +1,9 @@
-using BaseLib.Abstracts;
 using BaseLib.Utils;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
-using PicklerFrigil.PicklerFrigilCode.Character;
 using PicklerFrigil.PicklerFrigilCode.Commands;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
@@ -20,8 +15,10 @@ public class GeodeThrow() : PicklerFrigilCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(8, ValueProp.Move),
-        new DynamicVar("Gems", 1)
+        new ("Gems", 1)
     ];
+
+    public override IEnumerable<CardTag> Tags => [CardTag.Strike];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
