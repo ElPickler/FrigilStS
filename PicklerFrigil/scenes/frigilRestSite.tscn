@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bch3kfihfme08"]
+
+[ext_resource type="Texture2D" uid="uid://b65d72f1w752j" path="res://PicklerFrigil/images/character/temprestsite.png" id="1_fw20m"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_fw20m")
