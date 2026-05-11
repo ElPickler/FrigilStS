@@ -17,13 +17,13 @@ namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
 
-public class DescendingSpiralPower : CustomPowerModel
+public class DescendingSpiralPower : PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
     
-    public override string? CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-descending_spiral_power.png";
-    public override string? CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-descending_spiral_power.png";
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-descending_spiral_power.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-descending_spiral_power.png";
     
     public override Decimal ModifyBlockAdditive(
         Creature target,
