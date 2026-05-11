@@ -1,13 +1,10 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
-using PicklerFrigil.PicklerFrigilCode.Cards;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
@@ -21,12 +18,7 @@ public class Flourish() : PicklerFrigilCard(-1,
         new BlockVar(3, ValueProp.Move),
     ];
     
-    protected override bool IsPlayable => false;
-
-    protected override IEnumerable<IHoverTip> ExtraHoverTips
-    {
-        get { yield return HoverTipFactory.FromKeyword(CardKeyword.Unplayable); }
-    }
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,

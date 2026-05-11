@@ -9,7 +9,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Power;
 
 
 public class Twizzle() : PicklerFrigilCard(3,
-    CardType.Power, CardRarity.Rare,
+    CardType.Power, CardRarity.Ancient,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [

@@ -16,6 +16,8 @@ public class Hailstrike() : PicklerFrigilCard(-1,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.RandomEnemy)
 {
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(6, ValueProp.Move),
@@ -26,12 +28,9 @@ public class Hailstrike() : PicklerFrigilCard(-1,
         PlayerChoiceContext choiceContext,
         CardPlay play) {}
 
-    protected override bool IsPlayable => false;
-
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get { 
-            yield return HoverTipFactory.FromKeyword(CardKeyword.Unplayable);
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
         }
     }
