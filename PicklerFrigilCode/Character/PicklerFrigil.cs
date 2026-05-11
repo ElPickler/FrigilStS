@@ -1,5 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using BaseLib.Abstracts;
+using BaseLib.Patches.UI;
 using BaseLib.Utils.NodeFactories;
 using PicklerFrigil.PicklerFrigilCode.Extensions;
 using Godot;
@@ -74,10 +75,27 @@ public class PicklerFrigil : PlaceholderCharacterModel
     
     
     public override string CustomCharacterSelectTransitionPath => "res://PicklerFrigil/materials/frigil_transition_mat.tres";
-    
-    
-    //public override string CustomRestSiteAnimPath => "res://PicklerFrigil/scenes/frigil_rest_site.tscn"; FUUUCK this
 
+
+    public override RelicIconData CustomYummyCookie => new (
+        "C:/Users/aleja/RiderProjects/PicklerFrigil/PicklerFrigil/images/relics/big/yummy_cookie_frigil.png",
+        "C:/Users/aleja/RiderProjects/PicklerFrigil/PicklerFrigil/images/relics/yummy_cookie_frigil.png",
+        "C:/Users/aleja/RiderProjects/PicklerFrigil/PicklerFrigil/images/relics/yummy_cookie_frigil_outline.png"
+    );
+
+    
+
+    public override string CustomRestSiteAnimPath => "res://PicklerFrigil/scenes/frigilRestSite.tscn";
+   
+    
+    
+    //TODO: MAKE SURE THIS STILL WORKS IN MULTIPLAYER
+    //Might need to find a way to manually add the reticle scene via c#
+
+    /// Backup scene if this breaks
+    // public override string CustomRestSiteAnimPath  => SceneHelper.GetScenePath($"rest_site/characters/{this.PlaceholderID}_rest_site");
+    
+    
     
     public override Control CustomIcon
     {
@@ -88,11 +106,6 @@ public class PicklerFrigil : PlaceholderCharacterModel
             return icon;
         }
     }
-    
-    
-    
-    //
-
 
     
     public override string CustomMerchantAnimPath => "res://PicklerFrigil/scenes/frigilmerchant.tscn";
@@ -111,10 +124,7 @@ public class PicklerFrigil : PlaceholderCharacterModel
         get => SceneHelper.GetScenePath($"combat/energy_counters/{this.PlaceholderID}_energy_counter");
     }
     
-    public override string CustomRestSiteAnimPath
-    {
-        get => SceneHelper.GetScenePath($"rest_site/characters/{this.PlaceholderID}_rest_site");
-    }
+    
     
     
     
