@@ -19,7 +19,7 @@ public class Flurry() : PicklerFrigilCard(2,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(5, ValueProp.Move),
+        new DamageVar(6, ValueProp.Move),
         new PowerVar<WeakPower>(1)
     ];
     

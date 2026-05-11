@@ -18,7 +18,7 @@ public class PiercingThrust() : PicklerFrigilCard(1,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(4, ValueProp.Move)
+        new DamageVar(6, ValueProp.Move)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -43,6 +43,6 @@ public class PiercingThrust() : PicklerFrigilCard(1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(2m);
+        DynamicVars.Damage.UpgradeValueBy(3m);
     }
 }
