@@ -7,7 +7,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Power;
 
 
-public class InMotion() : PicklerFrigilCard(1,
+public class InMotion() : PicklerFrigilCard(2,
     CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {
