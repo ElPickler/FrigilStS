@@ -34,6 +34,8 @@ public class Launch() : PicklerFrigilCard(-1,
         {
             await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
             DynamicVars.Energy.BaseValue -= 1;
+            if(DynamicVars.Energy.BaseValue < 0)
+                DynamicVars.Energy.BaseValue = 0;
         }
     }
 
