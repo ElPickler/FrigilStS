@@ -15,13 +15,13 @@ namespace PicklerFrigil.PicklerFrigilCode.Relics;
 
 
 [Pool(typeof(PicklerFrigilRelicPool))]
-public class RadiantBismuth() : PicklerFrigilRelic
+public class RadiantBismuth : PicklerFrigilRelic
 {
     public override RelicRarity Rarity =>
         RelicRarity.Starter;
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>(1M),
+        new PowerVar<HypothermiaPower>(3M),
         new ("Repeat", 3)
     ];
     

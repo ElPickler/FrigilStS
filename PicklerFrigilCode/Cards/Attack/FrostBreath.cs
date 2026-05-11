@@ -18,7 +18,7 @@ public class FrostBreath() : PicklerFrigilCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(7, ValueProp.Move),
-        new PowerVar<HypothermiaPower>( 1M)
+        new PowerVar<HypothermiaPower>( 3M)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips

@@ -15,13 +15,13 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Relics;
 
 [Pool(typeof(PicklerFrigilRelicPool))]
-public class GlisteningAmethyst() : PicklerFrigilRelic
+public class GlisteningAmethyst : PicklerFrigilRelic
 {
     public override RelicRarity Rarity =>
         RelicRarity.Starter;
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>( 1M)
+        new PowerVar<HypothermiaPower>( 2M)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
