@@ -13,6 +13,8 @@ public class Quartz() : AbstractGem(-1,
     CardType.Status, CardRarity.Token,
     TargetType.Self)
 {
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [new ("Accumulate", 18)];
     
     protected override async Task OnPlay(
