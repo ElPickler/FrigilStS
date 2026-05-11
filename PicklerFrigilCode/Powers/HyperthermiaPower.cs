@@ -5,7 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class HyperthermiaPower : CustomPowerModel
+public class HyperthermiaPower : PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;

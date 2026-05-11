@@ -8,13 +8,13 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class FreeSkatePower : CustomPowerModel
+public class FreeSkatePower : PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
     
-    public override string? CustomPackedIconPath => "res://PicklerFrigil/images/powers/freeskate.png";
-    public override string? CustomBigIconPath => "res://PicklerFrigil/images/powers/big/freeskate.png";
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/freeskate.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/freeskate.png";
     
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {

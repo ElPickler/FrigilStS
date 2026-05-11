@@ -11,13 +11,13 @@ using PicklerFrigil.PicklerFrigilCode.Cards.Special;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class DeepPiercePower: CustomPowerModel
+public class DeepPiercePower: PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
     
-    public override string? CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-flow_power.png";
-    public override string? CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-flow_power.png";
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-flow_power.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-flow_power.png";
 
     public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer,
         CardModel? cardSource)

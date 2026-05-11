@@ -7,7 +7,7 @@ using PicklerFrigil.PicklerFrigilCode.Commands;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class AccumulateNextTurnPower: CustomPowerModel
+public class AccumulateNextTurnPower: PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;

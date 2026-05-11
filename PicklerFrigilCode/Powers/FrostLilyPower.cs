@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class FrostLilyPower: CustomPowerModel
+public class FrostLilyPower: PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Single;

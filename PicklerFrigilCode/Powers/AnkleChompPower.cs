@@ -11,13 +11,13 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class AnkleChompPower: CustomPowerModel
+public class AnkleChompPower: PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Counter;
     
-    public override string? CustomPackedIconPath => "res://PicklerFrigil/images/powers/anklechomp.png";
-    public override string? CustomBigIconPath => "res://PicklerFrigil/images/powers/big/anklechomp.png";
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/anklechomp.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/anklechomp.png";
     
     public override Decimal ModifyBlockMultiplicative(
         Creature target,

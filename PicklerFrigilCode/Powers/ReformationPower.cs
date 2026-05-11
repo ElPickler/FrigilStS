@@ -7,7 +7,7 @@ using PicklerFrigil.PicklerFrigilCode.Cards.Special;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class ReformationPower : CustomPowerModel
+public class ReformationPower : PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;

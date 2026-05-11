@@ -7,11 +7,8 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class InMotionPower: CustomPowerModel
+public class InMotionPower: PicklerFrigilPower
 {
-    //private decimal prevAmount;
-    private decimal applied;
-    
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
     

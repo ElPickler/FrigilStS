@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class WinterWindPower: CustomPowerModel
+public class WinterWindPower: PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;

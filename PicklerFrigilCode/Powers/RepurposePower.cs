@@ -9,13 +9,13 @@ using PicklerFrigil.PicklerFrigilCode.Commands;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
   
-public class RepurposePower: CustomPowerModel
+public class RepurposePower: PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
     
-    public override string? CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-repurpose_power.png";
-    public override string? CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-repurpose_power.png";
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-repurpose_power.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-repurpose_power.png";
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {

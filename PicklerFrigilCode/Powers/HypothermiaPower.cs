@@ -1,6 +1,5 @@
 using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Commands;
-using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -8,21 +7,17 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Cards;
-using PicklerFrigil.PicklerFrigilCode.Cards.Power;
 
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class HypothermiaPower : CustomPowerModel
+public class HypothermiaPower : PicklerFrigilPower
 {
-    //private decimal prevAmount;
-    private decimal applied;
-    
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Counter;
     
-    public override string? CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-hypothermia_power.png";
-    public override string? CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-hypothermia_power.png";
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-hypothermia_power.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-hypothermia_power.png";
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new ("EffDamage", 0)
@@ -36,7 +31,7 @@ public class HypothermiaPower : CustomPowerModel
             return 0;
         if (target != Owner)
             return 0;
-        if (dealer.HasPower<HyperthermiaPower>())
+        if (dealer != null && dealer.HasPower<HyperthermiaPower>())
             return 0;
         if (!cardSource.Tags.Contains(PicklerFrigilCard.IcyTag))
             return 0;
@@ -60,9 +55,8 @@ public class HypothermiaPower : CustomPowerModel
             if (applier.HasPower<DraconicFormPower>()) 
             {
                 decimal draconicFormAmount = applier.GetPowerAmount<DraconicFormPower>();
-                await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), applier.CombatState.HittableEnemies, amount * draconicFormAmount, ValueProp.Unpowered, Owner);
+                await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), applier.CombatState!.HittableEnemies, amount * draconicFormAmount, ValueProp.Unpowered, Owner);
             }
         }
     }
-    
 }

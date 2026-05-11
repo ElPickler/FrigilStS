@@ -13,13 +13,13 @@ using MegaCrit.Sts2.Core.ValueProps;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class FlowPower : CustomPowerModel
+public class FlowPower : PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
     
-    public override string? CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-flow_power.png";
-    public override string? CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-flow_power.png";
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-flow_power.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-flow_power.png";
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {

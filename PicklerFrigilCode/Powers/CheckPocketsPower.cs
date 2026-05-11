@@ -7,7 +7,7 @@ using PicklerFrigil.PicklerFrigilCode.Commands;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class CheckPocketsPower: CustomPowerModel
+public class CheckPocketsPower: PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
