@@ -17,6 +17,8 @@ public class Retrieve() : PicklerFrigilCard(1,
         new ("Accumulate", 0)
     ];
 
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
+    
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         if (cardPlay.Card.Owner != Owner)
@@ -37,6 +39,6 @@ public class Retrieve() : PicklerFrigilCard(1,
 
     protected override void OnUpgrade()
     {
-
+        RemoveKeyword(CardKeyword.Exhaust);
     }
 }
