@@ -62,8 +62,8 @@
   "PICKLERFRIGIL-DRACONIC_FORM_POWER.description": "When you apply Hypothermia, deal an equal amount to ALL enemies.",
   "PICKLERFRIGIL-DRACONIC_FORM_POWER.smartDescription": "When you apply Hypothermia, deal {Amount:plural:an equal|[blue]{Amount}[/blue] times the} amount to ALL enemies",
   "PICKLERFRIGIL-DRACONIC_FORM_POWER.title": "Draconic Form",
-  "PICKLERFRIGIL-RUBY_BLOOD_POWER.description": "When you would create Gemstones, create [blue]1[/blue] more",
-  "PICKLERFRIGIL-RUBY_BLOOD_POWER.smartDescription": "When you would create Gemstones, create [blue]{Amount}[/blue] more.",
+  "PICKLERFRIGIL-RUBY_BLOOD_POWER.description": "The first time you draw an [gold]Unplayable[/gold] card each turn, draw more cards.\nWhen you would create [gold]Gemstones[/gold], create [blue]1[/blue] more.",
+  "PICKLERFRIGIL-RUBY_BLOOD_POWER.smartDescription": "The first time you draw an [gold]Unplayable[/gold] card each turn, draw [blue]{Amount}[/blue] more cards.\nWhen you would create [gold]Gemstones[/gold], create [blue]1[/blue] more.",
   "PICKLERFRIGIL-RUBY_BLOOD_POWER.title": "Ruby Blood",
   "PICKLERFRIGIL-IN_MOTION_POWER.description": "The next [blue]3[/blue] times you play a skill, do not lose [gold]Flow[/gold].",
   "PICKLERFRIGIL-IN_MOTION_POWER.smartDescription": "The next [blue]{Amount}[/blue] times you play a skill, do not lose [gold]Flow[/gold].",
@@ -82,5 +82,8 @@
   "PICKLERFRIGIL-TWIZZLE_POWER.title": "Twizzle",
   "PICKLERFRIGIL-HYPERTHERMIA_POWER.description": "Gain [blue]1[/blue] [gold]Energy[/gold] at the start of each turn.",
   "PICKLERFRIGIL-HYPERTHERMIA_POWER.smartDescription": "Gain {Amount:energyIcons()} at the start of each turn.",
-  "PICKLERFRIGIL-HYPERTHERMIA_POWER.title": "Hyperthermia"
+  "PICKLERFRIGIL-HYPERTHERMIA_POWER.title": "Hyperthermia",
+  "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.description": "[gold]Flow[/gold] gain is increased by [blue]2[/blue].",
+  "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.smartDescription": "[gold]Flow[/gold] gain is increased by [blue]{Amount}[/blue].",
+  "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.title": "Graceful Motion"
 }
