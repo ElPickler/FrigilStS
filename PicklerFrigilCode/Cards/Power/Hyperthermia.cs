@@ -19,8 +19,8 @@ public class Hyperthermia() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        if(play.Target != null)
-            await PowerCmd.Apply<HyperthermiaPower>(choiceContext, Owner.Creature, DynamicVars["HyperthermiaPower"].BaseValue, Owner.Creature, this);
+        
+        await PowerCmd.Apply<HyperthermiaPower>(choiceContext, Owner.Creature, DynamicVars["HyperthermiaPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
