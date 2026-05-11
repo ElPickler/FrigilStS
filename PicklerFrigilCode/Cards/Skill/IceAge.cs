@@ -12,14 +12,15 @@ public class IceAge() : PicklerFrigilCard(-1,
     CardType.Skill, CardRarity.Rare,
     TargetType.AllEnemies)
 {
-    protected override bool IsPlayable => false;
+    
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<HypothermiaPower>( 8M)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [
-        CardKeyword.Ethereal
+        CardKeyword.Ethereal,
+        CardKeyword.Unplayable
     ];
     
     protected override async Task OnPlay(
