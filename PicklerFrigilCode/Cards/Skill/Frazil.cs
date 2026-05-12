@@ -22,7 +22,7 @@ public class Frazil() : PicklerFrigilCard(-1,
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get { 
-            yield return HoverTipFactory.FromPower <ThornsPower>();
+            yield return HoverTipFactory.FromPower <FrazilPower>();
         }
     }
     
@@ -46,6 +46,5 @@ public class Frazil() : PicklerFrigilCard(-1,
     protected override void OnUpgrade()
     {
         DynamicVars["FrazilPower"].UpgradeValueBy(2);
-        DynamicVars["ThornsPower"].UpgradeValueBy(2);
     }
 }
