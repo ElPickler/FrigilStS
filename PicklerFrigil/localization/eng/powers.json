@@ -38,8 +38,8 @@
   "PICKLERFRIGIL-FREE_SKATE_POWER.description": "Playing a card increases its cost by [blue]1[/blue] this turn.",
   "PICKLERFRIGIL-FREE_SKATE_POWER.smartDescription": "Playing a card increases its cost by [blue]{Amount}[/blue] this turn.",
   "PICKLERFRIGIL-FREE_SKATE_POWER.title": "Free Skate",
-  "PICKLERFRIGIL-FRAZIL_POWER.description": "Gain [gold]Thorns[/gold] until the end of this turn.",
-  "PICKLERFRIGIL-FRAZIL_POWER.smartDescription": "Gain [blue]{Amount}[/blue] [gold]Thorns[/gold] until the end of this turn.",
+  "PICKLERFRIGIL-FRAZIL_POWER.description": "Attackers take [gold]Icy[/gold] damage this turn.",
+  "PICKLERFRIGIL-FRAZIL_POWER.smartDescription": "Attackers take [blue]{Amount}[/blue] [gold]Icy[/gold] damage this turn.",
   "PICKLERFRIGIL-FRAZIL_POWER.title": "Frazil",
   "PICKLERFRIGIL-DEEP_PIERCE_POWER.description": "Cryospear damage is doubled.",
   "PICKLERFRIGIL-DEEP_PIERCE_POWER.smartDescription": "Cryospear damage is multiplied by [blue]{Amount}[/blue].",
@@ -85,5 +85,15 @@
   "PICKLERFRIGIL-HYPERTHERMIA_POWER.title": "Hyperthermia",
   "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.description": "[gold]Flow[/gold] gain is increased by [blue]2[/blue].",
   "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.smartDescription": "[gold]Flow[/gold] gain is increased by [blue]{Amount}[/blue].",
-  "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.title": "Graceful Motion"
+  "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.title": "Graceful Motion",
+  "PICKLERFRIGIL-METABOLIZE_POWER.description": "When you [gold]Exhaust[/gold] [gold]Unplayable[/gold] cards, Draw [blue]2[/blue] cards.",
+  "PICKLERFRIGIL-METABOLIZE_POWER.smartDescription": "When you [gold]Exhaust[/gold] [gold]Unplayable[/gold] cards, Draw [blue]{Amount}[/blue] cards.",
+  "PICKLERFRIGIL-METABOLIZE_POWER.title": "Metabolize",
+  "PICKLERFRIGIL-ELEGANT_POISE_POWER.description": "When you gain [gold]Flow[/gold] from a card, other players gain half as much.",
+  "PICKLERFRIGIL-ELEGANT_POISE_POWER.smartDescription": "When you gain [gold]Flow[/gold] from a card, all other allies gain [blue]{Amount}[/blue]% as much.",
+  "PICKLERFRIGIL-ELEGANT_POISE_POWER.title": "Elegant Poise",
+  "PICKLERFRIGIL-REFREEZE_POWER.description": "When you make an Icy attack, [gold]Accumulate[/gold] equal to the enemy's [gold]Hypothermia[/gold].",
+  "PICKLERFRIGIL-REFREEZE_POWER.smartDescription": "When you play an Icy attack, [gold]Accumulate[/gold] equal to the enemy's [gold]Hypothermia[/gold].",
+  "PICKLERFRIGIL-REFREEZE_POWER.title": "Refreeze"
+  
 }
