@@ -19,13 +19,15 @@ public class BlizzardKick() : PicklerFrigilCard(1,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
+            yield return HoverTipFactory.FromPower<FlowPower>();
         }
     }
     
     protected override HashSet<CardTag> CanonicalTags => [IcyTag];
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(2, ValueProp.Move),
-        new DynamicVar("Repeat", 4M)
+        new DamageVar(3, ValueProp.Move),
+        new PowerVar<FlowPower>(2),
+        new ("Repeat", 3M)
     ];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
@@ -33,6 +35,8 @@ public class BlizzardKick() : PicklerFrigilCard(1,
         for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+            await PowerCmd.Apply<FlowPower>(choiceContext, Owner.Creature, DynamicVars["FlowPower"].BaseValue,
+                Owner.Creature, this);
         }
     }
 
