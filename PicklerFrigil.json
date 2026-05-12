@@ -3,7 +3,7 @@
   "name": "Frigil",
   "author": "Pickler",
   "description": "Frigil, the Cryomantic Kobold, prepares to enter the Spire.",
-  "version": "v0.0.9",
+  "version": "v0.0.10",
   "has_pck": true,
   "has_dll": true,
   "dependencies": [{"id": "BaseLib", "min_version": "v0.105.0"}],
