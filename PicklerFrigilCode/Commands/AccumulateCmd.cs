@@ -27,7 +27,8 @@ public static class AccumulateCmd
         else
         {
             Cryospear spear = spears[0];
-            await CardPileCmd.Add(spear, PileType.Hand);
+            if(spear.Pile.Type != PileType.Hand)
+                await CardPileCmd.Add(spear, PileType.Hand);
             if (spears.Count > 1)
             {
                 foreach (Cryospear c in spears)
