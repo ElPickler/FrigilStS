@@ -19,7 +19,8 @@ public class TwinNeedle() : PicklerFrigilCard(1,
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get { 
-            yield return HoverTipFactory.FromKeyword(IcyKeyword); 
+            yield return HoverTipFactory.FromKeyword(IcyKeyword);
+            yield return HoverTipFactory.FromPower<HypothermiaPower>();
         }
     }
     

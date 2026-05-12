@@ -1,10 +1,12 @@
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using PicklerFrigil.PicklerFrigilCode.Cards;
 using PicklerFrigil.PicklerFrigilCode.Cards.Special;
 using PicklerFrigil.PicklerFrigilCode.Commands;
+using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Gems;
 
@@ -13,6 +15,13 @@ public class Quartz() : AbstractGem(-1,
     CardType.Status, CardRarity.Token,
     TargetType.Self)
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get { 
+            yield return HoverTipFactory.FromKeyword(AccumulateKeyword);
+        }
+    }
+    
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [new ("Accumulate", 18)];

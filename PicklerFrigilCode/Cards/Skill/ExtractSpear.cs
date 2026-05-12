@@ -1,6 +1,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using PicklerFrigil.PicklerFrigilCode.Commands;
 using PicklerFrigil.PicklerFrigilCode.Powers;
@@ -12,6 +13,15 @@ public class ExtractSpear() : PicklerFrigilCard(1,
     CardType.Skill, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get
+        {
+            yield return HoverTipFactory.FromPower<HypothermiaPower>();
+            yield return HoverTipFactory.FromKeyword(AccumulateKeyword);
+        }
+    }
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new ("Multiplier", 2)

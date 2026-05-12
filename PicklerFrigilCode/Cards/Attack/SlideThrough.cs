@@ -2,6 +2,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Cards;
@@ -15,6 +16,13 @@ public class SlideThrough() : PicklerFrigilCard(1,
     TargetType.AllEnemies)
 
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get { 
+            yield return HoverTipFactory.FromPower<FlowPower>();
+        }
+    }
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(4, ValueProp.Move),
         new PowerVar<FlowPower>(2M),

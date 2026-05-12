@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using PicklerFrigil.PicklerFrigilCode.Character;
 using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
@@ -16,13 +17,13 @@ public class SnowSpiral() : PicklerFrigilCard(2,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AllEnemies)
 {
-    //private CardModel preview = ModelDb.Card<ReverseSpiral>();
-    
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get { 
-            yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromCard<ReverseSpiral>();
+            yield return HoverTipFactory.FromKeyword(IcyKeyword);
+            yield return IsUpgraded
+                ? HoverTipFactory.FromCard<RisingSpiral>()
+                : HoverTipFactory.FromCard<ReverseSpiral>();
         }
     }
     
@@ -46,7 +47,5 @@ public class SnowSpiral() : PicklerFrigilCard(2,
     }
 
     protected override void OnUpgrade()
-    {
-        DynamicVars.Damage.UpgradeValueBy(3m);
-    }
+    { }
 }

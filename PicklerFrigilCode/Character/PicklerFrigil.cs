@@ -4,11 +4,7 @@ using BaseLib.Patches.UI;
 using BaseLib.Utils.NodeFactories;
 using PicklerFrigil.PicklerFrigilCode.Extensions;
 using Godot;
-using MegaCrit.Sts2.Core.Animation;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Characters;
-using MegaCrit.Sts2.Core.Entities.Creatures;
-using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
 using PicklerFrigil.Cards;
@@ -27,7 +23,7 @@ public class PicklerFrigil : PlaceholderCharacterModel
 
     public override Color NameColor => Color;
     public override CharacterGender Gender => CharacterGender.Masculine;
-    public override int StartingHp => 70;
+    public override int StartingHp => 72;
 
     public override IEnumerable<CardModel> StartingDeck =>
     [
@@ -57,6 +53,7 @@ public class PicklerFrigil : PlaceholderCharacterModel
         
     public override Color MapDrawingColor => new ("482675");
     
+
     //Already replaced
     
     //public override string CustomIconPath => "res://PicklerFrigil/scenes/ui/character_icon_frigil.tscn"; Not sure why this is breaking

@@ -1,5 +1,6 @@
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using PicklerFrigil.PicklerFrigilCode.Cards;
 using PicklerFrigil.PicklerFrigilCode.Commands;
@@ -11,6 +12,14 @@ public class Gemsense() : PicklerFrigilCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get
+        {
+            yield return HoverTipFactory.FromKeyword(GemstoneKeyword);
+        }
+    }
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new ("Gems", 3)
     ];

@@ -22,7 +22,7 @@ public class Slip() : PicklerFrigilCard(1,
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get { 
-            yield return HoverTipFactory.FromPower < VulnerablePower>();
+            yield return HoverTipFactory.FromPower <VulnerablePower>();
         }
     }
     

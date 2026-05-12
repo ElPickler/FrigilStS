@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -17,6 +18,13 @@ public class FrozenMaiden() : PicklerFrigilCard(4,
     CardType.Attack, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get { 
+            yield return HoverTipFactory.FromKeyword(IcyKeyword); 
+        }
+    }
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(14, ValueProp.Move),
         new PowerVar<HypothermiaPower>(0)

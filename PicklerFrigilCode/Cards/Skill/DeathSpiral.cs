@@ -1,6 +1,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using PicklerFrigil.PicklerFrigilCode.Powers;
@@ -12,6 +13,15 @@ public class DeathSpiral() : PicklerFrigilCard(1,
     CardType.Skill, CardRarity.Common,
     TargetType.AnyEnemy)
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get
+        {
+            yield return HoverTipFactory.FromPower<FlowPower>();
+            yield return HoverTipFactory.FromPower<VulnerablePower>();
+        }
+    }
+    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<FlowPower>(5M),
