@@ -27,7 +27,8 @@ public class Opal() : AbstractGem(-1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>( 5M)
+        new PowerVar<HypothermiaPower>( 5M),
+        new PowerVar<MetabolizingOpalPower>(3)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
@@ -47,6 +48,7 @@ public class Opal() : AbstractGem(-1,
         {
             foreach (Creature enemy in CombatState!.HittableEnemies)
                 await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this); 
+            await PowerCmd.Apply<MetabolizingOpalPower>(choiceContext, Owner.Creature, DynamicVars["MetabolizingOpalPower"].BaseValue, Owner.Creature, this);
         }
     }
 }

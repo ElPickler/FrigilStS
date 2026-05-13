@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Cards.Special;
+using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Gems;
 
@@ -16,13 +17,16 @@ public class Diamond() : AbstractGem(-1,
     CardType.Status, CardRarity.Token,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new BlockVar(10, ValueProp.Move)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new BlockVar(12, ValueProp.Move),
+        new PowerVar<MetabolizingDiamondPower>(8)
+    ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(4);
+        DynamicVars.Block.UpgradeValueBy(6);
     }
     
     protected override async Task OnPlay(
@@ -34,6 +38,7 @@ public class Diamond() : AbstractGem(-1,
         if (card == this)
         {
             await CommonActions.CardBlock(this, null);
+            await PowerCmd.Apply<MetabolizingDiamondPower>(choiceContext, Owner.Creature, DynamicVars["MetabolizingDiamondPower"].BaseValue, Owner.Creature, this);
         }
     }
 }

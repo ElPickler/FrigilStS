@@ -1,3 +1,4 @@
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -24,7 +25,10 @@ public class Quartz() : AbstractGem(-1,
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
     
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new ("Accumulate", 18)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new ("Accumulate", 18),
+        new PowerVar<MetabolizingQuartzPower>(4)
+    ];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -36,11 +40,13 @@ public class Quartz() : AbstractGem(-1,
         if (card == this)
         {
             await AccumulateCmd.Accumulate(DynamicVars["Accumulate"].BaseValue, card.Owner, this);
+            await PowerCmd.Apply<MetabolizingQuartzPower>(choiceContext, Owner.Creature, DynamicVars["MetabolizingQuartzPower"].BaseValue, Owner.Creature, this);
         }
     }
     
     protected override void OnUpgrade()
     {
         DynamicVars["Accumulate"].UpgradeValueBy(6);
+        DynamicVars["MetabolizingQuartzPower"].UpgradeValueBy(2);
     }
 }

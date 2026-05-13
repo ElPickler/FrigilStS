@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Models.Powers;
 using PicklerFrigil.PicklerFrigilCode.Cards.Special;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Gems;
@@ -14,7 +15,10 @@ public class Amethyst() : AbstractGem(-1,
     CardType.Status, CardRarity.Token,
     TargetType.Self)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [new EnergyVar(1)];
+    protected override IEnumerable<DynamicVar> CanonicalVars => [
+        new EnergyVar(1),
+        new PowerVar<EnergyNextTurnPower>(1)
+    ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
 
@@ -32,6 +36,7 @@ public class Amethyst() : AbstractGem(-1,
         if (card == this)
         {
             await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
+            await PowerCmd.Apply<EnergyNextTurnPower>(choiceContext, Owner.Creature, DynamicVars["EnergyNextTurnPower"].BaseValue, Owner.Creature, this);
         }
     }
 }
