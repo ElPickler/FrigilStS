@@ -1,5 +1,4 @@
 using BaseLib.Utils;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -38,6 +37,5 @@ public class Burrow() : PicklerFrigilCard(0,
     protected override void OnUpgrade()
     {
         DynamicVars.Block.UpgradeValueBy(4);
-        DynamicVars["Gems"].UpgradeValueBy(1);
     }
 }
