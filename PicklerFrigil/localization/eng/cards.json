@@ -182,14 +182,14 @@
   
   "PICKLERFRIGIL-TOPAZ.description": "If [gold]Exhausted[/gold], at the end of combat, gain {Gold:diff()} [gold]Gold[/gold].",
   "PICKLERFRIGIL-TOPAZ.title": "Topaz",
-  "PICKLERFRIGIL-AMETHYST.description": "If [gold]Exhausted[/gold], gain {Energy:energyIcons()}.",
+  "PICKLERFRIGIL-AMETHYST.description": "If [gold]Exhausted[/gold], gain {Energy:energyIcons()} now, and again next turn.",
   "PICKLERFRIGIL-AMETHYST.title": "Amethyst",
-  "PICKLERFRIGIL-DIAMOND.description": "If [gold]Exhausted[/gold], gain {Block:diff()} [gold]Block[/gold].",
+  "PICKLERFRIGIL-DIAMOND.description": "If [gold]Exhausted[/gold], gain {Block:diff()} [gold]Block[/gold].\nEach turn, gain {MetabolizingDiamondPower:diff()} [gold]Block[/gold]. This amount is reduced by half each turn.",
   "PICKLERFRIGIL-DIAMOND.title": "Diamond",
-  "PICKLERFRIGIL-OPAL.description": "If [gold]Exhausted[/gold], apply {HypothermiaPower:diff()} [gold]Hypothermia[/gold] to ALL enemies. ",
+  "PICKLERFRIGIL-OPAL.description": "If [gold]Exhausted[/gold], apply {HypothermiaPower:diff()} [gold]Hypothermia[/gold] to ALL enemies. Each time you [gold]Exhaust[/gold] another [gold]Gemstone[/gold], apply {MetabolizingOpalPower:diff()} to a random enemy. This amount decreases by 1 each turn.",
   "PICKLERFRIGIL-OPAL.title": "Opal",
-  "PICKLERFRIGIL-EMERALD.description": "If [gold]Exhausted[/gold], draw {Cards:diff()} {Cards:plural:card|cards}.",
+  "PICKLERFRIGIL-EMERALD.description": "If [gold]Exhausted[/gold], draw {Cards:diff()} {Cards:plural:card|cards}.\n Each turn, draw {MetabolizingEmeraldPower:diff()} {Cards:plural:card|cards}. This amount decreases by 1 each turn.",
   "PICKLERFRIGIL-EMERALD.title": "Emerald",
-  "PICKLERFRIGIL-QUARTZ.description": "If [gold]Exhausted[/gold], [gold]Accumulate[/gold] {Accumulate:diff()}.",
+  "PICKLERFRIGIL-QUARTZ.description": "If [gold]Exhausted[/gold], [gold]Accumulate[/gold] {Accumulate:diff()}.\nEach time you [gold]Exhaust[/gold] another [gold]Gemstone[/gold], [gold]Accumulate[/gold] {MetabolizingQuartzPower:diff()}. This amount decreases by 1 each turn.",
   "PICKLERFRIGIL-QUARTZ.title": "Quartz"
 }

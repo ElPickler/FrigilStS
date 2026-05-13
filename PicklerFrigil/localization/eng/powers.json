@@ -94,6 +94,18 @@
   "PICKLERFRIGIL-ELEGANT_POISE_POWER.title": "Elegant Poise",
   "PICKLERFRIGIL-REFREEZE_POWER.description": "When you make an Icy attack, [gold]Accumulate[/gold] equal to the enemy's [gold]Hypothermia[/gold].",
   "PICKLERFRIGIL-REFREEZE_POWER.smartDescription": "When you play an Icy attack, [gold]Accumulate[/gold] equal to the enemy's [gold]Hypothermia[/gold].",
-  "PICKLERFRIGIL-REFREEZE_POWER.title": "Refreeze"
+  "PICKLERFRIGIL-REFREEZE_POWER.title": "Refreeze",
+  "PICKLERFRIGIL-METABOLIZING_DIAMOND_POWER.description": "Gaining Block next turn.",
+  "PICKLERFRIGIL-METABOLIZING_DIAMOND_POWER.smartDescription": "Next turn, gain [blue]{Amount}[/blue] [gold]Block[/gold].",
+  "PICKLERFRIGIL-METABOLIZING_DIAMOND_POWER.title": "Metabolizing Diamond",
+  "PICKLERFRIGIL-METABOLIZING_QUARTZ_POWER.description": "Each time you [gold]Exhaust[/gold] a [gold]Gemstone[/gold], [gold]Accumulate[/gold] for the rest of combat.",
+  "PICKLERFRIGIL-METABOLIZING_QUARTZ_POWER.smartDescription": "Each time you [gold]Exhaust[/gold] a [gold]Gemstone[/gold], [gold]Accumulate[/gold] [blue]{Amount}[/blue].",
+  "PICKLERFRIGIL-METABOLIZING_QUARTZ_POWER.title": "Metabolizing Quartz",
+  "PICKLERFRIGIL-METABOLIZING_EMERALD_POWER.description": "At the start of your next turn, draw [blue]1[/blue] additional card.",
+  "PICKLERFRIGIL-METABOLIZING_EMERALD_POWER.smartDescription": "At the start of your next turn, draw [blue]{Amount}[/blue] additional {Amount:plural:card|cards}.",
+  "PICKLERFRIGIL-METABOLIZING_EMERALD_POWER.title": "Metabolizing Emerald",
+  "PICKLERFRIGIL-METABOLIZING_OPAL_POWER.description": "Each time you [gold]Exhaust[/gold] a [gold]Gemstone[/gold], apply [blue]3[/blue] [gold]Hypothermia[/gold] to a random enemy.",
+  "PICKLERFRIGIL-METABOLIZING_OPAL_POWER.smartDescription": "Each time you [gold]Exhaust[/gold] a [gold]Gemstone[/gold], apply [blue]{Amount}[/blue] [gold]Hypothermia[/gold] to a random enemy.",
+  "PICKLERFRIGIL-METABOLIZING_OPAL_POWER.title": "Metabolizing Opal"
   
 }
