@@ -24,8 +24,8 @@ public class SnowCloak() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new BlockVar(3, ValueProp.Move),
-        new DynamicVar("Repeat", 2M),
+        new BlockVar(4, ValueProp.Move),
+        new ("Repeat", 2M),
         new PowerVar<HypothermiaPower>( 2M)
     ];
     
@@ -37,7 +37,7 @@ public class SnowCloak() : PicklerFrigilCard(1,
         {
             await CommonActions.CardBlock(this, play);
             
-            Creature enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
+            Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState!.HittableEnemies);
             if(enemy != null) await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue , Owner.Creature, this);
         }
     }

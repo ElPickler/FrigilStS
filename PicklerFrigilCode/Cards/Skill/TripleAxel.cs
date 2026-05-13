@@ -13,7 +13,7 @@ public class TripleAxel() : PicklerFrigilCard(2,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(4, ValueProp.Move),
+        new BlockVar(5, ValueProp.Move),
         new("Repeat", 3)
     ];
     
