@@ -30,7 +30,8 @@ public class RepurposePower: PicklerFrigilPower
     {
         if (side == CombatSide.Enemy)
         {
-            await AccumulateCmd.Accumulate(Owner.Block * Amount, Owner.Player, this);
+            if(Owner.Block > 0)
+                await AccumulateCmd.Accumulate(Owner.Block * Amount, Owner.Player!, this);
             await PowerCmd.Remove(this);
         }
     }
