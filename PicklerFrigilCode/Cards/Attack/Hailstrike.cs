@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.GameInfo.Objects;
 using PicklerFrigil.PicklerFrigilCode.Character;
 using PicklerFrigil.PicklerFrigilCode.Powers;
 
@@ -16,6 +17,8 @@ public class Hailstrike() : PicklerFrigilCard(-1,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.RandomEnemy)
 {
+    //TODO: Find a way to override CanEnchant to always return false
+    
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
