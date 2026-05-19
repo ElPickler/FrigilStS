@@ -1,3 +1,4 @@
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -6,6 +7,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Cards;
+using PicklerFrigil.PicklerFrigilCode.Cards.Special;
 using PicklerFrigil.PicklerFrigilCode.Commands;
 
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
@@ -28,7 +30,9 @@ public class RefreezePower : PicklerFrigilPower
         if (cardSource.Type != CardType.Attack)
             return;
         
+        
         int hypothermia = target.GetPowerAmount<HypothermiaPower>();
-        await AccumulateCmd.Accumulate(hypothermia * Amount, Owner.Player!, this);
+        //await AccumulateCmd.Accumulate(hypothermia * Amount, Owner.Player!, this);
+        await PowerCmd.Apply<AccumulateNextTurnPower>(choiceContext, Owner, hypothermia * Amount, Owner, null);
     }
 }
