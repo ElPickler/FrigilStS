@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Models;
 using PicklerFrigil.PicklerFrigilCode.Cards.Gems;
 using PicklerFrigil.PicklerFrigilCode.Cards.Special;
 using PicklerFrigil.PicklerFrigilCode.Powers;
+using PicklerFrigil.PicklerFrigilCode.Relics;
 
 namespace PicklerFrigil.PicklerFrigilCode.Commands;
 
@@ -16,7 +17,6 @@ public class GemstoneCmd
         Player player, int count, PileType pileType = PileType.Hand)
     {
         int moddedCount = count;
-
         
         
         if (player.Creature.HasPower<RubyBloodPower>())
@@ -24,8 +24,19 @@ public class GemstoneCmd
             moddedCount++;
             player.Creature.GetPower<RubyBloodPower>()!.InvokeFlash();
         }
-            
-            
+
+        
+        if (!player.Relics.Contains(ModelDb.Relic<CrystallizedSalt>())) 
+        {
+            int rng = player.RunState.Rng.Niche.NextInt(0, 49); // 2% chance to get salt IF you don't already have it
+            if (rng == 0)
+            {
+                moddedCount--;
+                await RelicCmd.Obtain<CrystallizedSalt>(player);
+                player.GetRelic<CrystallizedSalt>()!.InvokeFlash();
+            }
+        }
+        
         
         IEnumerable<CardModel> c = CardFactory.GetDistinctForCombat(player, Gems, moddedCount, player.RunState.Rng.Shuffle);
         
