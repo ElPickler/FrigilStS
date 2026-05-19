@@ -14,7 +14,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
 
-public class Icebreaker() : PicklerFrigilCard(1,
+public class Icebreaker() : PicklerFrigilCard(0,
     CardType.Attack, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
@@ -26,7 +26,7 @@ public class Icebreaker() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ("Repeat", 2M),
+        new ("Repeat", 1M),
         new CalculationBaseVar(0M),
         new ExtraDamageVar(1M),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier((Func<CardModel, Creature, Decimal>) ((_, target) => target != null ? target.GetPowerAmount<HypothermiaPower>() : 0))
@@ -43,6 +43,6 @@ public class Icebreaker() : PicklerFrigilCard(1,
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
+        DynamicVars["Repeat"].UpgradeValueBy(1);
     }
 }
