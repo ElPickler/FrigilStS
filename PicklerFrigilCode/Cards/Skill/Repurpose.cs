@@ -9,7 +9,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 
 public class Repurpose() : PicklerFrigilCard(1,
-    CardType.Attack, CardRarity.Basic,
+    CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -29,6 +29,6 @@ public class Repurpose() : PicklerFrigilCard(1,
 
     protected override void OnUpgrade()
     {
-
+        EnergyCost.UpgradeBy(-1);
     }
 }
