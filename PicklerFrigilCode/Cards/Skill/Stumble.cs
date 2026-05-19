@@ -45,11 +45,11 @@ public class Stumble() : PicklerFrigilCard(0,
 
     protected override void OnUpgrade()
     {
-        RemoveKeyword(CardKeyword.Exhaust);
+        AddKeyword(CardKeyword.Retain);
     }
     
     private static IEnumerable<CardModel> GetGemstones(Player owner)
     {
-        return owner.PlayerCombatState!.AllCards.Where(c => c.Tags.Contains(GemTag) && c.Pile.Type != PileType.Exhaust);
+        return owner.PlayerCombatState!.AllCards.Where(c => c.Tags.Contains(GemTag) && c.Pile!.Type != PileType.Exhaust);
     }
 }
