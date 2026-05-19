@@ -16,13 +16,14 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Gems;
 [Pool(typeof(TokenCardPool))]
 public class Opal() : AbstractGem(-1,
     CardType.Status, CardRarity.Token,
-    TargetType.Self)
+    TargetType.AllEnemies)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get
         {
-            yield return HoverTipFactory.FromPower < HypothermiaPower>();
+            yield return HoverTipFactory.FromPower<HypothermiaPower>();
+            yield return HoverTipFactory.FromPower<MetabolizingOpalPower>();
         }
     }
     
