@@ -21,7 +21,7 @@ public class ColdBlooded() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<ColdBloodedPower>(1M)
+        new PowerVar<ColdBloodedPower>(3M)
     ];
     
     protected override async Task OnPlay(
