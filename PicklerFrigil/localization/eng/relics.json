@@ -1,8 +1,14 @@
 {
   "PICKLERFRIGIL-GLISTENING_AMETHYST.description": "At the start of your turn, applies {HypothermiaPower:diff()} [gold]Hypothermia[/gold] to a random enemy.",
-  "PICKLERFRIGIL-GLISTENING_AMETHYST.flavor": "",
+  "PICKLERFRIGIL-GLISTENING_AMETHYST.flavor": "Gems like these have a way of concentrating magical energies just the way you want.",
   "PICKLERFRIGIL-GLISTENING_AMETHYST.title": "Glistening Amethyst",
   "PICKLERFRIGIL-RADIANT_BISMUTH.description": "At the start of your turn, applies {HypothermiaPower:diff()} [gold]Hypothermia[/gold] to a random enemy 3 times.",
-  "PICKLERFRIGIL-RADIANT_BISMUTH.flavor": "",
-  "PICKLERFRIGIL-RADIANT_BISMUTH.title": "Radiant Bismuth"
+  "PICKLERFRIGIL-RADIANT_BISMUTH.flavor": "Magnitudes harder to control, as if you ever wanted to in the first place.",
+  "PICKLERFRIGIL-RADIANT_BISMUTH.title": "Radiant Bismuth",
+  "PICKLERFRIGIL-EVERFROZEN_SPIKE.description": "When Icy attacks deal unblocked damage, apply [blue]2[/blue] [gold]Hypothermia[/gold]",
+  "PICKLERFRIGIL-EVERFROZEN_SPIKE.flavor": "You could cast this unto a raging inferno, yet it never seems to melt.",
+  "PICKLERFRIGIL-EVERFROZEN_SPIKE.title": "Everfrozen Spike",
+  "PICKLERFRIGIL-CRYSTALLIZED_SALT.description": "The first [gold]Gemstone[/gold] [gold]Exhausted[/gold] each combat takes effect twice.",
+  "PICKLERFRIGIL-CRYSTALLIZED_SALT.flavor": "",
+  "PICKLERFRIGIL-CRYSTALLIZED_SALT.title": "Crystallized Salt"
 }
