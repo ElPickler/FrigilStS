@@ -82,7 +82,7 @@ public class PicklerFrigil : PlaceholderCharacterModel
 
     
 
-    public override string CustomRestSiteAnimPath => "res://PicklerFrigil/scenes/frigilRestSite.tscn";
+    public override string CustomRestSiteAnimPath => "res://PicklerFrigil/scenes/frigilRestSite2.tscn";
    
     
     
