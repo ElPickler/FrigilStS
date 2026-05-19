@@ -1,3 +1,4 @@
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -15,14 +16,15 @@ public class MetabolizingDiamondPower : PicklerFrigilPower
     public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-metabolizing_diamond_power.png";
     public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-metabolizing_diamond_power.png";
 
-    
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
-        if (player == Owner.Player)
-        {
-            await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, null);
-            // ReSharper disable once PossibleLossOfFraction
-            await PowerCmd.ModifyAmount(choiceContext, this, Amount / -2 , Owner, null);
-        }
+
+        if (side == CombatSide.Enemy)
+            return;
+        await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, null);
+        // ReSharper disable once PossibleLossOfFraction
+        await PowerCmd.ModifyAmount(choiceContext, this, Amount / -2 , Owner, null);
     }
+
+
 }
