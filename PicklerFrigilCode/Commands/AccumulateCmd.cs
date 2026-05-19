@@ -33,7 +33,7 @@ public static class AccumulateCmd
             {
                 foreach (Cryospear c in spears)
                 {
-                    await CardCmd.Exhaust(null, c);
+                    await CardCmd.Exhaust(null!, c);
                 }
             }
         }
