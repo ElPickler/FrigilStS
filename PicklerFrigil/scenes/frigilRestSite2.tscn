@@ -4,10 +4,6 @@
 
 [node name="FrigilRestSite" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(31, 34)
-texture = ExtResource("1_jxc2g")
-
 [node name="ControlRoot" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -16,26 +12,28 @@ offset_bottom = 40.0
 
 [node name="Hitbox" type="Control" parent="ControlRoot"]
 unique_name_in_owner = true
-layout_mode = 1
-anchor_left = -0.39900002
-anchor_right = -0.39900002
-offset_left = -181.04
-offset_top = -354.0
-offset_right = 148.96
-offset_bottom = 236.0
+anchors_preset = 0
+offset_left = -151.0
+offset_top = -275.0
+offset_right = 202.0
+offset_bottom = 203.0
 
 [node name="ThoughtBubbleLeft" type="Control" parent="ControlRoot"]
 unique_name_in_owner = true
 anchors_preset = 0
-offset_left = -185.0
-offset_top = -248.0
-offset_right = -185.0
-offset_bottom = -248.0
+offset_left = -78.0
+offset_top = -223.0
+offset_right = -78.0
+offset_bottom = -223.0
 
 [node name="ThoughtBubbleRight" type="Control" parent="ControlRoot"]
 unique_name_in_owner = true
 anchors_preset = 0
-offset_left = 142.0
-offset_top = -258.0
-offset_right = 142.0
-offset_bottom = -258.0
+offset_left = 139.0
+offset_top = -223.0
+offset_right = 139.0
+offset_bottom = -223.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-25, -53)
+texture = ExtResource("1_jxc2g")
