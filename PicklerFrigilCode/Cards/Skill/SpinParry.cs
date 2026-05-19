@@ -1,10 +1,8 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Commands;
 
@@ -24,8 +22,8 @@ public class SpinParry() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ("Accumulate", 8M),
-        new BlockVar(8, ValueProp.Move)
+        new ("Accumulate", 7M),
+        new BlockVar(7, ValueProp.Move)
     ];
     
     protected override async Task OnPlay(
