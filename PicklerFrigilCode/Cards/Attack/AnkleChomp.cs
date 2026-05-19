@@ -11,7 +11,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
 
-public class AnkleChomp() : PicklerFrigilCard(2,
+public class AnkleChomp() : PicklerFrigilCard(1,
     CardType.Attack, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
@@ -19,7 +19,7 @@ public class AnkleChomp() : PicklerFrigilCard(2,
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<AnkleChompPower>(1M),
-        new DamageVar(9, ValueProp.Move)
+        new DamageVar(8, ValueProp.Move)
     ];
     
     protected override async Task OnPlay(
@@ -32,7 +32,7 @@ public class AnkleChomp() : PicklerFrigilCard(2,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4);
-        DynamicVars["AnkleChompPower"].UpgradeValueBy(1);
+        DynamicVars.Damage.UpgradeValueBy(2);
+        AddKeyword(CardKeyword.Retain);
     }
 }
