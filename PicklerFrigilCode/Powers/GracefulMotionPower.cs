@@ -9,6 +9,9 @@ public class GracefulMotionPower: PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
+    
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-graceful_motion_power.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-graceful_motion_power.png";
 
     public override decimal ModifyPowerAmountGiven(PowerModel power, Creature giver, decimal amount, Creature? target,
         CardModel? cardSource)

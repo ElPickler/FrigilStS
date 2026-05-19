@@ -16,6 +16,9 @@ public class ColdBloodedPower : PicklerFrigilPower
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
     
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-cold_blooded_power.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-cold_blooded_power.png";
+    
     public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
         Creature? dealer, CardModel? cardSource)
     {

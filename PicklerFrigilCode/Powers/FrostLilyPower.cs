@@ -13,6 +13,9 @@ public class FrostLilyPower: PicklerFrigilPower
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Single;
     
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-frost_lily_power.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-frost_lily_power.png";
+    
 
     public override async Task BeforePowerAmountChanged(PowerModel power, decimal amount, Creature target, Creature? applier,
         CardModel? cardSource)
