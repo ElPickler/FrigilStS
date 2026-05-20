@@ -31,8 +31,8 @@ public class HypothermiaPower : PicklerFrigilPower
             return 0;
         if (target != Owner)
             return 0;
-        if (dealer != null && dealer.HasPower<HyperthermiaPower>())
-            return 0;
+        //if (dealer != null && dealer.HasPower<HyperthermiaPower>())
+        //    return 0;
         if (!cardSource.Tags.Contains(PicklerFrigilCard.IcyTag))
             return 0;
         return Math.Ceiling(Amount / 2M);
