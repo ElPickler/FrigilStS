@@ -143,7 +143,7 @@
   "PICKLERFRIGIL-FROST_LILY.title": "Frost Lily",
   "PICKLERFRIGIL-TWIZZLE.description": "When you play a card, gain {TwizzlePower:diff()} [gold]Flow[/gold].",
   "PICKLERFRIGIL-TWIZZLE.title": "Twizzle",
-  "PICKLERFRIGIL-HYPERTHERMIA.description": "Gain {Energy:energyIcons()} at the start of each turn. [gold]Icy[/gold] attacks no longer benefit from [gold]Hypothermia[/gold]",
+  "PICKLERFRIGIL-HYPERTHERMIA.description": "Gain {Energy:energyIcons()} at the start of each turn.\nCards apply 2 fewer [gold]Hypothermia[/gold].",
   "PICKLERFRIGIL-HYPERTHERMIA.title": "Hyperthermia",
   "PICKLERFRIGIL-ICE_AGE.description": "On Draw, apply {HypothermiaPower:diff()} [gold]Hypothermia[/gold] to ALL enemies.",
   "PICKLERFRIGIL-ICE_AGE.title": "Ice Age",
@@ -151,7 +151,7 @@
   "PICKLERFRIGIL-RETRIEVE.title": "Retrieve",
   "PICKLERFRIGIL-GATHER_RIME.description": "For every Cryospear in your Exhaust Pile, [gold]Accumulate[/gold] equal to its damage value.",
   "PICKLERFRIGIL-GATHER_RIME.title": "Gather Rime",
-  "PICKLERFRIGIL-RAVENOUS_HUNGER.description": "[gold]Exhaust[/gold] ALL cards in your hand. [gold]Heal[/gold] 1 for every [gold]Unplayable[/gold] card [gold]exhausted[/gold] this way.",
+  "PICKLERFRIGIL-RAVENOUS_HUNGER.description": "[gold]Exhaust[/gold] ALL cards in your hand.\n[gold]Heal[/gold] 1 for every [gold]Unplayable[/gold] card [gold]exhausted[/gold] this way.",
   "PICKLERFRIGIL-RAVENOUS_HUNGER.title": "Ravenous Hunger",
   "PICKLERFRIGIL-BURROW.description": "Gain {Block:diff()} [gold]Block[/gold].\nCreate {Gems:diff()} [gold]Gemstones[/gold] in your Discard Pile.",
   "PICKLERFRIGIL-BURROW.title": "Burrow",
@@ -179,7 +179,7 @@
   "PICKLERFRIGIL-REFREEZE.title": "Refreeze",
   "PICKLERFRIGIL-GLITTERSEED.description": "When you [gold]Exhaust[/gold] a [gold]Gemstone[/gold], deal {GlitterseedPower:diff()} damage to a random enemy 3 times.",
   "PICKLERFRIGIL-GLITTERSEED.title": "Glitterseed",
-  "PICKLERFRIGIL-REDIRECT.description": "Gain an amount of [gold]Block[/gold] equal to {IfUpgraded:show:two times |}[gold]Flow[/gold].{InCombat:\nGain {CalculatedBlock:diff()} [gold]Block[/gold].|}",
+  "PICKLERFRIGIL-REDIRECT.description": "Gain [gold]Block[/gold] equal to {IfUpgraded:show:two times |}[gold]Flow[/gold].\nGain [gold]Flow[/gold] equal to [gold]Flow[/gold].\nDraw {Cards:diff()} {Cards:plural:card|cards}.{InCombat:\nGain {CalculatedBlock:diff()} [gold]Block[/gold].|}",
   "PICKLERFRIGIL-REDIRECT.title": "Redirect",
   
   
