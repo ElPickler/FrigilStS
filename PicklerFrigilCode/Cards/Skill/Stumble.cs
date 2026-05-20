@@ -12,7 +12,7 @@ using PicklerFrigil.PicklerFrigilCode.Cards;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 public class Stumble() : PicklerFrigilCard(0,
-    CardType.Skill, CardRarity.Uncommon,
+    CardType.Skill, CardRarity.Rare,
     TargetType.Self)
 { 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
