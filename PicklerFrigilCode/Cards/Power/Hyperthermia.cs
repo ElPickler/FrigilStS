@@ -9,7 +9,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Power;
 
   
 public class Hyperthermia() : PicklerFrigilCard(1,
-    CardType.Power, CardRarity.Rare,
+    CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
