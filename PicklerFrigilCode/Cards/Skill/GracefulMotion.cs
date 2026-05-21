@@ -17,6 +17,7 @@ public class GracefulMotion() : PicklerFrigilCard(-1,
     {
         get
         {
+            yield return HoverTipFactory.FromPower<GracefulMotionPower>();
             yield return HoverTipFactory.FromPower<FlowPower>();
         }
     }
