@@ -12,8 +12,8 @@ public class ReformationPower : PicklerFrigilPower
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
     
-    //public override string? CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-hypothermia_power.png";
-    //public override string? CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-hypothermia_power.png";
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/reformationPower.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/reformationPower.png";
 
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {

@@ -15,6 +15,9 @@ public class HyperthermiaPower : PicklerFrigilPower
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
     
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-hyperthermia_power.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-hyperthermia_power.png";
+    
     public override Decimal ModifyMaxEnergy(Player player, Decimal amount)
     {
         return player != Owner.Player ? amount : amount + Amount;

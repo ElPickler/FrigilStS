@@ -11,10 +11,12 @@ namespace PicklerFrigil.PicklerFrigilCode.Powers;
 public class WinterWindPower: PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerStackType StackType => PowerStackType.Counter;
     
-    //public override string? CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-hypothermia_power.png";
-    //public override string? CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-hypothermia_power.png";
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/WinterWindPower.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/WinterWindPower.png";
+
+    //public override int DisplayAmount => Amount;
 
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {

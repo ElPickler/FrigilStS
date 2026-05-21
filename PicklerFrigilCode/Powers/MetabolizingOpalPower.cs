@@ -13,6 +13,9 @@ public class MetabolizingOpalPower : PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
+    
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-metabolizing_opal_power.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-metabolizing_opal_power.png";
 
     public override async Task AfterCardExhausted(PlayerChoiceContext choiceContext, CardModel card, bool causedByEthereal)
     {

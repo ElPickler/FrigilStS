@@ -11,6 +11,9 @@ public class AccumulateNextTurnPower: PicklerFrigilPower
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
+    
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/accumulatePower.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/accumulatePower.png";
 
     public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
     {

@@ -12,6 +12,9 @@ public class HoarfrostPower:PicklerFrigilPower
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
     
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-hoarfrost_power.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-hoarfrost_power.png";
+    
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
