@@ -22,7 +22,7 @@ public class Frazil() : PicklerFrigilCard(-1,
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get { 
-            yield return HoverTipFactory.FromPower <FrazilPower>();
+            yield return HoverTipFactory.FromPower<FrazilPower>();
         }
     }
     
