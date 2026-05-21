@@ -32,12 +32,12 @@ public class GeodeThrow() : PicklerFrigilCard(1,
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        await GemstoneCmd.GenerateGemstone(Owner, (int) DynamicVars["Gems"].BaseValue);
+        await GemstoneCmd.GenerateGemstone(Owner, DynamicVars["Gems"].IntValue);
     }
 
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(2m);
+        DynamicVars.Damage.UpgradeValueBy(3m);
     }
 }
