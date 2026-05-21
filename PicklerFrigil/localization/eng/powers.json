@@ -85,7 +85,7 @@
   "PICKLERFRIGIL-HYPERTHERMIA_POWER.title": "Hyperthermia",
   "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.description": "[gold]Flow[/gold] gain is increased by [blue]2[/blue].",
   "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.smartDescription": "[gold]Flow[/gold] gain is increased by [blue]{Amount}[/blue].",
-  "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.title": "Graceful Motion",
+  "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.title": "Grace",
   "PICKLERFRIGIL-METABOLIZE_POWER.description": "When you [gold]Exhaust[/gold] [gold]Unplayable[/gold] cards, Draw [blue]2[/blue] cards.",
   "PICKLERFRIGIL-METABOLIZE_POWER.smartDescription": "When you [gold]Exhaust[/gold] [gold]Unplayable[/gold] cards, Draw [blue]{Amount}[/blue] cards.",
   "PICKLERFRIGIL-METABOLIZE_POWER.title": "Metabolize",
