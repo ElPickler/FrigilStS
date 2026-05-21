@@ -11,7 +11,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 
-public class AntithermalFocus() : PicklerFrigilCard(2,
+public class AntithermalFocus() : PicklerFrigilCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
@@ -44,6 +44,6 @@ public class AntithermalFocus() : PicklerFrigilCard(2,
 
     protected override void OnUpgrade()
     {
-        RemoveKeyword(CardKeyword.Ethereal);
+        EnergyCost.UpgradeBy(-1);
     }
 }
