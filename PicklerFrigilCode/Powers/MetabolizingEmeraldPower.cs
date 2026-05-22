@@ -1,5 +1,6 @@
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Models;
@@ -21,7 +22,7 @@ public class MetabolizingEmeraldPower : PicklerFrigilPower
         return player != Owner.Player || AmountOnTurnStart == 0 ? count : count + Amount;
     }
 
-    public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
+    public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
     {
         if (side != Owner.Side || AmountOnTurnStart == 0)
             return;

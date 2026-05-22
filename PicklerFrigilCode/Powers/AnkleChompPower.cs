@@ -30,8 +30,8 @@ public class AnkleChompPower: PicklerFrigilPower
             return  0.33M;
         return 1;
     }
-    
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side != CombatSide.Enemy)
             return;

@@ -43,7 +43,8 @@ public class DescendingSpiralPower : PicklerFrigilPower
         return Amount;
     }
 
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, ICombatState combatState)
+    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants,
+        ICombatState combatState)
     {
         if (side == CombatSide.Player)
         {

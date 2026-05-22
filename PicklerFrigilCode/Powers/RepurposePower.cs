@@ -1,6 +1,7 @@
 using BaseLib.Abstracts;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -26,7 +27,8 @@ public class RepurposePower: PicklerFrigilPower
     }
 
 
-    public override async Task AfterTurnEndLate(PlayerChoiceContext choiceContext, CombatSide side)
+
+    public override async Task AfterSideTurnEndLate(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side == CombatSide.Enemy)
         {

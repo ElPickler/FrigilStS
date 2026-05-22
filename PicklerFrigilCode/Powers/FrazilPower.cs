@@ -17,7 +17,9 @@ public class FrazilPower: PicklerFrigilPower
     public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/frazil.png";
     public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/frazil.png";
 
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+
+
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side == CombatSide.Player)
             return;
