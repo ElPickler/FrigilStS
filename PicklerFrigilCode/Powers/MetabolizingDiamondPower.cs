@@ -24,7 +24,7 @@ public class MetabolizingDiamondPower : PicklerFrigilPower
             return;
         //await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, null);
         // ReSharper disable once PossibleLossOfFraction
-        await PowerCmd.ModifyAmount(choiceContext, this, Amount - Amount/2 , Owner, null);
+        await PowerCmd.ModifyAmount(choiceContext, this, -(Amount - Amount/2), Owner, null);
     }
 
 
