@@ -14,7 +14,7 @@ public class Panic() : PicklerFrigilCard(1,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new BlockVar(8, ValueProp.Move)
+        new BlockVar(3, ValueProp.Move)
     ];
     
     protected override async Task OnPlay(
@@ -23,7 +23,7 @@ public class Panic() : PicklerFrigilCard(1,
     {
         await CommonActions.CardBlock(this, play);
         
-        CardSelectorPrefs prefs = new CardSelectorPrefs(SelectionScreenPrompt, 1);
+        CardSelectorPrefs prefs = new CardSelectorPrefs(SelectionScreenPrompt, 0,3);
         CardModel? card = (await CardSelectCmd.FromSimpleGrid(choiceContext, PileType.Discard.GetPile(Owner).Cards, Owner, prefs)).FirstOrDefault();
         if(card == null)
             return;
@@ -32,6 +32,6 @@ public class Panic() : PicklerFrigilCard(1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(4);
+        DynamicVars.Block.UpgradeValueBy(1);
     }
 }
