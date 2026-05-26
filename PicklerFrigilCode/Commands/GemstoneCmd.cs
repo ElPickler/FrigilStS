@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
 using PicklerFrigil.PicklerFrigilCode.Cards.Gems;
 using PicklerFrigil.PicklerFrigilCode.Cards.Special;
 using PicklerFrigil.PicklerFrigilCode.Powers;
@@ -14,7 +15,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Commands;
 public class GemstoneCmd
 {
     public static async Task GenerateGemstone(
-        Player player, int count, PileType pileType = PileType.Hand)
+        Player player, int count, PileType pileType = PileType.Hand, CardPreviewStyle previewStyle = CardPreviewStyle.HorizontalLayout)
     {
         int moddedCount = count;
         
@@ -28,7 +29,7 @@ public class GemstoneCmd
         
         if (!player.Relics.Contains(ModelDb.Relic<CrystallizedSalt>())) 
         {
-            int rng = player.RunState.Rng.Niche.NextInt(0, 49); // 2% chance to get salt IF you don't already have it
+            int rng = player.RunState.Rng.Niche.NextInt(0, 50); // 2% chance to get salt IF you don't already have it
             if (rng == 0)
             {
                 moddedCount--;
@@ -41,9 +42,9 @@ public class GemstoneCmd
         IEnumerable<CardModel> c = CardFactory.GetDistinctForCombat(player, Gems, moddedCount, player.RunState.Rng.Shuffle);
         
         if(pileType == PileType.Draw)
-            await CardPileCmd.AddGeneratedCardsToCombat(c, pileType, player, CardPilePosition.Random);
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(c, pileType, player, CardPilePosition.Random), 0.8F, previewStyle);
         else
-            await CardPileCmd.AddGeneratedCardsToCombat(c, pileType, player);
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(c, pileType, player), 0.8F, previewStyle);
     }
 
     private static readonly AbstractGem[] Gems =
