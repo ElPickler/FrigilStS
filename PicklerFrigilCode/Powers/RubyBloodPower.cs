@@ -14,7 +14,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 public class RubyBloodPower : PicklerFrigilPower
 {
-    public override PowerType Type => PowerType.Debuff;
+    public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
 
     private const int CardDraw = 2;
