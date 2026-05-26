@@ -36,7 +36,8 @@ public class Icebreaker() : PicklerFrigilCard(0,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        for(int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
+            await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
 
         if (play.Target != null) await PowerCmd.Remove<HypothermiaPower>(play.Target);
     }
