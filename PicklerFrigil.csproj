@@ -103,6 +103,7 @@
         <Folder Include="PicklerFrigil\images\potions\" />
         <Folder Include="PicklerFrigil\images\powers\big\"/>
         <Folder Include="PicklerFrigil\images\relics\big\"/>
+        <Folder Include="PicklerFrigil\scenes\vfx\" />
     </ItemGroup>
 
     <Target Name="CheckDependencyPaths">
