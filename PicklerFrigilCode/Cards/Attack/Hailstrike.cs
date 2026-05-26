@@ -51,7 +51,7 @@ public class Hailstrike() : PicklerFrigilCard(-1,
         if (card == this)
         {
             Creature enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
-            await CommonActions.CardAttack(this, enemy).Execute(choiceContext);
+            await CommonActions.CardAttack(this, enemy).WithHitFx("vfx/vfx_big_slash_impact").Execute(choiceContext);
         }
     }
 }
