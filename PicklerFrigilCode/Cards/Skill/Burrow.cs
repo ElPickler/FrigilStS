@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Commands;
 
@@ -31,7 +32,7 @@ public class Burrow() : PicklerFrigilCard(0,
         CardPlay play)
     {
         await CommonActions.CardBlock(this, play);
-        await GemstoneCmd.GenerateGemstone(Owner, (int) DynamicVars["Gems"].BaseValue, PileType.Discard);
+        await GemstoneCmd.GenerateGemstone(Owner, (int) DynamicVars["Gems"].BaseValue, PileType.Discard, CardPreviewStyle.MessyLayout);
     }
 
     protected override void OnUpgrade()
