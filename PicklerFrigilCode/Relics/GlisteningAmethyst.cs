@@ -34,12 +34,13 @@ public class GlisteningAmethyst : PicklerFrigilRelic
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        if (Owner == player)
-        {
-           Flash();
-           Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(player.Creature.CombatState!.HittableEnemies);
-           if (enemy != null) await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, null); 
-        }
+        if (Owner != player)
+            return;
+        
+        Flash();
+        Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(player.Creature.CombatState!.HittableEnemies);
+        if (enemy != null) await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, null); 
+        
         
     }
 }

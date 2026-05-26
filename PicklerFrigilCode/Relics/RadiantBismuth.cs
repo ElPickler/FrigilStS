@@ -35,14 +35,14 @@ public class RadiantBismuth : PicklerFrigilRelic
     
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
     {
-        if (Owner == player)
+        if (Owner != player)
+            return;
+        
+        Flash();
+        for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
         {
-            Flash();
-            for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
-            {
-                Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(player.Creature.CombatState!.HittableEnemies);
-                if (enemy != null) await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, null);
-            }
+            Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(player.Creature.CombatState!.HittableEnemies);
+            if (enemy != null) await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, null);
         }
     }
 }
