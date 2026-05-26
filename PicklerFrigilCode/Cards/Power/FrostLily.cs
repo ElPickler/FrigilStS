@@ -9,7 +9,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Power;
 
 
 public class FrostLily() : PicklerFrigilCard(2,
-    CardType.Power, CardRarity.Rare,
+    CardType.Skill, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -18,6 +18,8 @@ public class FrostLily() : PicklerFrigilCard(2,
             yield return HoverTipFactory.FromPower<HypothermiaPower>();
         }
     }
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<FrostLilyPower>(1)
