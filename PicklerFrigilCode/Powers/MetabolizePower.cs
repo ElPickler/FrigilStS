@@ -19,7 +19,9 @@ public class MetabolizePower: PicklerFrigilPower
     {
         if (card.Owner != Owner.Player)
             return;
-
+        if (causedByEthereal)
+            return;
+        
         if (card.Keywords.Contains(CardKeyword.Unplayable))
         {
             await CardPileCmd.Draw(choiceContext, Amount, Owner.Player);
