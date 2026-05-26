@@ -15,7 +15,7 @@ public class Flourish() : PicklerFrigilCard(-1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(3, ValueProp.Move),
+        new BlockVar(6, ValueProp.Move),
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
@@ -27,7 +27,7 @@ public class Flourish() : PicklerFrigilCard(-1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(1);
+        DynamicVars.Block.UpgradeValueBy(3);
     }
     
     public override async Task AfterCardDrawn(
@@ -36,14 +36,8 @@ public class Flourish() : PicklerFrigilCard(-1,
         bool fromHandDraw)
     {
         if (card == this)
-        {
-            //FIXME: Doesn't seem to respect block enchantment? I think its because of the lack of a cardplay and idk what to DOOO
-            for (int i = 0; i < 2; i++)
-            {
-                await CommonActions.CardBlock(this, null);
-                await Cmd.Wait(0.15f);
-            }
-            
+        { 
+            await CommonActions.CardBlock(this, null);
         }
         
     }
