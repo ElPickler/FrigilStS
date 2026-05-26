@@ -15,17 +15,12 @@ public class WinterWindPower: PicklerFrigilPower
     
     public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/WinterWindPower.png";
     public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/WinterWindPower.png";
-
-    //public override int DisplayAmount => Amount;
-
+    
+    
     public override async Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier, CardModel? cardSource)
     {
         if (power is FlowPower && power.Owner == Owner)
         {
-            //Creature enemy = Owner.Player.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
-            //await PowerCmd.Apply<HypothermiaPower>(enemy, Amount, Owner, null);
-            
-            
             await PowerCmd.Apply<HypothermiaPower>(choiceContext, CombatState.HittableEnemies, Amount, Owner, null);
             
         }
