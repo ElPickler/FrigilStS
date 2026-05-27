@@ -139,7 +139,7 @@
   "PICKLERFRIGIL-LAUNCH.title": "Launch",
   "PICKLERFRIGIL-ENDOTHERMIA.description": "[gold]Accumulate[/gold] {EndothermiaPower:diff()}% of damage dealt by Cryospear.",
   "PICKLERFRIGIL-ENDOTHERMIA.title": "Endothermia",
-  "PICKLERFRIGIL-FROST_LILY.description": "When a card applies [gold]Hypothermia[/gold] to the enemy, it is applied to all enemies.",
+  "PICKLERFRIGIL-FROST_LILY.description": "Apply [gold]Frost Lily[/gold] to enemy.",
   "PICKLERFRIGIL-FROST_LILY.title": "Frost Lily",
   "PICKLERFRIGIL-TWIZZLE.description": "When you play a card, gain {TwizzlePower:diff()} [gold]Flow[/gold].",
   "PICKLERFRIGIL-TWIZZLE.title": "Twizzle",
