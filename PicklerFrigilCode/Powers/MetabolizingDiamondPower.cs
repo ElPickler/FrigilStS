@@ -22,7 +22,7 @@ public class MetabolizingDiamondPower : PicklerFrigilPower
 
         if (side == CombatSide.Enemy)
             return;
-        //await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, null);
+        await CreatureCmd.GainBlock(Owner, Amount, ValueProp.Unpowered, null);
         // ReSharper disable once PossibleLossOfFraction
         await PowerCmd.ModifyAmount(choiceContext, this, -(Amount - Amount/2), Owner, null);
     }
