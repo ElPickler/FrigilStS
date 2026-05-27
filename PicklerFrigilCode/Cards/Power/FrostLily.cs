@@ -15,6 +15,7 @@ public class FrostLily() : PicklerFrigilCard(2,
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get { 
+            yield return HoverTipFactory.FromPower<FrostLilyPower>();
             yield return HoverTipFactory.FromPower<HypothermiaPower>();
         }
     }
