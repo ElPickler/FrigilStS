@@ -21,13 +21,15 @@ public class Panic() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardBlock(this, play);
-        
         CardSelectorPrefs prefs = new CardSelectorPrefs(SelectionScreenPrompt, 0,3);
-        CardModel? card = (await CardSelectCmd.FromSimpleGrid(choiceContext, PileType.Discard.GetPile(Owner).Cards, Owner, prefs)).FirstOrDefault();
-        if(card == null)
-            return;
-        await CardCmd.Exhaust(choiceContext, card);
+        IEnumerable<CardModel> card = (await CardSelectCmd.FromSimpleGrid(choiceContext, PileType.Discard.GetPile(Owner).Cards, Owner, prefs)).ToList();
+
+        foreach (CardModel c in card)
+        {
+            await CardCmd.Exhaust(choiceContext, c);
+            await CommonActions.CardBlock(this, play);
+        }
+        
     }
 
     protected override void OnUpgrade()
