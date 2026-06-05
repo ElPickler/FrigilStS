@@ -23,18 +23,18 @@ public class HyperthermiaPower : PicklerFrigilPower
         return player != Owner.Player ? amount : amount + Amount;
     }
 
-    public override decimal ModifyPowerAmountGiven(PowerModel power, Creature giver, decimal amount, Creature? target,
+    public override decimal ModifyPowerAmountGivenAdditive(PowerModel power, Creature giver, decimal amount, Creature? target,
         CardModel? cardSource)
     {
         if(power is not HypothermiaPower)
-            return base.ModifyPowerAmountGiven(power, giver, amount, target, cardSource);
+            return base.ModifyPowerAmountGivenAdditive(power, giver, amount, target, cardSource);
         if(giver != Owner)
-            return base.ModifyPowerAmountGiven(power, giver, amount, target, cardSource);
+            return base.ModifyPowerAmountGivenAdditive(power, giver, amount, target, cardSource);
         if(cardSource is null)
-            return base.ModifyPowerAmountGiven(power, giver, amount, target, cardSource);
+            return base.ModifyPowerAmountGivenAdditive(power, giver, amount, target, cardSource);
         
         Flash();
-        return base.ModifyPowerAmountGiven(power, giver, amount - HypothermiaLoss, target, cardSource);
+        return base.ModifyPowerAmountGivenAdditive(power, giver, amount - HypothermiaLoss, target, cardSource);
     }
     
 }
