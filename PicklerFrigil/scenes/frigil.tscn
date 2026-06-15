@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://kfbecv1bv88a"]
+[gd_scene load_steps=9 format=3 uid="uid://kfbecv1bv88a"]
 
 [ext_resource type="Texture2D" uid="uid://deq5jkuls826r" path="res://PicklerFrigil/images/character/tempfrigil.png" id="1_q6pid"]
 [ext_resource type="Texture2D" uid="uid://bfs7oay7ux7pj" path="res://PicklerFrigil/images/character/tempfrigildead.png" id="1_s6fy4"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://sj6mp5dc7sm0" path="res://PicklerFrigil/images/character/tempfrigilcast.png" id="3_nx2mm"]
 [ext_resource type="Texture2D" uid="uid://bb84qs573hlk4" path="res://PicklerFrigil/images/character/tempfrigilhurt.png" id="5_byfhc"]
 [ext_resource type="Texture2D" uid="uid://b1hspj1ualwan" path="res://PicklerFrigil/images/character/tempfrigilrevive.png" id="5_cs247"]
+[ext_resource type="Texture2D" uid="uid://bmbke7cvqacj8" path="res://PicklerFrigil/images/character/tempmerchant.png" id="6_v8tg7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3f3if"]
 animations = [{
@@ -65,6 +66,14 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_v8tg7")
+}],
+"loop": true,
+"name": &"relaxed",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 0.5,
 "texture": ExtResource("1_s6fy4")
 }, {
@@ -86,14 +95,8 @@ unique_name_in_owner = true
 position = Vector2(10, -91)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_3f3if")
-animation = &"idle"
+animation = &"relaxed"
 autoplay = "idle"
-
-[node name="VisualsOld" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(10, -91)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_q6pid")
 
 [node name="Bounds" type="Control" parent="."]
 unique_name_in_owner = true
