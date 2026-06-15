@@ -28,8 +28,6 @@ public class Gemsense() : PicklerFrigilCard(1,
         new ("Exhaust", 3)
     ];
     
-    //public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
-    
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
