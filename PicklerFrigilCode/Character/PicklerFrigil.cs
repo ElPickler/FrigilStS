@@ -1,5 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using BaseLib.Abstracts;
+using BaseLib.Audio;
 using BaseLib.Patches.UI;
 using BaseLib.Utils.NodeFactories;
 using PicklerFrigil.PicklerFrigilCode.Extensions;
@@ -15,7 +16,7 @@ using PicklerFrigil.PicklerFrigilCode.Relics;
 namespace PicklerFrigil.PicklerFrigilCode.Character;
 
 
-public class PicklerFrigil : PlaceholderCharacterModel
+public class PicklerFrigil : CustomCharacterModel
 {
     public const string CharacterId = "PicklerFrigil";
 
@@ -56,7 +57,6 @@ public class PicklerFrigil : PlaceholderCharacterModel
 
     //Already replaced
     
-    //public override string CustomIconPath => "res://PicklerFrigil/scenes/ui/character_icon_frigil.tscn"; Not sure why this is breaking
     public override string CustomIconTexturePath => "res://PicklerFrigil/images/charui/character_icon_frigil2.png";
     public override string CustomCharacterSelectIconPath => "char_select_frigil.png".CharacterUiPath();
     public override string CustomCharacterSelectLockedIconPath => "char_select_char_name_locked.png".CharacterUiPath();
@@ -68,31 +68,17 @@ public class PicklerFrigil : PlaceholderCharacterModel
     public override string CustomArmScissorsTexturePath => "res://PicklerFrigil/images/character/ui/hand_scissors.png";
     
     public override string CustomVisualPath => "res://PicklerFrigil/scenes/frigil.tscn";
-    public override string CustomCharacterSelectBg => "res://PicklerFrigil/scenes/char_select_bg_frigil.tscn";
-    
+    public override string CustomCharacterSelectBg => "res://PicklerFrigil/scenes/CharSelect/char_select_bg_frigil.tscn";
     
     public override string CustomCharacterSelectTransitionPath => "res://PicklerFrigil/materials/frigil_transition_mat.tres";
-
 
     public override RelicIconData CustomYummyCookie => new (
         "C:/Users/aleja/RiderProjects/PicklerFrigil/PicklerFrigil/images/relics/big/yummy_cookie_frigil.png",
         "C:/Users/aleja/RiderProjects/PicklerFrigil/PicklerFrigil/images/relics/yummy_cookie_frigil.png",
         "C:/Users/aleja/RiderProjects/PicklerFrigil/PicklerFrigil/images/relics/yummy_cookie_frigil_outline.png"
     );
-
     
-
-    public override string CustomRestSiteAnimPath => "res://PicklerFrigil/scenes/frigilRestSite2.tscn";
-   
-    
-    
-    //TODO: MAKE SURE THIS STILL WORKS IN MULTIPLAYER
-    //Might need to find a way to manually add the reticle scene via c#
-
-    /// Backup scene if this breaks
-    // public override string CustomRestSiteAnimPath  => SceneHelper.GetScenePath($"rest_site/characters/{this.PlaceholderID}_rest_site");
-    
-    
+    public override string CustomRestSiteAnimPath => "res://PicklerFrigil/scenes/RestSite/frigilRestSite2.tscn";
     
     public override Control CustomIcon
     {
@@ -103,9 +89,15 @@ public class PicklerFrigil : PlaceholderCharacterModel
             return icon;
         }
     }
-
     
-    public override string CustomMerchantAnimPath => "res://PicklerFrigil/scenes/frigilmerchant.tscn";
+    public override string CustomMerchantAnimPath => "res://PicklerFrigil/scenes/Merchant/frigilmerchant.tscn";
+    
+    
+    
+        //audio
+    public override string CharacterSelectSfx => "res://PicklerFrigil/audio/FrigilCharSelect.ogg";
+    public override string CharacterTransitionSfx => "res://PicklerFrigil/audio/FrigilTransition.ogg";
+
     
     
     //To be replaced
@@ -121,20 +113,9 @@ public class PicklerFrigil : PlaceholderCharacterModel
         get => SceneHelper.GetScenePath($"combat/energy_counters/{this.PlaceholderID}_energy_counter");
     }
     
-    
-    
-    
-    
-    
-    
     public override string CustomIconPath
     {
         get => SceneHelper.GetScenePath($"ui/character_icons/{this.PlaceholderID}_icon");
-    }
-    
-    public override string CharacterSelectSfx
-    {
-        get => $"event:/sfx/characters/{this.PlaceholderID}/{this.PlaceholderID}_select";
     }
     
     public override string CustomCastSfx
@@ -159,7 +140,7 @@ public class PicklerFrigil : PlaceholderCharacterModel
         CollectionsMarshal.SetCount<string>(list, num);
         Span<string> span = CollectionsMarshal.AsSpan<string>(list);
         int index1 = 0;
-        span[index1] = "vfx/vfx_attack_blunt";
+        span[index1] = "vfx/vfx_attack_slash";
         int index2 = index1 + 1;
         span[index2] = "vfx/vfx_heavy_blunt";
         int index3 = index2 + 1;
@@ -167,7 +148,7 @@ public class PicklerFrigil : PlaceholderCharacterModel
         int index4 = index3 + 1;
         span[index4] = "vfx/vfx_bloody_impact";
         int index5 = index4 + 1;
-        span[index5] = "vfx/vfx_rock_shatter";
+        span[index5] = "vfx/vfx_big_slash_impact";
         return list;
     }
 }
