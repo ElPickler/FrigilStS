@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://d01k3nplf4fhf"]
+
+[ext_resource type="Texture2D" uid="uid://b65d72f1w752j" path="res://PicklerFrigil/images/character/temprestsite.png" id="2_x5yln"]
+[ext_resource type="Script" path="res://PicklerFrigilCode/FrigilSelectionReticle.cs" id="3_4ud5n"]
+
+[node name="FrigilRestSite" type="Node2D"]
+
+[node name="ControlRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ControlRoot"]
+unique_name_in_owner = true
+position = Vector2(-25, -53)
+texture = ExtResource("2_x5yln")
+
+[node name="SelectionReticle" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -151.0
+offset_top = -275.0
+offset_right = 202.0
+offset_bottom = 203.0
+script = ExtResource("3_4ud5n")
+
+[node name="Hitbox" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+z_index = 15
+z_as_relative = false
+anchors_preset = 0
+offset_left = -151.0
+offset_top = -275.0
+offset_right = 202.0
+offset_bottom = 203.0
+
+[node name="ThoughtBubbleLeft" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -108.0
+offset_top = -234.0
+offset_right = -108.0
+offset_bottom = -234.0
+
+[node name="ThoughtBubbleRight" type="Control" parent="ControlRoot"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 185.0
+offset_top = -234.0
+offset_right = 185.0
+offset_bottom = -234.0
