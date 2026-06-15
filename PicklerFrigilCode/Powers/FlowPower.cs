@@ -50,7 +50,6 @@ public class FlowPower : PicklerFrigilPower
 
     public override async Task AfterCardPlayed(PlayerChoiceContext context, CardPlay cardPlay)
     {
-        PowerModel flowpower = this;
         if(cardPlay.Card.Owner.Creature != Owner) //Check if owner played the card
             return;
         if (cardPlay.Card.Type != CardType.Skill) //check if card is skill
@@ -61,7 +60,7 @@ public class FlowPower : PicklerFrigilPower
             await PowerCmd.Decrement(inMotion);
             return;
         }
-        await PowerCmd.Remove(flowpower);
+        await PowerCmd.Remove(this);
     }
 
     
