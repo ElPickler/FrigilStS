@@ -7,13 +7,11 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
-using PicklerFrigil.PicklerFrigilCode.Cards;
-using PicklerFrigil.PicklerFrigilCode.Character;
 
-namespace PicklerFrigil.PicklerFrigilCode.Cards.Basic;
+namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
 
-public class QuickSwipe() : PicklerFrigilCard(1,
+public class QuickLash() : PicklerFrigilCard(1,
     CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
@@ -28,7 +26,7 @@ public class QuickSwipe() : PicklerFrigilCard(1,
     {
         for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
         {
-            await CommonActions.CardAttack(this, play.Target).WithHitVfxNode((Func<Creature, Node2D>) (t => (Node2D) NScratchVfx.Create(t, true))).Execute(choiceContext);
+            await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         }
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
     }
