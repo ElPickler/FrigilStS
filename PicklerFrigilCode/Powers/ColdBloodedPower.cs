@@ -22,7 +22,7 @@ public class ColdBloodedPower : PicklerFrigilPower
     public override async Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props,
         Creature? dealer, CardModel? cardSource)
     {
-        if (target != Owner || dealer == null || !props.IsPoweredAttack() && !(cardSource is Omnislice))
+        if (target != Owner || dealer == null || !props.IsPoweredAttack())
             return;
         Flash();
         await PowerCmd.Apply<HypothermiaPower>(choiceContext, dealer, Amount, Owner, null);
