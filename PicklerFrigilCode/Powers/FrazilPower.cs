@@ -31,6 +31,8 @@ public class FrazilPower: PicklerFrigilPower
     {
         if (target != Owner || dealer == null)
             return;
+        if (!props.IsPoweredAttack())
+            return;
         Flash();
 
         decimal hypothermiaMod = Math.Ceiling(dealer.GetPowerAmount<HypothermiaPower>() / 2M);
