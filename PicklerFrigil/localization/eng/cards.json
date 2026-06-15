@@ -164,7 +164,7 @@
   "PICKLERFRIGIL-LET_IT_GO.selectionScreenPrompt": "Choose cards to [gold]Exhaust[/gold].",
   "PICKLERFRIGIL-EXTRACT_SPEAR.description": "Remove ALL [gold]Hypothermia[/gold] from target.\n[gold]Accumulate[/gold] equal to [gold]Hypothermia[/gold] removed times {IfUpgraded:show:three|two}.",
   "PICKLERFRIGIL-EXTRACT_SPEAR.title": "Extract Spear",
-  "PICKLERFRIGIL-PANIC.description": "[gold]Exhaust[/gold] up to 3 cards from your Discard Pile.\nGain {Block:diff()} [gold]Block[/gold] for each card exhausted this way.",
+  "PICKLERFRIGIL-PANIC.description": "[gold]Exhaust[/gold] up to 3 [gold]Unplayable[/gold] cards from your Discard Pile.\nGain {Block:diff()} [gold]Block[/gold] for each card exhausted this way.",
   "PICKLERFRIGIL-PANIC.title": "Panic",
   "PICKLERFRIGIL-PANIC.selectionScreenPrompt": "Choose cards to [gold]Exhaust[/gold].",
   "PICKLERFRIGIL-CRYOSEISM.description": "Apply {VulnerablePower:diff()} [gold]Vulnerable[/gold].\n[gold]Exhaust[/gold] a card at random.",
