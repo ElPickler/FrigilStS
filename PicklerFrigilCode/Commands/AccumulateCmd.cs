@@ -1,9 +1,12 @@
+using GodotPlugins.Game;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.Models;
 using PicklerFrigil.PicklerFrigilCode.Cards.Special;
+using PicklerFrigil.PicklerFrigilCode.Relics;
 
 namespace PicklerFrigil.PicklerFrigilCode.Commands;
 
@@ -14,9 +17,27 @@ public static class AccumulateCmd
         Player player,
         AbstractModel? source)
     {
+        decimal accumulateAmount = amount;
+
+        //Check for coldsteel spearhead
+        ColdsteelSpearhead? spearhead = player.GetRelic<ColdsteelSpearhead>();
+        if (spearhead != null)
+        {
+            if (spearhead.Status == RelicStatus.Active)
+            {
+                accumulateAmount *= 2;
+                spearhead.InvokeFlash();
+                spearhead.Status = RelicStatus.Disabled;
+            }
+        }
+        
+        //Dump spears on combat end
         if (CombatManager.Instance.IsOverOrEnding)
             return Array.Empty<Cryospear>();
+        
+            //Accumulate behavior on varying spear counts
         List<Cryospear> spears = GetCryospears(player, false).ToList();
+        //For no spears, create one and move on
         if (spears.Count == 0)
         {
             Cryospear spear = player.Creature.CombatState!.CreateCard<Cryospear>(player);
@@ -26,8 +47,9 @@ public static class AccumulateCmd
         }
         else
         {
+            //TODO: Finish functionality for multiple spears
             Cryospear spear = spears[0];
-            if(spear.Pile.Type != PileType.Hand)
+            if(spear.Pile!.Type != PileType.Hand)
                 await CardPileCmd.Add(spear, PileType.Hand);
             if (spears.Count > 1)
             {
@@ -37,7 +59,8 @@ public static class AccumulateCmd
                 }
             }
         }
-        IncreaseSpearDamage(amount, player);
+        
+        IncreaseSpearDamage(accumulateAmount, player);
 
         return spears;
     }
