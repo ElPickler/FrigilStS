@@ -26,8 +26,8 @@ public class GemstoneCmd
             player.Creature.GetPower<RubyBloodPower>()!.InvokeFlash();
         }
 
-        
-        if (!player.Relics.Contains(ModelDb.Relic<CrystallizedSalt>())) 
+        CrystallizedSalt? salt = player.GetRelic<CrystallizedSalt>();
+        if (salt == null) 
         {
             int rng = player.RunState.Rng.Niche.NextInt(0, 50); // 2% chance to get salt IF you don't already have it
             if (rng == 0)
@@ -42,9 +42,9 @@ public class GemstoneCmd
         IEnumerable<CardModel> c = CardFactory.GetDistinctForCombat(player, Gems, moddedCount, player.RunState.Rng.Shuffle);
         
         if(pileType == PileType.Draw)
-            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(c, pileType, player, CardPilePosition.Random), 0.8F, previewStyle);
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(c, pileType, player, CardPilePosition.Random), 0.4F, previewStyle);
         else
-            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(c, pileType, player), 0.8F, previewStyle);
+            CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(c, pileType, player), 0.4F, previewStyle);
     }
 
     private static readonly AbstractGem[] Gems =
