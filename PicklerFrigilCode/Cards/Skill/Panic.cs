@@ -22,7 +22,6 @@ public class Panic() : PicklerFrigilCard(1,
         CardPlay play)
     {
         CardSelectorPrefs prefs = new CardSelectorPrefs(SelectionScreenPrompt, 0,3);
-        //IEnumerable<CardModel> card = (await CardSelectCmd.FromSimpleGrid(choiceContext, PileType.Discard.GetPile(Owner).Cards, Owner, prefs)).ToList();
 
         List<CardModel> card = (await CardSelectCmd.FromCombatPile(choiceContext, PileType.Discard.GetPile(Owner), Owner, prefs, Filter)).ToList();
         
