@@ -38,7 +38,7 @@ public class PiercingThrust() : PicklerFrigilCard(1,
     {
         AttackCommand attack = await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         
-        await AccumulateCmd.Accumulate(attack.Results.SelectMany(r => r).Sum(r => r.TotalDamage + r.OverkillDamage), Owner, this);
+        await AccumulateCmd.Accumulate(choiceContext, attack.Results.SelectMany(r => r).Sum(r => r.TotalDamage + r.OverkillDamage), Owner, this);
     }
 
     protected override void OnUpgrade()

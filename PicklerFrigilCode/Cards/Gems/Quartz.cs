@@ -38,7 +38,7 @@ public class Quartz() : AbstractGem(-1,
     {
         if (card == this)
         {
-            await AccumulateCmd.Accumulate(DynamicVars["Accumulate"].BaseValue, card.Owner, this);
+            await AccumulateCmd.Accumulate(choiceContext, DynamicVars["Accumulate"].BaseValue, card.Owner, this);
             await PowerCmd.Apply<MetabolizingQuartzPower>(choiceContext, Owner.Creature, DynamicVars["MetabolizingQuartzPower"].BaseValue, Owner.Creature, this);
         }
     }

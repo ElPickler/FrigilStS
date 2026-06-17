@@ -32,7 +32,7 @@ public class ConjureSpear() : PicklerFrigilCard(1
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await AccumulateCmd.Accumulate(DynamicVars["Accumulate"].BaseValue, Owner, this);
+        await AccumulateCmd.Accumulate(choiceContext, DynamicVars["Accumulate"].BaseValue, Owner, this);
     }
 
     protected override void OnUpgrade()

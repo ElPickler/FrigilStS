@@ -39,7 +39,7 @@ public class ExtractSpear() : PicklerFrigilCard(1,
         if (hypothermia > 0)
         {
             await PowerCmd.Remove<HypothermiaPower>(play.Target);
-            await AccumulateCmd.Accumulate(hypothermia, Owner, this);
+            await AccumulateCmd.Accumulate(choiceContext, hypothermia, Owner, this);
         }
         
     }

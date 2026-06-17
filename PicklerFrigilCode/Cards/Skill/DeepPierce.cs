@@ -31,7 +31,7 @@ public class DeepPierce() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await AccumulateCmd.Accumulate(DynamicVars["Accumulate"].BaseValue, Owner, this);
+        await AccumulateCmd.Accumulate(choiceContext, DynamicVars["Accumulate"].BaseValue, Owner, this);
         if (Owner.Creature.GetPowerAmount<DeepPiercePower>() == 0)
         {
             await PowerCmd.Apply<DeepPiercePower>(choiceContext, Owner.Creature, DynamicVars["DeepPiercePower"].BaseValue + 1,

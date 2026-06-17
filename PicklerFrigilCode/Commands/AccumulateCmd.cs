@@ -1,9 +1,10 @@
-using GodotPlugins.Game;
+using Godot;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using PicklerFrigil.PicklerFrigilCode.Cards.Special;
 using PicklerFrigil.PicklerFrigilCode.Relics;
@@ -13,6 +14,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Commands;
 public static class AccumulateCmd
 {
     public static async Task<IEnumerable<Cryospear>> Accumulate(
+        PlayerChoiceContext choiceContext,
         Decimal amount,
         Player player,
         AbstractModel? source)
@@ -47,15 +49,23 @@ public static class AccumulateCmd
         }
         else
         {
-            //TODO: Finish functionality for multiple spears
             Cryospear spear = spears[0];
             if(spear.Pile!.Type != PileType.Hand)
                 await CardPileCmd.Add(spear, PileType.Hand);
             if (spears.Count > 1)
             {
+                MainFile.Logger.Info("Beginning accumulate");
                 foreach (Cryospear c in spears)
                 {
-                    await CardCmd.Exhaust(null!, c);
+                    //Skip the first spear to keep it around
+                    if (c != spear)
+                    {
+                        //Add the damage of other spears to the first before exhausting them
+                        decimal spearDamage = c.GetDamage();
+                        spear.AddDamage(spearDamage);
+                        
+                        await CardCmd.Exhaust(choiceContext, c);
+                    }
                 }
             }
         }
@@ -76,7 +86,7 @@ public static class AccumulateCmd
                 return false;
             if (includeExhausted)
                 return true;
-            CardPile pile = c.Pile;
+            CardPile? pile = c.Pile;
             return pile == null || pile.Type != PileType.Exhaust;
         })).OfType<Cryospear>();
     }
@@ -97,6 +107,7 @@ public static class AccumulateCmd
     {
         decimal damage = 0;
         List<Cryospear> spears = GetCryospears(player, false).ToList();
+        Cryospear mainspear = spears[0];
         foreach(Cryospear spear in spears)
         {
             damage += spear.GetDamage();

@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using PicklerFrigil.PicklerFrigilCode.Commands;
 
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
@@ -21,7 +22,7 @@ public class AccumulateNextTurnPower: PicklerFrigilPower
     {
         if (side == CombatSide.Player)
         {
-            await AccumulateCmd.Accumulate(Amount, Owner.Player!, this);
+            await AccumulateCmd.Accumulate(new ThrowingPlayerChoiceContext(), Amount, Owner.Player!, this);
             await PowerCmd.Remove(this);
         }
     }

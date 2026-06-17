@@ -31,7 +31,7 @@ public class GatherRime() : PicklerFrigilCard(3,
             if (c is Cryospear)
             {
                 Cryospear cryospear = (c as Cryospear)!;
-                await AccumulateCmd.Accumulate(cryospear.GetDamage(), Owner, this);
+                await AccumulateCmd.Accumulate(choiceContext, cryospear.GetDamage(), Owner, this);
             }
         }
     }

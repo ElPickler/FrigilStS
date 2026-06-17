@@ -30,8 +30,8 @@ public class Deployment() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        foreach (Player player in CombatState.Players)
-            await AccumulateCmd.Accumulate(DynamicVars["Accumulate"].BaseValue, player, this);
+        foreach (Player player in CombatState!.Players)
+            await AccumulateCmd.Accumulate(choiceContext, DynamicVars["Accumulate"].BaseValue, player, this);
     }
 
     protected override void OnUpgrade()
