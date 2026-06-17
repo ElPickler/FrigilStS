@@ -31,7 +31,7 @@ public class AntithermalFocus() : PicklerFrigilCard(1,
         CardPlay play)
     {
         DynamicVars["HypothermiaPower"].BaseValue = 0;
-        foreach (Creature enemy in CombatState.HittableEnemies)
+        foreach (Creature enemy in CombatState!.HittableEnemies)
         {
             if (enemy.HasPower<HypothermiaPower>())
             {
@@ -39,7 +39,8 @@ public class AntithermalFocus() : PicklerFrigilCard(1,
                 await PowerCmd.Remove<HypothermiaPower>(enemy);
             }
         }
-        await PowerCmd.Apply<HypothermiaPower>(choiceContext, play.Target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
+        if(play.Target != null)
+            await PowerCmd.Apply<HypothermiaPower>(choiceContext, play.Target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

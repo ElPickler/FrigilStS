@@ -29,7 +29,7 @@ public class Icebreaker() : PicklerFrigilCard(0,
         new ("Repeat", 1M),
         new CalculationBaseVar(0M),
         new ExtraDamageVar(1M),
-        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((Func<CardModel, Creature, Decimal>) ((_, target) => target != null ? target.GetPowerAmount<HypothermiaPower>() : 0))
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier(((Func<CardModel, Creature, Decimal>) ((_, target) => target.GetPowerAmount<HypothermiaPower>()))!)
     ];
     
     protected override async Task OnPlay(

@@ -1,5 +1,3 @@
-using System.Buffers;
-using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -7,9 +5,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.ValueProps;
-using PicklerFrigil.PicklerFrigilCode.Cards;
 using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
@@ -26,7 +22,7 @@ public class Redirect() : PicklerFrigilCard(0,
         new ("Multiplier", 1),
         new CalculationBaseVar(0M),
         new CalculationExtraVar(1M),
-        new CalculatedBlockVar(ValueProp.Move).WithMultiplier((Func<CardModel, Creature, Decimal>) ((card, _) => GetFlowAmount(card))),
+        new CalculatedBlockVar(ValueProp.Move).WithMultiplier(((Func<CardModel, Creature, Decimal>) ((card, _) => GetFlowAmount(card)))!),
         new PowerVar<FlowPower>(0M),
         new CardsVar(1)
     ];

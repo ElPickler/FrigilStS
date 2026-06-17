@@ -8,9 +8,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Text;
 
 public partial class RichTextFrigil : AbstractMegaRichTextEffect
 {
-    public string bbcode = "frigil";
-    
-    protected override string Bbcode => bbcode;
+    protected override string Bbcode => "frigil";
     
     public override bool _ProcessCustomFX(CharFXTransform charFx)
     {

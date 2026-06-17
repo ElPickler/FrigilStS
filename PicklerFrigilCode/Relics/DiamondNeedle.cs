@@ -1,5 +1,4 @@
 using BaseLib.Utils;
-using Godot;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.HoverTips;
@@ -7,7 +6,6 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using PicklerFrigil.PicklerFrigilCode.Character;
 using PicklerFrigil.PicklerFrigilCode.Powers;
-using PicklerFrigil.PicklerFrigilCode.Relics;
 
 namespace PicklerFrigil.PicklerFrigilCode.Relics;
 

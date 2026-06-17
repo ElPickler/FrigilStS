@@ -26,7 +26,7 @@ public class MetabolizingQuartzPower : PicklerFrigilPower
             return;
         if (!card.Tags.Contains(PicklerFrigilCard.GemTag)) 
             return;
-        await AccumulateCmd.Accumulate(Amount, Owner.Player!, this);
+        await AccumulateCmd.Accumulate(choiceContext, Amount, Owner.Player!, this);
     }
 
     public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)

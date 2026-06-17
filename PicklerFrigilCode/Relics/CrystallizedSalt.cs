@@ -5,7 +5,6 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Rooms;
 using PicklerFrigil.PicklerFrigilCode.Cards;
 using PicklerFrigil.PicklerFrigilCode.Character;
-using PicklerFrigil.PicklerFrigilCode.Relics;
 
 namespace PicklerFrigil.PicklerFrigilCode.Relics;
 

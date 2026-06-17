@@ -21,7 +21,7 @@ public class HoarfrostPower:PicklerFrigilPower
         if (Owner.Player == player)
         {
             Flash();
-            await AccumulateCmd.Accumulate(Amount, Owner.Player, this);
+            await AccumulateCmd.Accumulate(choiceContext,  Amount, Owner.Player, this);
         }
         
     }

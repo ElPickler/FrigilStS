@@ -32,8 +32,10 @@ public class SlipUnder() : PicklerFrigilCard(1,
         CardPlay play)
     {
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
-        
-        if(play.Target.Monster.IntendsToAttack)
+
+        if (play.Target == null)
+            return;
+        if(play.Target.Monster!.IntendsToAttack)
             await PowerCmd.Apply<DarkShacklesPower>(choiceContext, play.Target,  DynamicVars["StrengthLoss"].BaseValue, Owner.Creature, this);
     }
 

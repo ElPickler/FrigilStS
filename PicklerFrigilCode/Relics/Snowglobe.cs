@@ -8,13 +8,12 @@ using MegaCrit.Sts2.Core.Rooms;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Character;
 using PicklerFrigil.PicklerFrigilCode.Powers;
-using PicklerFrigil.PicklerFrigilCode.Relics;
 
 namespace PicklerFrigil.PicklerFrigilCode.Relics;
 
 
 [Pool(typeof(PicklerFrigilRelicPool))]
-public class Snowglobe() : PicklerFrigilRelic
+public class Snowglobe : PicklerFrigilRelic
 {
     public override RelicRarity Rarity =>
         RelicRarity.Rare;

@@ -2,13 +2,12 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.Rooms;
 using PicklerFrigil.PicklerFrigilCode.Character;
-using PicklerFrigil.PicklerFrigilCode.Relics;
 
 namespace PicklerFrigil.PicklerFrigilCode.Relics;
 
 
 [Pool(typeof(PicklerFrigilRelicPool))]
-public class ColdsteelSpearhead() : PicklerFrigilRelic
+public class ColdsteelSpearhead : PicklerFrigilRelic
 {
     public override RelicRarity Rarity =>
         RelicRarity.Uncommon;

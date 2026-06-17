@@ -2,18 +2,16 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Rooms;
 using PicklerFrigil.PicklerFrigilCode.Character;
-using PicklerFrigil.PicklerFrigilCode.Relics;
 
 namespace PicklerFrigil.PicklerFrigilCode.Relics;
 
 
 [Pool(typeof(PicklerFrigilRelicPool))]
-public class RockyRoadSundae() : PicklerFrigilRelic
+public class RockyRoadSundae : PicklerFrigilRelic
 {
     public override RelicRarity Rarity =>
         RelicRarity.Uncommon;

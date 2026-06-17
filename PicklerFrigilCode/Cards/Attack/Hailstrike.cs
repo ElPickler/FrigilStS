@@ -6,9 +6,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
-using MegaCrit.Sts2.GameInfo.Objects;
 using PicklerFrigil.PicklerFrigilCode.Character;
-using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
@@ -50,8 +48,9 @@ public class Hailstrike() : PicklerFrigilCard(-1,
     {
         if (card == this)
         {
-            Creature enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState.HittableEnemies);
-            await CommonActions.CardAttack(this, enemy).WithHitFx("vfx/vfx_big_slash_impact").Execute(choiceContext);
+            Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState!.HittableEnemies);
+            if(enemy != null)
+                await CommonActions.CardAttack(this, enemy).WithHitFx("vfx/vfx_big_slash_impact").Execute(choiceContext);
         }
     }
 }

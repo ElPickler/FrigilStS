@@ -47,7 +47,7 @@ public class RisingSpiralPower : PicklerFrigilPower
     {
         if (side == CombatSide.Player)
         {
-            CardModel c = combatState.CreateCard<RisingSpiral>(Owner.Player);
+            CardModel c = combatState.CreateCard<RisingSpiral>(Owner.Player!);
             await CardPileCmd.AddGeneratedCardToCombat(c, PileType.Hand, Owner.Player);
             await PowerCmd.Remove(this);
         }

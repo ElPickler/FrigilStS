@@ -6,10 +6,8 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
-using PicklerFrigil.PicklerFrigilCode.Cards;
-using PicklerFrigil.PicklerFrigilCode.Character;
 
-namespace PicklerFrigil.Cards;
+namespace PicklerFrigil.PicklerFrigilCode.Cards.Basic;
 
 public class StrikeFrigil() : PicklerFrigilCard(1,
     CardType.Attack, CardRarity.Basic,
@@ -17,7 +15,7 @@ public class StrikeFrigil() : PicklerFrigilCard(1,
 {
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).WithHitVfxNode((Func<Creature, Node2D>) (t => (Node2D) NScratchVfx.Create(t, true))).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play.Target).WithHitVfxNode((Func<Creature, Node2D>) (t => NScratchVfx.Create(t, true)!)).Execute(choiceContext);
     }
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];

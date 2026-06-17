@@ -7,8 +7,6 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
-using PicklerFrigil.PicklerFrigilCode.Cards;
-using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
@@ -34,7 +32,7 @@ public class PackIce() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        CardModel card = (await CardSelectCmd.FromHand(choiceContext, Owner, new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1), null, this)).FirstOrDefault<CardModel>();
+        CardModel? card = (await CardSelectCmd.FromHand(choiceContext, Owner, new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1), null, this)).FirstOrDefault();
         if (card == null)
             return;
         await CardCmd.Exhaust(choiceContext, card);

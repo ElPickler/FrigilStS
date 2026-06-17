@@ -1,11 +1,9 @@
-using BaseLib.Abstracts;
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
-using PicklerFrigil.PicklerFrigilCode.Character;
 using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Basic;
@@ -37,7 +35,8 @@ public class TwinNeedle() : PicklerFrigilCard(1,
         for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-            await PowerCmd.Apply<HypothermiaPower>(choiceContext, play.Target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
+            if(play.Target != null)
+                await PowerCmd.Apply<HypothermiaPower>(choiceContext, play.Target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
         }
     }
     

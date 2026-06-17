@@ -15,7 +15,7 @@ public class Bite() : PicklerFrigilCard(0,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        CardModel card = (await CardSelectCmd.FromHand(choiceContext, Owner, new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1), null, this)).FirstOrDefault<CardModel>();
+        CardModel? card = (await CardSelectCmd.FromHand(choiceContext, Owner, new CardSelectorPrefs(CardSelectorPrefs.ExhaustSelectionPrompt, 1), null, this)).FirstOrDefault<CardModel>();
         if (card == null)
             return;
         await CardCmd.Exhaust(choiceContext, card);

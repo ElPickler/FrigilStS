@@ -56,8 +56,8 @@ public class FlowPower : PicklerFrigilPower
             return;
         if (cardPlay.Card.Owner.HasPower<InMotionPower>()) //Check if owner has In Motion
         {
-            PowerModel inMotion = cardPlay.Card.Owner.Creature.GetPower<InMotionPower>();
-            await PowerCmd.Decrement(inMotion);
+            PowerModel? inMotion = cardPlay.Card.Owner.Creature.GetPower<InMotionPower>();
+            await PowerCmd.Decrement(inMotion!);
             return;
         }
         await PowerCmd.Remove(this);
