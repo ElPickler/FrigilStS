@@ -15,8 +15,6 @@ public class Hailstrike() : PicklerFrigilCard(-1,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.RandomEnemy)
 {
-    //TODO: Find a way to override CanEnchant to always return false
-    
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
