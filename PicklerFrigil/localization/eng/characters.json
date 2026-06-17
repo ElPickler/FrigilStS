@@ -8,9 +8,9 @@
   "PICKLERFRIGIL-PICKLER_FRIGIL.pronounSubject": "he",
   "PICKLERFRIGIL-PICKLER_FRIGIL.cardsModifierTitle": "Frigil Cards",
   "PICKLERFRIGIL-PICKLER_FRIGIL.cardsModifierDescription": "Frigil's cards will now appear in rewards and shops.",
-  "PICKLERFRIGIL-PICKLER_FRIGIL.aromaPrinciple": "[sine]I seek only truth...[/sine]",
+  "PICKLERFRIGIL-PICKLER_FRIGIL.aromaPrinciple": "[sine][color=a7e7eb]I seek only truth...[/color][/sine]",
   "PICKLERFRIGIL-PICKLER_FRIGIL.eventDeathPrevention": "That would be unwise...",
   "PICKLERFRIGIL-PICKLER_FRIGIL.banter.alive.endTurnPing": "Go on...",
   "PICKLERFRIGIL-PICKLER_FRIGIL.banter.dead.endTurnPing": "...",
-  "PICKLERFRIGIL-PICKLER_FRIGIL.goldMonologue": "[sine]I could buy a new cape...[/sine]"
+  "PICKLERFRIGIL-PICKLER_FRIGIL.goldMonologue": "[sine]I could buy a new cloak...[/sine]"
 }
