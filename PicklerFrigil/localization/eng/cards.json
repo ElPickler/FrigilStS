@@ -111,7 +111,7 @@
   "PICKLERFRIGIL-FREEZE.selectionScreenPrompt": "Choose a card to add [gold]Retain[/gold].",
   "PICKLERFRIGIL-DEEP_PIERCE.description": "[gold]Accumulate[/gold] {Accumulate:diff()}.\n[gold]Cryospear[/gold] damage this turn is doubled.",
   "PICKLERFRIGIL-DEEP_PIERCE.title": "Deep Pierce",
-  "PICKLERFRIGIL-SPIN_PARRY.description": "[gold]Accumulate[/gold] {Accumulate:diff()}. Gain {Block:diff()} [gold]Block[/gold].",
+  "PICKLERFRIGIL-SPIN_PARRY.description": "[gold]Accumulate[/gold] {Accumulate:diff()}.\nGain {Block:diff()} [gold]Block[/gold].",
   "PICKLERFRIGIL-SPIN_PARRY.title": "Spin Parry",
   "PICKLERFRIGIL-SLIP_UNDER.description": "Gain {FlowPower:diff()} [gold]Flow[/gold].\nIf the enemy intends to attack, they lose {StrengthLoss:diff()} [gold]Strength[/gold] this turn.",
   "PICKLERFRIGIL-SLIP_UNDER.title": "Slip Under",
