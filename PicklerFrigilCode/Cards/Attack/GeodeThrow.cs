@@ -9,7 +9,7 @@ using PicklerFrigil.PicklerFrigilCode.Commands;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
   
-public class GeodeThrow() : PicklerFrigilCard(1,
+public class GeodeThrow() : PicklerFrigilCard(0,
     CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
