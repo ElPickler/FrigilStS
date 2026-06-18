@@ -1,0 +1,136 @@
+[gd_scene load_steps=18 format=3 uid="uid://ufcntsnshdpl"]
+
+[ext_resource type="Texture2D" uid="uid://d03e4kh8uuttd" path="res://PicklerFrigil/images/charui/energycounter/energy_burst_back_frigil.png" id="2_opkof"]
+[ext_resource type="Texture2D" uid="uid://dxmekapactlg7" path="res://PicklerFrigil/images/charui/energycounter/energy_counter_frigil.png" id="3_p3dgf"]
+[ext_resource type="Texture2D" uid="uid://dbptl5bee371g" path="res://PicklerFrigil/images/charui/energycounter/energy_burst_sparkle_particle_frigil.png" id="4_r73et"]
+[ext_resource type="FontFile" uid="uid://b5c6uauitx370" path="res://PicklerFrigil/fonts/kreon_bold.ttf" id="5_xjcen"]
+
+[sub_resource type="Curve" id="Curve_5037u"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1.0419922), 0.0, 27.186914, 0, 0, Vector2(1, 21.360382), 13.498066, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ttkrw"]
+curve = SubResource("Curve_5037u")
+
+[sub_resource type="Gradient" id="Gradient_3wag2"]
+offsets = PackedFloat32Array(0, 0.31007752, 0.7248062, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_opkof"]
+gradient = SubResource("Gradient_3wag2")
+
+[sub_resource type="Curve" id="Curve_p3dgf"]
+_data = [Vector2(0, 0), 0.0, 3.2623, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_r73et"]
+curve = SubResource("Curve_p3dgf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xjcen"]
+particle_flag_disable_z = true
+angle_min = 7.000011
+angle_max = 7.000011
+angle_curve = SubResource("CurveTexture_ttkrw")
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_r73et")
+color_ramp = SubResource("GradientTexture1D_opkof")
+
+[sub_resource type="Gradient" id="Gradient_5037u"]
+offsets = PackedFloat32Array(0, 0.19767442, 0.43410853, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ttkrw"]
+gradient = SubResource("Gradient_5037u")
+
+[sub_resource type="Curve" id="Curve_3wag2"]
+_data = [Vector2(0, 0), 0.0, 3.5924313, 0, 0, Vector2(0.50000006, 0.8965267), 0.54799813, 0.54799813, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_opkof"]
+curve = SubResource("Curve_3wag2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p3dgf"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(64, 80, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 1.1999999
+scale_max = 1.1999999
+scale_curve = SubResource("CurveTexture_opkof")
+color_ramp = SubResource("GradientTexture1D_ttkrw")
+
+[sub_resource type="FontVariation" id="FontVariation_n2ucf"]
+base_font = ExtResource("5_xjcen")
+spacing_glyph = 2
+
+[node name="FrigilEnergyCounter" type="Control"]
+layout_mode = 3
+anchor_right = 0.07300001
+anchor_bottom = 0.10300001
+offset_right = -0.16001892
+offset_bottom = 0.1599884
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnergyVfxBack" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(32, 32)
+emitting = false
+amount = 1
+texture = ExtResource("2_opkof")
+lifetime = 1.2
+one_shot = true
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_xjcen")
+
+[node name="Layers" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 125.0
+offset_bottom = 140.0
+
+[node name="TextureRect" type="TextureRect" parent="Layers"]
+layout_mode = 0
+offset_left = -7.0
+offset_right = 121.0
+offset_bottom = 128.0
+texture = ExtResource("3_p3dgf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RotationLayers" type="Control" parent="Layers"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnergyVfxFront" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(28, 32)
+emitting = false
+amount = 7
+texture = ExtResource("4_r73et")
+lifetime = 1.4000000000000001
+one_shot = true
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_p3dgf")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(1, 0.9647059, 0.8862745, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.1882353)
+theme_override_colors/font_outline_color = Color(0.22115004, 0.051000006, 0.3, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 16
+theme_override_fonts/font = SubResource("FontVariation_n2ucf")
+theme_override_font_sizes/font_size = 36
+text = "3/3"
+horizontal_alignment = 1
+vertical_alignment = 1
