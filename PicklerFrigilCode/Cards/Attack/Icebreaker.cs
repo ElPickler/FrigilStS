@@ -29,7 +29,7 @@ public class Icebreaker() : PicklerFrigilCard(0,
         new ("Repeat", 1M),
         new CalculationBaseVar(0M),
         new ExtraDamageVar(1M),
-        new CalculatedDamageVar(ValueProp.Move).WithMultiplier(((Func<CardModel, Creature, Decimal>) ((_, target) => target.GetPowerAmount<HypothermiaPower>()))!)
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((_, target) => IcebreakerDamage(target))
     ];
     
     protected override async Task OnPlay(
@@ -45,5 +45,14 @@ public class Icebreaker() : PicklerFrigilCard(0,
     protected override void OnUpgrade()
     {
         DynamicVars["Repeat"].UpgradeValueBy(1);
+    }
+
+    private static decimal IcebreakerDamage(Creature creature)
+    {
+        if (creature == null)
+            return 0;
+
+        decimal hypoAmount = creature.GetPowerAmount<HypothermiaPower>();
+        return hypoAmount;
     }
 }
