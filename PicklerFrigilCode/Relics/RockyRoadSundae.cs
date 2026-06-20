@@ -17,7 +17,7 @@ public class RockyRoadSundae : PicklerFrigilRelic
         RelicRarity.Uncommon;
 
     private const int _exhaustThreshold = 4;
-    private const int _vigorReward = 2;
+    private const int _vigorReward = 3;
     private int _exhaustCount = 0;
 
     public override int DisplayAmount => _exhaustCount;
