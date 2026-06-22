@@ -8,7 +8,6 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
-using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
@@ -40,7 +39,6 @@ public class Flurry() : PicklerFrigilCard(2,
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         foreach (Creature enemy in CombatState!.HittableEnemies)
         {
-            
             await PowerCmd.Apply<WeakPower>(choiceContext, enemy, DynamicVars["WeakPower"].BaseValue, Owner.Creature, this, false);
         }
     }
