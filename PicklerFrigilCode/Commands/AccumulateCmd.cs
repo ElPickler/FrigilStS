@@ -54,7 +54,7 @@ public static class AccumulateCmd
                 await CardPileCmd.Add(spear, PileType.Hand);
             if (spears.Count > 1)
             {
-                MainFile.Logger.Info("Beginning accumulate");
+                FrigilMainFile.Logger.Info("Beginning accumulate");
                 foreach (Cryospear c in spears)
                 {
                     //Skip the first spear to keep it around
