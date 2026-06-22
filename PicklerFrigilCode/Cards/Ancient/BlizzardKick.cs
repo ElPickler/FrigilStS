@@ -32,9 +32,10 @@ public class BlizzardKick() : PicklerFrigilCard(1,
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
+        await CommonActions.CardAttack(this, play.Target).WithHitCount(DynamicVars["Repeat"].IntValue).Execute(choiceContext);
         for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
         {
-            await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+            
             await PowerCmd.Apply<FlowPower>(choiceContext, Owner.Creature, DynamicVars["FlowPower"].BaseValue,
                 Owner.Creature, this);
         }

@@ -1,13 +1,10 @@
 using BaseLib.Utils;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
-using PicklerFrigil.PicklerFrigilCode.Character;
-using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Ancient;
 
@@ -34,10 +31,7 @@ public class CrystalNeedles() : PicklerFrigilCard(2,
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        for (int i = 0; i < DynamicVars["RepeatTotal"].BaseValue; i++)
-        {
-            await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        }
+       await CommonActions.CardAttack(this, play.Target).WithHitCount(DynamicVars["RepeatTotal"].IntValue).Execute(choiceContext);
     }
     
     protected override void OnUpgrade()

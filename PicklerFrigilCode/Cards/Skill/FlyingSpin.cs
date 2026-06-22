@@ -24,7 +24,7 @@ public class FlyingSpin() : PicklerFrigilCard(1,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<FlowPower>(5),
-        new CardsVar(3)
+        new CardsVar(4)
     ];
     
     protected override async Task OnPlay(
@@ -43,5 +43,6 @@ public class FlyingSpin() : PicklerFrigilCard(1,
     protected override void OnUpgrade()
     {
         DynamicVars.Cards.UpgradeValueBy(1);
+        DynamicVars["FlowPower"].UpgradeValueBy(1);
     }
 }

@@ -31,10 +31,9 @@ public class PowderSnow() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
-        {
-            await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        }
+        
+        await CommonActions.CardAttack(this, play.Target).WithHitCount(DynamicVars["Repeat"].IntValue).Execute(choiceContext);
+        
         if (play.Target != null) {await PowerCmd.Apply<HypothermiaPower>(choiceContext, play.Target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this, false);}
     }
 

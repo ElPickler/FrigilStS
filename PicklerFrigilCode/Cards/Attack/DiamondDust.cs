@@ -31,12 +31,14 @@ public class DiamondDust() : PicklerFrigilCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        decimal flow = Owner.Creature.GetPowerAmount<FlowPower>();
+        int flow = Owner.Creature.GetPowerAmount<FlowPower>();
         await PowerCmd.Remove<FlowPower>(Owner.Creature);
-        for (int i = 0; i < flow; i++)
+        /*for (int i = 0; i < flow; i++)
         {
             await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         }
+        */
+        await CommonActions.CardAttack(this, play.Target).WithHitCount(flow).Execute(choiceContext);
         
     }
 
