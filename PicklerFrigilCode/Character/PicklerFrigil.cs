@@ -35,18 +35,18 @@ public class PicklerFrigil : CustomCharacterModel
         ModelDb.Card<StrikeFrigil>(),
         ModelDb.Card<StrikeFrigil>(),
         ModelDb.Card<StrikeFrigil>(),
-        ModelDb.Card<DefendFrigil>(),
-        ModelDb.Card<DefendFrigil>(),
-        ModelDb.Card<DefendFrigil>(),
-        ModelDb.Card<DefendFrigil>(),
         ModelDb.Card<IcicleKick>(),
+        ModelDb.Card<DefendFrigil>(),
+        ModelDb.Card<DefendFrigil>(),
+        ModelDb.Card<DefendFrigil>(),
+        ModelDb.Card<DefendFrigil>(),
         ModelDb.Card<DeepChill>()
     ];
     public override IReadOnlyList<RelicModel> StartingRelics =>
     [
         ModelDb.Relic<GlisteningAmethyst>()
     ];
-
+    
     //Animation Delays
     public override float AttackAnimDelay => 0.2f;
     public override float CastAnimDelay => 0.35f;
