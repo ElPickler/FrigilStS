@@ -16,9 +16,12 @@ public class GracefulMotionPower: PicklerFrigilPower
     public override decimal ModifyPowerAmountGivenAdditive(PowerModel power, Creature giver, decimal amount, Creature? target,
         CardModel? cardSource)
     {
-        if(power is FlowPower && target == Owner)
-            return base.ModifyPowerAmountGivenAdditive(power, giver, amount + Amount, target, cardSource);
+        if (power is FlowPower && target == Owner)
+        {
+            Flash();
+            return Amount;
+        }
         
-        return base.ModifyPowerAmountGivenAdditive(power, giver, amount, target, cardSource);
+        return 0;
     }
 }
