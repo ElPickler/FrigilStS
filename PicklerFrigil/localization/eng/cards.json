@@ -4,7 +4,7 @@
   "PICKLERFRIGIL-DEFEND_FRIGIL.title": "Defend",
   "PICKLERFRIGIL-DEFEND_FRIGIL.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "PICKLERFRIGIL-TWIN_NEEDLE.title": "Frostbite",
-  "PICKLERFRIGIL-TWIN_NEEDLE.description": "[gold]Icy[/gold].\nDeal {Damage:diff()} damage and apply {HypothermiaPower:diff()} [gold]Hypothermia[/gold] twice.",
+  "PICKLERFRIGIL-TWIN_NEEDLE.description": "[gold]Icy[/gold].\nDeal {Damage:diff()} damage twice.\nApply {HypothermiaPower:diff()} [gold]Hypothermia[/gold].",
   "PICKLERFRIGIL-SNOW_CLOAK.title": "Snow Cloak",
   "PICKLERFRIGIL-SNOW_CLOAK.description": "Gain {Block:diff()} [gold]Block[/gold] {Repeat:diff()} times.\nApply {HypothermiaPower:diff()} [gold]Hypothermia[/gold] to a random enemy {Repeat:diff()} times. ",
   "PICKLERFRIGIL-CRYSTAL_NEEDLES.description": "[gold]Icy[/gold].\nDeal {Damage:diff()} damage {RepeatTotal:diff()} times. Number of attacks increases every time this card is drawn.",
@@ -181,6 +181,8 @@
   "PICKLERFRIGIL-GLITTERSEED.title": "Glitterseed",
   "PICKLERFRIGIL-REDIRECT.description": "Gain [gold]Block[/gold] equal to {IfUpgraded:show:two times |}[gold]Flow[/gold].\nGain [gold]Flow[/gold] equal to [gold]Flow[/gold].\nDraw {Cards:diff()} {Cards:plural:card|cards}.{InCombat:\nGain {CalculatedBlock:diff()} [gold]Block[/gold].|}",
   "PICKLERFRIGIL-REDIRECT.title": "Redirect",
+  "PICKLERFRIGIL-KIP_UP.description": "Gain {FlowPower:diff()} [gold]Flow[/gold]. Remove ALL [gold]Vulnerable[/gold].",
+  "PICKLERFRIGIL-KIP_UP.title": "Kip Up",
   
   
   
