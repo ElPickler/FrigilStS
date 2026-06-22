@@ -7,7 +7,7 @@ using MegaCrit.Sts2.Core.Modding;
 namespace PicklerFrigil;
 
 [ModInitializer(nameof(Initialize))]
-public partial class MainFile : Node
+public partial class FrigilMainFile : Node
 {
     public const string ModId = "PicklerFrigil"; //Used for resource filepath
     
