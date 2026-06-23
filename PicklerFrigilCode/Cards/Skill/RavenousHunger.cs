@@ -13,6 +13,8 @@ public class RavenousHunger() : PicklerFrigilCard(2,
     CardType.Skill, CardRarity.Rare,
     TargetType.Self)
 {
+    public override bool CanBeGeneratedInCombat => false;
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get
