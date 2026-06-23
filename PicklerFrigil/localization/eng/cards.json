@@ -151,7 +151,7 @@
   "PICKLERFRIGIL-RETRIEVE.title": "Retrieve",
   "PICKLERFRIGIL-GATHER_RIME.description": "For every Cryospear in your Exhaust Pile, [gold]Accumulate[/gold] equal to its damage value.",
   "PICKLERFRIGIL-GATHER_RIME.title": "Gather Rime",
-  "PICKLERFRIGIL-RAVENOUS_HUNGER.description": "[gold]Exhaust[/gold] ALL cards in your hand.\n[gold]Heal[/gold] 1 for every [gold]Unplayable[/gold] card [gold]exhausted[/gold] this way.",
+  "PICKLERFRIGIL-RAVENOUS_HUNGER.description": "[gold]Exhaust[/gold] ALL cards in your hand.\n[gold]Heal[/gold] 1 HP for every [gold]Unplayable[/gold] card [gold]exhausted[/gold] this way.",
   "PICKLERFRIGIL-RAVENOUS_HUNGER.title": "Ravenous Hunger",
   "PICKLERFRIGIL-BURROW.description": "Gain {Block:diff()} [gold]Block[/gold].\nCreate {Gems:diff()} [gold]Gemstones[/gold] in your Discard Pile.",
   "PICKLERFRIGIL-BURROW.title": "Burrow",
@@ -181,7 +181,7 @@
   "PICKLERFRIGIL-GLITTERSEED.title": "Glitterseed",
   "PICKLERFRIGIL-REDIRECT.description": "Gain [gold]Block[/gold] equal to {IfUpgraded:show:two times |}[gold]Flow[/gold].\nGain [gold]Flow[/gold] equal to [gold]Flow[/gold].\nDraw {Cards:diff()} {Cards:plural:card|cards}.{InCombat:\nGain {CalculatedBlock:diff()} [gold]Block[/gold].|}",
   "PICKLERFRIGIL-REDIRECT.title": "Redirect",
-  "PICKLERFRIGIL-KIP_UP.description": "Gain {FlowPower:diff()} [gold]Flow[/gold]. Remove ALL [gold]Vulnerable[/gold].",
+  "PICKLERFRIGIL-KIP_UP.description": "Gain {FlowPower:diff()} [gold]Flow[/gold].\nRemove ALL [gold]Vulnerable[/gold].",
   "PICKLERFRIGIL-KIP_UP.title": "Kip Up",
   
   
