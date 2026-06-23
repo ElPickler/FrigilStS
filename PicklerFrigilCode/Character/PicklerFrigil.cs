@@ -4,6 +4,8 @@ using BaseLib.Patches.UI;
 using BaseLib.Utils.NodeFactories;
 using PicklerFrigil.PicklerFrigilCode.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Animation;
+using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
@@ -16,6 +18,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Character;
 
 public class PicklerFrigil : CustomCharacterModel
 {
+    
     public const string CharacterId = "PicklerFrigil";
     public virtual string PlaceholderID => "ironclad";
 
@@ -90,6 +93,7 @@ public class PicklerFrigil : CustomCharacterModel
             return icon;
         }
     }
+    
         //PLACEHOLDER
     public override string CustomTrailPath
     {
@@ -136,11 +140,12 @@ public class PicklerFrigil : CustomCharacterModel
         span[index5] = "vfx/vfx_big_slash_impact";
         return list;
     }
+
+
     
-   /* 
     public override string CustomIconPath
     {
-        get => SceneHelper.GetScenePath($"ui/character_icons/{this.PlaceholderID}_icon");
+        get => SceneHelper.GetScenePath($"ui/character_icons/ironclad_icon");
     }
-    */
+    
 }
