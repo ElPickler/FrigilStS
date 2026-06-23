@@ -1,0 +1,89 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://8aelaf1u4kaj"]
+
+[ext_resource type="Texture2D" uid="uid://deq5jkuls826r" path="res://PicklerFrigil/images/character/tempfrigil.png" id="1_ltusv"]
+[ext_resource type="Texture2D" uid="uid://lo3lgr7i6stn" path="res://PicklerFrigil/images/character/tempfrigilattack.png" id="2_78hdk"]
+[ext_resource type="Texture2D" uid="uid://sj6mp5dc7sm0" path="res://PicklerFrigil/images/character/tempfrigilcast.png" id="3_e231t"]
+[ext_resource type="Texture2D" uid="uid://bb84qs573hlk4" path="res://PicklerFrigil/images/character/tempfrigilhurt.png" id="4_ffmth"]
+[ext_resource type="Texture2D" uid="uid://bfs7oay7ux7pj" path="res://PicklerFrigil/images/character/tempfrigildead.png" id="5_qp47g"]
+[ext_resource type="Texture2D" uid="uid://bmbke7cvqacj8" path="res://PicklerFrigil/images/character/tempmerchant.png" id="7_prv5i"]
+[ext_resource type="Texture2D" uid="uid://b1hspj1ualwan" path="res://PicklerFrigil/images/character/tempfrigilrevive.png" id="8_avvko"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 0.25,
+"texture": ExtResource("1_ltusv")
+}, {
+"duration": 2.25,
+"texture": ExtResource("2_78hdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ltusv")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 0.25,
+"texture": ExtResource("1_ltusv")
+}, {
+"duration": 3.25,
+"texture": ExtResource("3_e231t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ltusv")
+}],
+"loop": false,
+"name": &"cast",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qp47g")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("4_ffmth")
+}, {
+"duration": 0.5,
+"texture": ExtResource("1_ltusv")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ltusv")
+}],
+"loop": true,
+"name": &"idle_loop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_prv5i")
+}],
+"loop": true,
+"name": &"relaxed_loop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("5_qp47g")
+}, {
+"duration": 3.0,
+"texture": ExtResource("8_avvko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ltusv")
+}],
+"loop": false,
+"name": &"revive",
+"speed": 10.0
+}]
