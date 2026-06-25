@@ -1,18 +1,17 @@
 using BaseLib.Utils;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
-using PicklerFrigil.PicklerFrigilCode.Cards;
 using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
 
 public class SlideKick() : PicklerFrigilCard(1,
-    CardType.Attack, CardRarity.Common,
+    CardType.Attack, CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -23,8 +22,9 @@ public class SlideKick() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(10, ValueProp.Move),
-        new PowerVar<FlowPower>(3M)
+        new CalculationBaseVar(9M),
+        new ExtraDamageVar(2M),
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier(static (card, target) => GetFlow(card))
     ];
     
     
@@ -33,12 +33,17 @@ public class SlideKick() : PicklerFrigilCard(1,
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        await PowerCmd.Apply<FlowPower>(choiceContext, Owner.Creature, DynamicVars["FlowPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["FlowPower"].UpgradeValueBy(1);
-        DynamicVars.Damage.UpgradeValueBy(2);
+        DynamicVars.ExtraDamage.UpgradeValueBy(1);
+    }
+
+    private static decimal GetFlow(CardModel card)
+    {
+        if (card.Owner == null)
+            return 0;
+        return card.Owner.Creature.GetPowerAmount<FlowPower>();
     }
 }
