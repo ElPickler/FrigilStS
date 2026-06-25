@@ -13,13 +13,13 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Basic;
 
 [Pool(typeof(PicklerFrigilCardPool))]
 public class FlipKick() : PicklerFrigilCard(1,
-    CardType.Attack, CardRarity.Uncommon,
+    CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(8, ValueProp.Move),
+        new DamageVar(9, ValueProp.Move),
         new CardsVar(1),
-        new PowerVar<FlowPower>(2M)
+        new PowerVar<FlowPower>(3M)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
