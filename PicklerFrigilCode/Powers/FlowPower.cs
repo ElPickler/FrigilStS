@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
@@ -45,6 +46,12 @@ public class FlowPower : PicklerFrigilPower
             return 0M;
         if(!props.IsPoweredCardOrMonsterMoveBlock_())
             return 0M;
+        if (cardSource is Redirect)
+        {
+            if (cardSource.IsUpgraded)
+                return Amount * 3;
+            return Amount * 2;
+        }
         return Amount;
     }
 
