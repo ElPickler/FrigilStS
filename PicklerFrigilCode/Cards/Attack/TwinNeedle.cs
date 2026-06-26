@@ -27,18 +27,15 @@ public class TwinNeedle() : PicklerFrigilCard(1,
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(4, ValueProp.Move),
         new ("Repeat", 2M),
-        new PowerVar<HypothermiaPower>(2)
+        new PowerVar<HypothermiaPower>(1)
     ];
     
     protected override async Task OnPlay(MegaCrit.Sts2.Core.GameActions.Multiplayer.PlayerChoiceContext choiceContext, CardPlay play)
     {
         await CommonActions.CardAttack(this, play.Target).WithHitCount(DynamicVars["Repeat"].IntValue).Execute(choiceContext);
         
-        //for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
-        //{
         if(play.Target != null)
             await PowerCmd.Apply<HypothermiaPower>(choiceContext, play.Target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
-        //}
     }
     
     protected override void OnUpgrade()

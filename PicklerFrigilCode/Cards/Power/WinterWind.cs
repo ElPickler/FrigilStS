@@ -14,7 +14,7 @@ public class WinterWind() : PicklerFrigilCard(2,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<WinterWindPower>(2M)
+        new PowerVar<WinterWindPower>(1M)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips

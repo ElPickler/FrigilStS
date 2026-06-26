@@ -28,15 +28,15 @@ public class Opal() : AbstractGem(-1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>( 5M),
-        new PowerVar<MetabolizingOpalPower>(3)
+        new PowerVar<HypothermiaPower>( 3M),
+        new PowerVar<MetabolizingOpalPower>(1)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
 
     protected override void OnUpgrade()
     {
-        DynamicVars["HypothermiaPower"].UpgradeValueBy(3m);
+        DynamicVars["HypothermiaPower"].UpgradeValueBy(2m);
     }
     
     protected override async Task OnPlay(
