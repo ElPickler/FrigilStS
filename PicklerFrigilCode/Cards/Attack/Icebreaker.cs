@@ -18,6 +18,9 @@ public class Icebreaker() : PicklerFrigilCard(0,
     CardType.Attack, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
+    private const int BaseMult = 2;
+    private const int UpgMult = 3;
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get { 
@@ -26,17 +29,16 @@ public class Icebreaker() : PicklerFrigilCard(0,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ("Repeat", 1M),
         new CalculationBaseVar(0M),
         new ExtraDamageVar(1M),
-        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((_, target) => IcebreakerDamage(target))
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((card, target) => IcebreakerDamage(card, target))
     ];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).WithHitCount(DynamicVars["Repeat"].IntValue).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
 
         if (play.Target != null) await PowerCmd.Remove<HypothermiaPower>(play.Target);
     }
@@ -46,12 +48,13 @@ public class Icebreaker() : PicklerFrigilCard(0,
         DynamicVars["Repeat"].UpgradeValueBy(1);
     }
 
-    private static decimal IcebreakerDamage(Creature creature)
+    private static decimal IcebreakerDamage(CardModel card, Creature creature)
     {
         if (creature == null)
             return 0;
-
         decimal hypoAmount = creature.GetPowerAmount<HypothermiaPower>();
-        return hypoAmount;
+        if (card.IsUpgraded)
+            return hypoAmount * UpgMult;
+        return hypoAmount * BaseMult;
     }
 }
