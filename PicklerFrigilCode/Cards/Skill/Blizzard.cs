@@ -17,7 +17,7 @@ public class Blizzard() : PicklerFrigilCard(1,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<WeakPower>(1),
-        new PowerVar<HypothermiaPower>(3)
+        new PowerVar<HypothermiaPower>(1)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -42,6 +42,6 @@ public class Blizzard() : PicklerFrigilCard(1,
     protected override void OnUpgrade()
     {
         DynamicVars["WeakPower"].UpgradeValueBy(1);
-        DynamicVars["HypothermiaPower"].UpgradeValueBy(2);
+        DynamicVars["HypothermiaPower"].UpgradeValueBy(1);
     }
 }
