@@ -14,8 +14,8 @@ public class FrostLily() : PicklerFrigilCard(2,
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
-        get { 
-            yield return HoverTipFactory.FromPower<FrostLilyPower>();
+        get 
+        { 
             yield return HoverTipFactory.FromPower<HypothermiaPower>();
         }
     }
@@ -23,15 +23,19 @@ public class FrostLily() : PicklerFrigilCard(2,
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<FrostLilyPower>(1)
+        new PowerVar<FrostLilyPower>(1),
+        new PowerVar<HypothermiaPower>(4)
     ];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        if(play.Target != null)
+        if (play.Target != null)
+        {
             await PowerCmd.Apply<FrostLilyPower>(choiceContext, play.Target, DynamicVars["FrostLilyPower"].BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply <HypothermiaPower>(choiceContext, play.Target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
+        }
     }
 
     protected override void OnUpgrade()
