@@ -18,7 +18,7 @@ public class FrostBreath() : PicklerFrigilCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(7, ValueProp.Move),
-        new PowerVar<HypothermiaPower>( 3M)
+        new PowerVar<HypothermiaPower>( 1M)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -36,7 +36,6 @@ public class FrostBreath() : PicklerFrigilCard(1,
         {
           await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this, false);  
         }
-        
     }
     
     protected override void OnUpgrade()
