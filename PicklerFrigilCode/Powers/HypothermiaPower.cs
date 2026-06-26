@@ -20,7 +20,7 @@ public class HypothermiaPower : PicklerFrigilPower
     public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-hypothermia_power.png";
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ("EffDamage", 0)
+        new ("EffDamage", 0) //Used for localization
     ];
     
     //Main functionality
@@ -31,12 +31,9 @@ public class HypothermiaPower : PicklerFrigilPower
             return 0;
         if (target != Owner)
             return 0;
-        //if (dealer != null && dealer.HasPower<HyperthermiaPower>())
-        //    return 0;
         if (!cardSource.Tags.Contains(PicklerFrigilCard.IcyTag))
             return 0;
-        return Math.Ceiling(Amount / 2M);
-
+        return Amount;
     }
 
 
@@ -44,13 +41,15 @@ public class HypothermiaPower : PicklerFrigilPower
     {
         if (power == this && applier != null)
         {
+            DynamicVars["EffDamage"].BaseValue = Amount; 
+            
             //Snow Dancer functionality
-            DynamicVars["EffDamage"].BaseValue = Math.Ceiling(Amount / 2M);
             decimal snowDancer = applier.GetPowerAmount<SnowDancerPower>();
             if (snowDancer != 0)
             {
                 await CreatureCmd.GainBlock(applier, snowDancer, ValueProp.Unpowered, null);
             }
+            
             //Draconic Form functionality
             if (applier.HasPower<DraconicFormPower>()) 
             {
