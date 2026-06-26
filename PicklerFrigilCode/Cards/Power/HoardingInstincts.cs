@@ -12,6 +12,8 @@ public class HoardingInstincts() : PicklerFrigilCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
+    public override bool CanBeGeneratedInCombat => false;
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [new GoldVar(15)];
     
     protected override async Task OnPlay(
