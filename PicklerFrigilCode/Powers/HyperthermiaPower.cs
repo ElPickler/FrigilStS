@@ -10,7 +10,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 public class HyperthermiaPower : PicklerFrigilPower
 {
-    private const int HypothermiaLoss = 2;
+    private const int HypothermiaLoss = 1;
     
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
