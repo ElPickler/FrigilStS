@@ -21,8 +21,8 @@ public class RadiantBismuth : PicklerFrigilRelic
         RelicRarity.Starter;
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>(3M),
-        new ("Repeat", 3)
+        new PowerVar<HypothermiaPower>(1M),
+        new ("Repeat", 4)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips

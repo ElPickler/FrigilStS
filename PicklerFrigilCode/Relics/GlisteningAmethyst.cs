@@ -21,7 +21,7 @@ public class GlisteningAmethyst : PicklerFrigilRelic
         RelicRarity.Starter;
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>( 2M)
+        new PowerVar<HypothermiaPower>( 1M)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
