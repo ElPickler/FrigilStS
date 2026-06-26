@@ -18,7 +18,7 @@ public class DraconicForm() : PicklerFrigilCard(3,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<DraconicFormPower>(1M)
+        new PowerVar<DraconicFormPower>(2M)
     ];
     
     protected override async Task OnPlay(
@@ -30,6 +30,6 @@ public class DraconicForm() : PicklerFrigilCard(3,
 
     protected override void OnUpgrade()
     {
-        AddKeyword(CardKeyword.Innate);
+        DynamicVars["DraconicFormPower"].UpgradeValueBy(1);
     }
 }
