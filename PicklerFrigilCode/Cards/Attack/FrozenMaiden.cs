@@ -26,7 +26,7 @@ public class FrozenMaiden() : PicklerFrigilCard(2,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(18, ValueProp.Move),
+        new DamageVar(12, ValueProp.Move),
         new PowerVar<HypothermiaPower>(0)
     ];
     
@@ -44,14 +44,13 @@ public class FrozenMaiden() : PicklerFrigilCard(2,
     {
         if (cardSource == this)
         {
-            DynamicVars["HypothermiaPower"].BaseValue = result.UnblockedDamage;
+            DynamicVars["HypothermiaPower"].BaseValue = Math.Ceiling(result.UnblockedDamage / 2M);
             await PowerCmd.Apply<HypothermiaPower>(choiceContext, target, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, this);
         }
-        
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(5);
+        DynamicVars.Damage.UpgradeValueBy(4);
     }
 }
