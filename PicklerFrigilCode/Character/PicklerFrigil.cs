@@ -72,9 +72,9 @@ public class PicklerFrigil : CustomCharacterModel
     public override string CustomArmPaperTexturePath => "res://PicklerFrigil/images/character/ui/hand_paper.png";
     public override string CustomArmScissorsTexturePath => "res://PicklerFrigil/images/character/ui/hand_scissors.png";
     public override RelicIconData CustomYummyCookie => new (
-        "C:/Users/aleja/RiderProjects/PicklerFrigil/PicklerFrigil/images/relics/big/yummy_cookie_frigil.png",
-        "C:/Users/aleja/RiderProjects/PicklerFrigil/PicklerFrigil/images/relics/yummy_cookie_frigil.png",
-        "C:/Users/aleja/RiderProjects/PicklerFrigil/PicklerFrigil/images/relics/yummy_cookie_frigil_outline.png"
+        "res://PicklerFrigil/images/relics/big/yummy_cookie_frigil.png",
+        "res://PicklerFrigil/images/relics/yummy_cookie_frigil.png",
+        "res:////PicklerFrigil/images/relics/yummy_cookie_frigil_outline.png"
     );
     
     //Scenes
