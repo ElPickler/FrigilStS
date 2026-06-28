@@ -45,7 +45,7 @@ public class Icebreaker() : PicklerFrigilCard(0,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Repeat"].UpgradeValueBy(1);
+        //Upgrade baked into IcebreakerDamage
     }
 
     private static decimal IcebreakerDamage(CardModel card, Creature creature)
