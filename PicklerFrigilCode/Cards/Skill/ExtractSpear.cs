@@ -9,7 +9,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 
-public class ExtractSpear() : PicklerFrigilCard(1,
+public class ExtractSpear() : PicklerFrigilCard(0,
     CardType.Skill, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
