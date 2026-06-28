@@ -171,7 +171,7 @@
   "PICKLERFRIGIL-CRYOSEISM.title": "Cryoseism",
   "PICKLERFRIGIL-METABOLIZE.description": "Whenever an [gold]Unplayable[/gold] card is [gold]Exhausted[/gold], draw {MetabolizePower:diff()} cards.",
   "PICKLERFRIGIL-METABOLIZE.title": "Metabolize",
-  "PICKLERFRIGIL-ELEGANT_POISE.description": "When you gain [gold]Flow[/gold] from a card, other players gain half as much.",
+  "PICKLERFRIGIL-ELEGANT_POISE.description": "When you gain [gold]Flow[/gold] from a card, other players gain {ElegantPoisePower:diff()}% as much.",
   "PICKLERFRIGIL-ELEGANT_POISE.title": "Elegant Poise",
   "PICKLERFRIGIL-DEPLOYMENT.description": "ALL allies [gold]Accumulate[/gold] {Accumulate:diff()}.",
   "PICKLERFRIGIL-DEPLOYMENT.title": "Deployment",
