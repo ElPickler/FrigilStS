@@ -74,7 +74,7 @@ public class PicklerFrigil : CustomCharacterModel
     public override RelicIconData CustomYummyCookie => new (
         "res://PicklerFrigil/images/relics/big/yummy_cookie_frigil.png",
         "res://PicklerFrigil/images/relics/yummy_cookie_frigil.png",
-        "res:////PicklerFrigil/images/relics/yummy_cookie_frigil_outline.png"
+        "res://PicklerFrigil/images/relics/yummy_cookie_frigil_outline.png"
     );
     
     //Scenes
