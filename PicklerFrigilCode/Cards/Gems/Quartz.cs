@@ -19,6 +19,7 @@ public class Quartz() : AbstractGem(-1,
     {
         get { 
             yield return HoverTipFactory.FromKeyword(AccumulateKeyword);
+            yield return HoverTipFactory.FromPower<MetabolizingQuartzPower>();
         }
     }
     
