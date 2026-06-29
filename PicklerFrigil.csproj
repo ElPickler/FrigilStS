@@ -100,6 +100,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Folder Include="PicklerFrigilCode\Hooks\" />
         <Folder Include="PicklerFrigil\banks\Desktop\" />
         <Folder Include="PicklerFrigil\images\potions\" />
         <Folder Include="PicklerFrigil\images\powers\big\"/>
