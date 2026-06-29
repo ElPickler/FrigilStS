@@ -109,6 +109,11 @@
   "PICKLERFRIGIL-METABOLIZING_OPAL_POWER.title": "Metabolizing Opal",
   "PICKLERFRIGIL-GLITTERSEED_POWER.description": "When you exhaust a [gold]Gemstone[/gold], deal [blue]2[/blue] damage to a random enemy 3 times.",
   "PICKLERFRIGIL-GLITTERSEED_POWER.smartDescription": "When you exhaust a [gold]Gemstone[/gold], deal [blue]{Amount}[/blue] damage to a random enemy 3 times.",
-  "PICKLERFRIGIL-GLITTERSEED_POWER.title": "Glitterseed"
-  
+  "PICKLERFRIGIL-GLITTERSEED_POWER.title": "Glitterseed",
+  "PICKLERFRIGIL-BOTTOMLESS_POCKETS_POWER.description": "Add an [gold]Ethereal[/gold] copy of every 4th card created into your [gold]Hand[/gold].",
+  "PICKLERFRIGIL-BOTTOMLESS_POCKETS_POWER.smartDescription": "Add an [gold]Ethereal[/gold] copy of every 4th card created into your [gold]Hand[/gold].",
+  "PICKLERFRIGIL-BOTTOMLESS_POCKETS_POWER.title": "Bottomless Pockets",
+  "PICKLERFRIGIL-BOTTOMLESS_POCKETS_POWER_PLUS.description": "Add an [gold]Ethereal[/gold] copy of every 3rd card created into your [gold]Hand[/gold].",
+  "PICKLERFRIGIL-BOTTOMLESS_POCKETS_POWER_PLUS.smartDescription": "Add an [gold]Ethereal[/gold] copy of every 3rd card created into your [gold]Hand[/gold].",
+  "PICKLERFRIGIL-BOTTOMLESS_POCKETS_POWER_PLUS.title": "Bottomless Pockets+"
 }
