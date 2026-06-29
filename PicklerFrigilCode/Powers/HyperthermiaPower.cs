@@ -13,7 +13,7 @@ public class HyperthermiaPower : PicklerFrigilPower
     private const int HypothermiaLoss = 1;
     
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerStackType StackType => PowerStackType.Counter;
     
     public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/picklerfrigil-hyperthermia_power.png";
     public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-hyperthermia_power.png";
@@ -33,8 +33,7 @@ public class HyperthermiaPower : PicklerFrigilPower
         if(cardSource is null)
             return 0;
         
-        Flash();
-        return 0 - HypothermiaLoss;
+        return 0 - HypothermiaLoss * Amount;
     }
     
 }
