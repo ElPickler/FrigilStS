@@ -27,8 +27,7 @@ public class Diamond() : AbstractGem(-1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new BlockVar(8, ValueProp.Move),
-        new PowerVar<MetabolizingDiamondPower>(8)
+        new PowerVar<MetabolizingDiamondPower>(16)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
@@ -46,7 +45,6 @@ public class Diamond() : AbstractGem(-1,
     {
         if (card == this)
         {
-            await CommonActions.CardBlock(this, null);
             await PowerCmd.Apply<MetabolizingDiamondPower>(choiceContext, Owner.Creature, DynamicVars["MetabolizingDiamondPower"].BaseValue, Owner.Creature, this);
         }
     }
