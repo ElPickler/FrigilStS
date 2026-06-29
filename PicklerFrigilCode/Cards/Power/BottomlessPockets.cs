@@ -3,13 +3,13 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using PicklerFrigil.PicklerFrigilCode.Cards;
 using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Power;
 
 
-public class CheckPockets() : PicklerFrigilCard(1,
+
+public class BottomlessPockets() : PicklerFrigilCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
@@ -22,18 +22,23 @@ public class CheckPockets() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<CheckPocketsPower>(1)
+        new PowerVar<BottomlessPocketsPower>(1)
     ];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await PowerCmd.Apply<CheckPocketsPower>(choiceContext, Owner.Creature, DynamicVars["CheckPocketsPower"].BaseValue, Owner.Creature, this);
+        if (IsUpgraded)
+        {
+            await PowerCmd.Apply<BottomlessPocketsPowerPlus>(choiceContext, Owner.Creature, DynamicVars["BottomlessPocketsPower"].BaseValue, Owner.Creature, this);
+            return;
+        }
+        await PowerCmd.Apply<BottomlessPocketsPower>(choiceContext, Owner.Creature, DynamicVars["BottomlessPocketsPower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["CheckPocketsPower"].UpgradeValueBy(1);
+        //Handled in OnPlay
     }
 }
