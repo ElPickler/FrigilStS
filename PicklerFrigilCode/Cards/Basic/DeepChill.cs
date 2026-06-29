@@ -8,7 +8,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Basic;
 
-public class DeepChill() : PicklerFrigilCard(1,
+public class DeepChill() : PicklerFrigilCard(0,
     CardType.Skill, CardRarity.Basic,
     TargetType.AnyEnemy)
 {
