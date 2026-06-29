@@ -46,7 +46,8 @@ public class Emerald() : AbstractGem(-1,
     {
         if (card == this)
         {
-            await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
+            if(!causedByEthereal)
+                await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
             await PowerCmd.Apply<MetabolizingEmeraldPower>(choiceContext, Owner.Creature, DynamicVars["MetabolizingEmeraldPower"].BaseValue, Owner.Creature, this);
         }
     }
