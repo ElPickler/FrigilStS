@@ -30,7 +30,7 @@
   "PICKLERFRIGIL-STUMBLE_OLD.description": "Gain {VulnerablePower:diff()} [gold]Vulnerable[/gold].\nDeal damage equal to [gold]Flow[/gold] times three.\nLose ALL [gold]Flow[/gold].{InCombat:\n(Deals {CalculatedDamage:diff()} damage.)|}",
   "PICKLERFRIGIL-STUMBLE.description": "Gain {VulnerablePower:diff()} [gold]Vulnerable[/gold].\n[gold]Exhaust[/gold] ALL your [gold]Gemstones[/gold].",
   "PICKLERFRIGIL-STUMBLE.title": "Stumble",
-  "PICKLERFRIGIL-SLIDE_KICK.description": "Deal {CalculatedDamage:diff()} damage.\nThis damage is increased by 2 for each stack of Flow.",
+  "PICKLERFRIGIL-SLIDE_KICK.description": "Deal {CalculatedDamage:diff()} damage.\nThis damage is increased by {ExtraDamage:diff()} for each stack of Flow.",
   "PICKLERFRIGIL-SLIDE_KICK.title": "Slide Kick",
   "PICKLERFRIGIL-POWDER_SNOW.description": "Deal {Damage:diff()} damage {Repeat:diff()} times. Apply {HypothermiaPower:diff()} [gold]Hypothermia[/gold].",
   "PICKLERFRIGIL-POWDER_SNOW.title": "Powder Snow",
