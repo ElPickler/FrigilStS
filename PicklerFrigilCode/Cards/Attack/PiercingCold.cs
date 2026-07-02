@@ -17,7 +17,7 @@ public class PiercingCold() : PicklerFrigilCard(2,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(5, ValueProp.Move),
+        new DamageVar(4, ValueProp.Move),
         new ("Repeat", 3)
     ];
     
