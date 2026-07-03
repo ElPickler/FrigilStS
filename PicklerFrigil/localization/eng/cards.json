@@ -185,6 +185,10 @@
   "PICKLERFRIGIL-KIP_UP.title": "Kip Up",
   "PICKLERFRIGIL-BOTTOMLESS_POCKETS.description": "For every {IfUpgraded:show:3rd|4th} card created, add an [gold]Ethereal[/gold] copy into your [gold]Hand[/gold].",
   "PICKLERFRIGIL-BOTTOMLESS_POCKETS.title": "Bottomless Pockets",
+  "PICKLERFRIGIL-FROST_PLATE.description": "[gold]Icy[/gold].\nDeal {Damage:diff()} Damage.\nGain {Block:diff()} [gold]Block[/gold].",
+  "PICKLERFRIGIL-FROST_PLATE.title": "Frost Plate",
+  "PICKLERFRIGIL-SHIMMERING_CYCLONE.description": "Deal {Damage:diff()} damage for every [gold]Gemstone[/gold] created this combat.{InCombat:\n(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
+  "PICKLERFRIGIL-SHIMMERING_CYCLONE.title": "Shimmering Cyclone",
   
   
   
