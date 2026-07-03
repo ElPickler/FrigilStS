@@ -40,7 +40,7 @@ public class PiercingCold() : PicklerFrigilCard(2,
             await CommonActions.CardAttack(this, enemy).Execute(choiceContext);
         }*/
         
-        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount(DynamicVars["Repeat"].IntValue).FromCard(this).TargetingRandomOpponents(CombatState!).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
+        await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount(DynamicVars["Repeat"].IntValue).FromCard(this, play).TargetingRandomOpponents(CombatState!).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
     }
 
     protected override void OnUpgrade()

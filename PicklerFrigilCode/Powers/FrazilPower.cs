@@ -36,6 +36,6 @@ public class FrazilPower: PicklerFrigilPower
         Flash();
 
         decimal hypothermiaMod = dealer.GetPowerAmount<HypothermiaPower>();
-        await CreatureCmd.Damage(choiceContext, dealer,  Amount + hypothermiaMod, ValueProp.Unpowered | ValueProp.SkipHurtAnim, Owner, null);
+        await CreatureCmd.Damage(choiceContext, dealer,  Amount + hypothermiaMod, ValueProp.Unpowered | ValueProp.SkipHurtAnim, Owner);
     }
 }
