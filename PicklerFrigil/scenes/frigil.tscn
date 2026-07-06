@@ -1,10 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://kfbecv1bv88a"]
+[gd_scene load_steps=31 format=3 uid="uid://kfbecv1bv88a"]
 
 [ext_resource type="SpriteFrames" uid="uid://7n31dsckqlcy" path="res://PicklerFrigil/images/character/new_sprite_framesNew.tres" id="1_cs247"]
 [ext_resource type="SpriteFrames" uid="uid://8aelaf1u4kaj" path="res://PicklerFrigil/images/character/new_sprite_framesOld.tres" id="2_3f3if"]
 [ext_resource type="Script" uid="uid://v5t7pjuhjoke" path="res://PicklerFrigilCode/Nodes/FrigilUpdatedVisibilityToggle.cs" id="2_cs247"]
 [ext_resource type="Script" uid="uid://cr8fe6besaq7h" path="res://PicklerFrigilCode/Nodes/FrigilBetaVisibilityToggle.cs" id="4_byfhc"]
 [ext_resource type="AnimationLibrary" uid="uid://cx3od82yvh6u2" path="res://PicklerFrigil/images/character/FrigilAnimationLibraryBeta.tres" id="11_y6xfm"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cs247"]
+animation = &"attack"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qd7qw"]
 animation = &"attack"
@@ -62,11 +65,23 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sugm2"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_byfhc"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v8tg7"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ybk5n"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2q782"]
 states/End/position = Vector2(904, 168)
 states/Start/position = Vector2(-113, 212)
 states/attack/node = SubResource("AnimationNodeAnimation_qd7qw")
-states/attack/position = Vector2(302, 131)
+states/attack/position = Vector2(381, 100)
+"states/attack 2/node" = SubResource("AnimationNodeAnimation_cs247")
+"states/attack 2/position" = Vector2(231.6175, 100)
 states/cast/node = SubResource("AnimationNodeAnimation_6h3fl")
 states/cast/position = Vector2(438, 212)
 states/die/node = SubResource("AnimationNodeAnimation_7gbxb")
@@ -79,8 +94,8 @@ states/relaxed_loop/node = SubResource("AnimationNodeAnimation_kluia")
 states/relaxed_loop/position = Vector2(-113, 100)
 states/revive/node = SubResource("AnimationNodeAnimation_ffhyb")
 states/revive/position = Vector2(156, 297)
-transitions = ["attack", "idle_loop", SubResource("AnimationNodeStateMachineTransition_63al6"), "cast", "idle_loop", SubResource("AnimationNodeStateMachineTransition_1iyi0"), "Start", "idle_loop", SubResource("AnimationNodeStateMachineTransition_vienu"), "idle_loop", "attack", SubResource("AnimationNodeStateMachineTransition_qsbw0"), "revive", "idle_loop", SubResource("AnimationNodeStateMachineTransition_3jd3h"), "idle_loop", "die", SubResource("AnimationNodeStateMachineTransition_saeeb"), "die", "revive", SubResource("AnimationNodeStateMachineTransition_t6e05"), "idle_loop", "cast", SubResource("AnimationNodeStateMachineTransition_8q8n7"), "hurt", "idle_loop", SubResource("AnimationNodeStateMachineTransition_igj0u"), "idle_loop", "hurt", SubResource("AnimationNodeStateMachineTransition_q3cqn"), "Start", "relaxed_loop", SubResource("AnimationNodeStateMachineTransition_t7mc7"), "idle_loop", "relaxed_loop", SubResource("AnimationNodeStateMachineTransition_yhrkq"), "relaxed_loop", "idle_loop", SubResource("AnimationNodeStateMachineTransition_sugm2")]
-graph_offset = Vector2(-289.3825, 62)
+transitions = ["attack", "idle_loop", SubResource("AnimationNodeStateMachineTransition_63al6"), "cast", "idle_loop", SubResource("AnimationNodeStateMachineTransition_1iyi0"), "Start", "idle_loop", SubResource("AnimationNodeStateMachineTransition_vienu"), "idle_loop", "attack", SubResource("AnimationNodeStateMachineTransition_qsbw0"), "revive", "idle_loop", SubResource("AnimationNodeStateMachineTransition_3jd3h"), "idle_loop", "die", SubResource("AnimationNodeStateMachineTransition_saeeb"), "die", "revive", SubResource("AnimationNodeStateMachineTransition_t6e05"), "idle_loop", "cast", SubResource("AnimationNodeStateMachineTransition_8q8n7"), "hurt", "idle_loop", SubResource("AnimationNodeStateMachineTransition_igj0u"), "idle_loop", "hurt", SubResource("AnimationNodeStateMachineTransition_q3cqn"), "Start", "relaxed_loop", SubResource("AnimationNodeStateMachineTransition_t7mc7"), "idle_loop", "relaxed_loop", SubResource("AnimationNodeStateMachineTransition_yhrkq"), "relaxed_loop", "idle_loop", SubResource("AnimationNodeStateMachineTransition_sugm2"), "attack", "attack 2", SubResource("AnimationNodeStateMachineTransition_byfhc"), "attack 2", "attack", SubResource("AnimationNodeStateMachineTransition_v8tg7"), "attack 2", "idle_loop", SubResource("AnimationNodeStateMachineTransition_ybk5n")]
+graph_offset = Vector2(-182.3825, 52)
 
 [node name="Frigil" type="Node2D"]
 
