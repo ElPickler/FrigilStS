@@ -51,8 +51,8 @@ public class PicklerFrigil : CustomCharacterModel
     ];
     
     //Animation Delays
-    public override float AttackAnimDelay => 0.2f;
-    public override float CastAnimDelay => 0.35f;
+    public override float AttackAnimDelay => 0.1f;
+    public override float CastAnimDelay => 0.1f;
 
     //Pools
     public override CardPoolModel CardPool => ModelDb.CardPool<PicklerFrigilCardPool>();
@@ -95,12 +95,13 @@ public class PicklerFrigil : CustomCharacterModel
     }
     
         //PLACEHOLDER
-    public override string CustomTrailPath
+    /*public override string CustomTrailPath
     {
         get => SceneHelper.GetScenePath("vfx/card_trail_" + this.PlaceholderID);
-    }
-    
-    
+    }*/
+
+    public override string? CustomTrailPath => "res://PicklerFrigil/scenes/vfx/card_trail_frigil.tscn";
+
     //Audio
     public override string CharacterSelectSfx => "res://PicklerFrigil/audio/FrigilCharSelect.ogg";
     public override string CharacterTransitionSfx => "res://PicklerFrigil/audio/FrigilTransition.ogg";
