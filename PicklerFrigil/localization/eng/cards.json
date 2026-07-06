@@ -189,8 +189,8 @@
   "PICKLERFRIGIL-FROST_PLATE.title": "Frost Plate",
   "PICKLERFRIGIL-SHIMMERING_CYCLONE.description": "Deal {Damage:diff()} damage for every [gold]Gemstone[/gold] created this combat.{InCombat:\n(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
   "PICKLERFRIGIL-SHIMMERING_CYCLONE.title": "Shimmering Cyclone",
-  
-  
+  "PICKLERFRIGIL-ENBLIZZARD.description": "Select an ally. Their next attack applies {EnblizzardPower:diff()} [gold]Hypothermia[/gold] on hit.",
+  "PICKLERFRIGIL-ENBLIZZARD.title": "Enblizzard",
   
   "PICKLERFRIGIL-TOPAZ.description": "If [gold]Exhausted[/gold], at the end of combat, gain {Gold:diff()} [gold]Gold[/gold].",
   "PICKLERFRIGIL-TOPAZ.title": "Topaz",
