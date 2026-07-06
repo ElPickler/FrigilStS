@@ -1,0 +1,127 @@
+[gd_scene load_steps=20 format=3 uid="uid://oix70gwm32xc"]
+
+[ext_resource type="Script" uid="uid://c2dvdv067o0kd" path="res://PicklerFrigilCode/Nodes/FrigilCardTrailNode.cs" id="1_3q7r1"]
+[ext_resource type="Texture2D" uid="uid://75oon3sqevgm" path="res://PicklerFrigil/images/vfx/trail.png" id="1_vkl5s"]
+[ext_resource type="Texture2D" uid="uid://cthlt6v174ipt" path="res://PicklerFrigil/images/vfx/small_card_silhouette.png" id="1_xrgdg"]
+[ext_resource type="Script" path="res://PicklerFrigilCode/Nodes/FrigilOuterTrail.cs" id="2_e0m1j"]
+[ext_resource type="Texture2D" uid="uid://d2qmvb6b6qlrq" path="res://PicklerFrigil/images/vfx/brush_particle_2.png" id="2_o74x6"]
+[ext_resource type="Texture2D" uid="uid://tnawp6tu0j22" path="res://PicklerFrigil/images/vfx/trail2.png" id="3_3q7r1"]
+[ext_resource type="Texture2D" uid="uid://g8n2q0w5pja6" path="res://PicklerFrigil/images/vfx/sparkle.png" id="3_opwdk"]
+[ext_resource type="Material" uid="uid://c4ycqv0gdxvmr" path="res://PicklerFrigil/themes/canvas_item_material_additive_shared.tres" id="4_5di10"]
+[ext_resource type="Script" path="res://PicklerFrigilCode/Nodes/FrigilCardTrail.cs" id="4_e0m1j"]
+
+[sub_resource type="Curve" id="Curve_drdas"]
+_data = [Vector2(0, 0.10928655), 0.0, 0.0, 0, 0, Vector2(0.84226185, 0.6623376), -2.6003644, -2.6003644, 0, 0, Vector2(0.922619, 0.93860674), 0.0, 0.0, 0, 0, Vector2(1, 0.6930342), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_f4njm"]
+offsets = PackedFloat32Array(0, 0.1409396, 0.52684563)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0.30588236, 1, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_l0px1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.8035714, 0.5702479), -3.1445274, -3.1445274, 0, 0, Vector2(0.8988095, 0.37072015), 0.0, 0.0, 0, 0, Vector2(0.9375, 0.93093264), 0.0, 0.0, 0, 0, Vector2(1, 0.739079), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_b5ckl"]
+offsets = PackedFloat32Array(0.25167784, 0.61744964, 0.82550335)
+colors = PackedColorArray(0, 0, 0, 0, 0.2509804, 0.2509804, 0.2509804, 0.30588236, 1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_cc1k5"]
+offsets = PackedFloat32Array(0, 0.46899223, 0.77131784, 1)
+colors = PackedColorArray(0, 0.5646667, 0.77, 1, 0.484, 0.484, 0.88, 0.5137255, 0.48235294, 0.48235294, 0.8784314, 0.5137255, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vkl5s"]
+gradient = SubResource("Gradient_cc1k5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e0m1j"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(24, 24, 1)
+angle_min = -31.99999
+angle_max = 32.00001
+direction = Vector3(5, -5, 0)
+initial_velocity_min = 16.0
+initial_velocity_max = 32.0
+gravity = Vector3(0, 0, 0)
+damping_min = 1.0
+damping_max = 5.0
+scale_min = 0.19999999
+scale_max = 0.79999995
+color_ramp = SubResource("GradientTexture1D_vkl5s")
+
+[sub_resource type="Gradient" id="Gradient_3q7r1"]
+colors = PackedColorArray(1, 0.9764706, 0.8509804, 1, 0.8784314, 0.8509804, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5di10"]
+gradient = SubResource("Gradient_3q7r1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_drdas"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(24, 24, 1)
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, -5, 0)
+initial_velocity_max = 480.0
+gravity = Vector3(0, 1960, 0)
+scale_min = 0.02
+scale_max = 0.049999997
+color_ramp = SubResource("GradientTexture1D_5di10")
+
+[node name="CardTrailFrigil" type="Node2D"]
+script = ExtResource("1_3q7r1")
+
+[node name="Trails" type="Node2D" parent="."]
+
+[node name="FrigilOuterTrail" type="Line2D" parent="Trails"]
+modulate = Color(0, 0.42433342, 0.67, 0.7529412)
+position = Vector2(7, -112)
+width = 96.0
+width_curve = SubResource("Curve_drdas")
+gradient = SubResource("Gradient_f4njm")
+texture = ExtResource("1_vkl5s")
+texture_mode = 2
+joint_mode = 2
+script = ExtResource("2_e0m1j")
+
+[node name="FrigilInnerTrail" type="Line2D" parent="Trails"]
+modulate = Color(0, 0.9666667, 1, 0.5019608)
+width = 64.0
+width_curve = SubResource("Curve_l0px1")
+gradient = SubResource("Gradient_b5ckl")
+texture = ExtResource("3_3q7r1")
+texture_mode = 2
+joint_mode = 2
+script = ExtResource("4_e0m1j")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Outercard" type="Sprite2D" parent="Sprites"]
+modulate = Color(0.2383334, 0, 0.65, 0.7529412)
+material = ExtResource("4_5di10")
+scale = Vector2(1.1, 1.054)
+texture = ExtResource("1_xrgdg")
+
+[node name="Innercard" type="Sprite2D" parent="Sprites"]
+modulate = Color(0.08533325, 0, 0.64, 0.5019608)
+material = ExtResource("4_5di10")
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_xrgdg")
+
+[node name="BigSparks" type="GPUParticles2D" parent="Sprites"]
+material = ExtResource("4_5di10")
+amount = 64
+texture = ExtResource("2_o74x6")
+lifetime = 2.0
+randomness = 0.5
+fract_delta = false
+process_material = SubResource("ParticleProcessMaterial_e0m1j")
+
+[node name="LittleSparks" type="GPUParticles2D" parent="Sprites"]
+material = ExtResource("4_5di10")
+amount = 64
+texture = ExtResource("3_opwdk")
+lifetime = 0.3
+explosiveness = 0.35
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_drdas")
