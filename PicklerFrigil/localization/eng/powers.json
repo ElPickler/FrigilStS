@@ -115,5 +115,8 @@
   "PICKLERFRIGIL-BOTTOMLESS_POCKETS_POWER.title": "Bottomless Pockets",
   "PICKLERFRIGIL-BOTTOMLESS_POCKETS_POWER_PLUS.description": "Add an [gold]Ethereal[/gold] copy of every 3rd card created into your [gold]Hand[/gold].",
   "PICKLERFRIGIL-BOTTOMLESS_POCKETS_POWER_PLUS.smartDescription": "Add an [gold]Ethereal[/gold] copy of every 3rd card created into your [gold]Hand[/gold].",
-  "PICKLERFRIGIL-BOTTOMLESS_POCKETS_POWER_PLUS.title": "Bottomless Pockets+"
+  "PICKLERFRIGIL-BOTTOMLESS_POCKETS_POWER_PLUS.title": "Bottomless Pockets+",
+  "PICKLERFRIGIL-ENBLIZZARD_POWER.description": "Your next attack played applies [gold]Hypothermia[/gold] on hit.",
+  "PICKLERFRIGIL-ENBLIZZARD_POWER.smartDescription": "Your next attack played applies [blue[{Amount}[/blue] [gold]Hypothermia[/gold] on hit.",
+  "PICKLERFRIGIL-ENBLIZZARD_POWER.title": "Enblizzard"
 }
