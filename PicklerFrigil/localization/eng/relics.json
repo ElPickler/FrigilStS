@@ -11,7 +11,7 @@
   "PICKLERFRIGIL-CRYSTALLIZED_SALT.description": "The first [gold]Gemstone[/gold] [gold]Exhausted[/gold] each combat takes effect twice.",
   "PICKLERFRIGIL-CRYSTALLIZED_SALT.flavor": "",
   "PICKLERFRIGIL-CRYSTALLIZED_SALT.title": "Crystallized Salt",
-  "PICKLERFRIGIL-SNOWGLOBE.description": "The first time you gain [gold]Block[/gold] from playing a card each combat, apply an equal amount of [gold]Hypothermia[/gold] to ALL enemies.",
+  "PICKLERFRIGIL-SNOWGLOBE.description": "The first time you gain [gold]Block[/gold] from playing a card each combat, apply half as much [gold]Hypothermia[/gold] to ALL enemies.",
   "PICKLERFRIGIL-SNOWGLOBE.flavor": "The more you shake it, the greater the storm.",
   "PICKLERFRIGIL-SNOWGLOBE.title": "Snowglobe",
   "PICKLERFRIGIL-ROCKY_ROAD_SUNDAE.description": "For every [blue]4[/blue] cards [gold]Exhausted[/gold], your next attack deals [blue]3[/blue] additional damage.",
