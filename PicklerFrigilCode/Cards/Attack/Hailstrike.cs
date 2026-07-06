@@ -1,4 +1,5 @@
 using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -47,8 +48,8 @@ public class Hailstrike() : PicklerFrigilCard(-1,
         if (card == this)
         {
             Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState!.HittableEnemies);
-            if(enemy != null)
-                await CommonActions.CardAttack(this, enemy).WithHitFx("vfx/vfx_big_slash_impact").Execute(choiceContext);
+            if (enemy != null)
+                await DamageCmd.Attack(DynamicVars.Damage.BaseValue).FromCard(this, null).Targeting(enemy).WithHitFx("vfx/vfx_big_slash_impact").Execute(choiceContext);
         }
     }
 }
