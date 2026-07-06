@@ -25,18 +25,6 @@ public class HypothermiaPower : PicklerFrigilPower
     ];
     
     //Main functionality
-   /* public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,
-CardModel? cardSource)
-    {
-        if (cardSource == null)
-            return 0;
-        if (target != Owner)
-            return 0;
-        if (!cardSource.Tags.Contains(PicklerFrigilCard.IcyTag))
-            return 0;
-        return Amount;
-    }*/
-
    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
        CardPlay? cardPlay)
    {
