@@ -18,7 +18,7 @@ public class BottomlessPocketsPower: PicklerFrigilPower
         public static readonly SpireField<CardModel, bool> CreatedByBottomless = new(() => false);
     }
     
-    public int CardCounter = 0;
+    public int CardCounter;
 
     protected virtual int CardTrigger
     {
@@ -37,6 +37,8 @@ public class BottomlessPocketsPower: PicklerFrigilPower
     public override Task AfterPowerAmountChanged(PlayerChoiceContext choiceContext, PowerModel power, decimal amount, Creature? applier,
         CardModel? cardSource)
     {
+        if (power != this)
+            return Task.CompletedTask;
         CardCounter = CardTrigger;
         InvokeDisplayAmountChanged();
         return Task.CompletedTask;
