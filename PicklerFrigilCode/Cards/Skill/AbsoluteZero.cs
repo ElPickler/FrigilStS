@@ -31,7 +31,7 @@ public class AbsoluteZero() : PicklerFrigilCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        foreach (Creature enemy in CombatState.HittableEnemies)
+        foreach (Creature enemy in CombatState!.HittableEnemies)
         {
             
             DynamicVars["HypothermiaPower"].BaseValue = enemy.GetPowerAmount<HypothermiaPower>();
