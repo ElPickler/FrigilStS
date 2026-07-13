@@ -86,6 +86,8 @@ public static class AccumulateCmd
                 return false;
             if (includeExhausted)
                 return true;
+            if (c is ShatteredSpear)
+                return false;
             CardPile? pile = c.Pile;
             return pile == null || pile.Type != PileType.Exhaust;
         })).OfType<Cryospear>();
