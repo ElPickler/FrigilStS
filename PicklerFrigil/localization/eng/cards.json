@@ -191,6 +191,13 @@
   "PICKLERFRIGIL-SHIMMERING_CYCLONE.title": "Shimmering Cyclone",
   "PICKLERFRIGIL-ENBLIZZARD.description": "Select an ally. Their next attack applies {EnblizzardPower:diff()} [gold]Hypothermia[/gold] on hit.",
   "PICKLERFRIGIL-ENBLIZZARD.title": "Enblizzard",
+  "PICKLERFRIGIL-BROKEN_SPEAR.description": "Cryospear damage is reduced by 50%.\nWhen you play a Cryospear, create {BrokenSpearPower:diff()} {BrokenSpearPower:plural:Shattered Spearhead|Shattered Spearheads} in hand.",
+  "PICKLERFRIGIL-BROKEN_SPEAR.title": "Broken Spear",
+  "PICKLERFRIGIL-SHATTERED_SPEAR.description": "[gold]Icy[/gold].\nDeal {Damage:diff()} damage.\nMost effects that affect Cryospear also affect this card.",
+  "PICKLERFRIGIL-SHATTERED_SPEAR.title": "Shattered Spear",
+  "PICKLERFRIGIL-NEEDLE_STORM.description": "While this card is in your hand, when ANY ally draws a card during their turn, deal {Damage:diff()} damage to a random enemy.",
+  "PICKLERFRIGIL-NEEDLE_STORM.title": "Needle Storm",
+  
   
   "PICKLERFRIGIL-TOPAZ.description": "If [gold]Exhausted[/gold], at the end of combat, gain {Gold:diff()} [gold]Gold[/gold].",
   "PICKLERFRIGIL-TOPAZ.title": "Topaz",
