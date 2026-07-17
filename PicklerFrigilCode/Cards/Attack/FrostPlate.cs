@@ -1,11 +1,9 @@
-using MegaCrit.Sts2.Core.Commands;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
-using PicklerFrigil.PicklerFrigilCode.Cards;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
@@ -32,8 +30,8 @@ public class FrostPlate() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CreatureCmd.Damage(choiceContext, play.Target!, DynamicVars.Damage, Owner.Creature);
-        await CreatureCmd.GainBlock(Owner.Creature, DynamicVars.Block, play);
+        await CommonActions.CardAttack(this, play, play.Target, DynamicVars.Damage.BaseValue, ValueProp.Move).Execute(choiceContext);
+        await CommonActions.CardBlock(this, play);
     }
 
     protected override void OnUpgrade()
