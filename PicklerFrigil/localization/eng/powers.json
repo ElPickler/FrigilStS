@@ -80,8 +80,8 @@
   "PICKLERFRIGIL-TWIZZLE_POWER.description": "When you play a card, gain [blue]2[/blue] [gold]Flow[/gold].",
   "PICKLERFRIGIL-TWIZZLE_POWER.smartDescription": "When you play a card, gain [blue]{Amount}[/blue] [gold]Flow[/gold].",
   "PICKLERFRIGIL-TWIZZLE_POWER.title": "Twizzle",
-  "PICKLERFRIGIL-HYPERTHERMIA_POWER.description": "Gain [blue]1[/blue] [gold]Energy[/gold] at the start of each turn.\nCards apply [red]2[/red] less [gold]Hypothermia[/gold].",
-  "PICKLERFRIGIL-HYPERTHERMIA_POWER.smartDescription": "Gain {Amount:energyIcons()} at the start of each turn.\nCards apply [red]2[/red] less [gold]Hypothermia[/gold].",
+  "PICKLERFRIGIL-HYPERTHERMIA_POWER.description": "Gain [blue]1[/blue] [gold]Energy[/gold] at the start of each turn.\nCards apply [red]1[/red] less [gold]Hypothermia[/gold].",
+  "PICKLERFRIGIL-HYPERTHERMIA_POWER.smartDescription": "Gain {Amount:energyIcons()} at the start of each turn.\nCards apply [red]{HypothermiaLoss:diff()}[/red] less [gold]Hypothermia[/gold].",
   "PICKLERFRIGIL-HYPERTHERMIA_POWER.title": "Hyperthermia",
   "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.description": "[gold]Flow[/gold] gain is increased by [blue]2[/blue].",
   "PICKLERFRIGIL-GRACEFUL_MOTION_POWER.smartDescription": "[gold]Flow[/gold] gain is increased by [blue]{Amount}[/blue].",
@@ -118,5 +118,8 @@
   "PICKLERFRIGIL-BOTTOMLESS_POCKETS_POWER_PLUS.title": "Bottomless Pockets+",
   "PICKLERFRIGIL-ENBLIZZARD_POWER.description": "Your next attack played applies [gold]Hypothermia[/gold] on hit.",
   "PICKLERFRIGIL-ENBLIZZARD_POWER.smartDescription": "Your next attack played applies [blue[{Amount}[/blue] [gold]Hypothermia[/gold] on hit.",
-  "PICKLERFRIGIL-ENBLIZZARD_POWER.title": "Enblizzard"
+  "PICKLERFRIGIL-ENBLIZZARD_POWER.title": "Enblizzard",
+  "PICKLERFRIGIL-BROKEN_SPEAR_POWER.description": "Cryospear deals 50% less damage.\nOn playing Cryospear, create a Shattered Spear in hand with the same damage.",
+  "PICKLERFRIGIL-BROKEN_SPEAR_POWER.smartDescription": "Cryospear deals 50% less damage.\nOn playing Cryospear, create {Amount:plural:a Shattered Spear|{Amount} Shattered Spears} in hand with the same damage.",
+  "PICKLERFRIGIL-BROKEN_SPEAR_POWER.title": "Broken Spear"
 }
