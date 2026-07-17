@@ -24,7 +24,7 @@ public class SnowCloak() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new BlockVar(4, ValueProp.Move),
+        new BlockVar(3, ValueProp.Move),
         new ("Repeat", 2M),
         new PowerVar<HypothermiaPower>( 1M)
     ];
