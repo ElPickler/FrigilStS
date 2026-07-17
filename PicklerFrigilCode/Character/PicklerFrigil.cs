@@ -4,8 +4,6 @@ using BaseLib.Patches.UI;
 using BaseLib.Utils.NodeFactories;
 using PicklerFrigil.PicklerFrigilCode.Extensions;
 using Godot;
-using MegaCrit.Sts2.Core.Animation;
-using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
@@ -21,14 +19,17 @@ public class PicklerFrigil : CustomCharacterModel
     
     public const string CharacterId = "PicklerFrigil";
     public virtual string PlaceholderID => "ironclad";
+    public override CharacterGender Gender => CharacterGender.Masculine;
+    
 
     //Colors
     public static readonly Color Color = new("a7e7eb");
     public override Color NameColor => Color;
     public override Color EnergyLabelOutlineColor => new("380d4d");
     public override Color MapDrawingColor => new ("482675");
-    
-    public override CharacterGender Gender => CharacterGender.Masculine;
+    //public override Color RemoteTargetingLineColor => new("5e44ed");
+    //public override Color RemoteTargetingLineOutline => new("21136d");
+
 
     //Run Start Properties
     public override int StartingHp => 72;
@@ -84,6 +85,7 @@ public class PicklerFrigil : CustomCharacterModel
     public override string CustomEnergyCounterPath => "res://PicklerFrigil/scenes/ui/FrigilEnergyCounter.tscn";
     public override string CustomRestSiteAnimPath => "res://PicklerFrigil/scenes/RestSite/frigilRestSite2.tscn";
     public override string CustomMerchantAnimPath => "res://PicklerFrigil/scenes/Merchant/frigilmerchant.tscn";
+    public override string CustomTrailPath => "res://PicklerFrigil/scenes/vfx/card_trail_frigil.tscn";
     public override Control CustomIcon
     {
         get
@@ -93,14 +95,6 @@ public class PicklerFrigil : CustomCharacterModel
             return icon;
         }
     }
-    
-        //PLACEHOLDER
-    /*public override string CustomTrailPath
-    {
-        get => SceneHelper.GetScenePath("vfx/card_trail_" + this.PlaceholderID);
-    }*/
-
-    public override string? CustomTrailPath => "res://PicklerFrigil/scenes/vfx/card_trail_frigil.tscn";
 
     //Audio
     public override string CharacterSelectSfx => "res://PicklerFrigil/audio/FrigilCharSelect.ogg";
