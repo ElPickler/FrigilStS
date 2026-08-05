@@ -12,7 +12,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
 
 public class NeedleStorm() : PicklerFrigilCard(-1,
-    CardType.Attack, CardRarity.Uncommon,
+    CardType.Attack, CardRarity.Rare,
     TargetType.RandomEnemy)
 {
     public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
@@ -21,7 +21,7 @@ public class NeedleStorm() : PicklerFrigilCard(-1,
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(4, ValueProp.Move),
+        new DamageVar(5, ValueProp.Move),
     ];
     
     protected override async Task OnPlay(
