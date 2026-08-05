@@ -15,6 +15,7 @@ public abstract class AbstractGem(int cost, CardType type, CardRarity rarity, Ta
     PicklerFrigilCard(cost, type, rarity, target)
 {
     protected override HashSet<CardTag> CanonicalTags => [GemTag];
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
     
     /*
     //Image size:
