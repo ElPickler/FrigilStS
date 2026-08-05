@@ -14,7 +14,7 @@ public class GemSlam() : PicklerFrigilCard(2,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new CalculationBaseVar(10M),
+        new CalculationBaseVar(11M),
         new ExtraDamageVar(2M),
         new CalculatedDamageVar(ValueProp.Move).WithMultiplier((card, target) => GetGemstones(card)),
     ];
@@ -29,6 +29,7 @@ public class GemSlam() : PicklerFrigilCard(2,
     protected override void OnUpgrade()
     {
         DynamicVars.ExtraDamage.UpgradeValueBy(1);
+        DynamicVars.CalculationBase.UpgradeValueBy(3);
     }
 
     private static int GetGemstones(CardModel card)
