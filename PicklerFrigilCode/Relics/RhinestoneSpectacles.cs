@@ -2,6 +2,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using PicklerFrigil.PicklerFrigilCode.Character;
@@ -17,11 +18,24 @@ public class RhinestoneSpectacles() : PicklerFrigilRelic
     public override RelicRarity Rarity =>
         RelicRarity.Shop;
 
+    /*
     public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants,
         ICombatState combatState)
     {
         if (!participants.Contains(Owner.Creature) || Owner.PlayerCombatState!.TurnNumber > 1)
             return;
+        Flash();
+        await GemstoneCmd.GenerateGemstone(Owner, 3, PileType.Discard);
+    }
+    */
+
+    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    {
+        if (player != Owner)
+            return;
+        if (player.PlayerCombatState!.TurnNumber > 1)
+            return;
+        
         Flash();
         await GemstoneCmd.GenerateGemstone(Owner, 3, PileType.Discard);
     }
