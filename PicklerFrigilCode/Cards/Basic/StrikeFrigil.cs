@@ -15,7 +15,7 @@ public class StrikeFrigil() : PicklerFrigilCard(1,
 {
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).WithHitVfxNode((Func<Creature, Node2D>) (t => NScratchVfx.Create(t, true)!)).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play, play.Target,DynamicVars.Damage.BaseValue, ValueProp.Move).WithHitVfxNode((Func<Creature, Node2D>) (t => NScratchVfx.Create(t, true)!)).Execute(choiceContext);
     }
 
     protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
