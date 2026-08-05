@@ -1,5 +1,6 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
@@ -62,6 +63,17 @@ public class FreeSkate() : PicklerFrigilCard(3,
         }
 
         await PowerCmd.Apply<FreeSkatePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
+    }
+    
+    public override async Task AfterCardGeneratedForCombat(CardModel card, Player? creator)
+    {
+        if (!card.EnergyCost.CostsX)
+        {
+            if (EnergyCost.Canonical < (int)DynamicVars["EnergyReduction"].BaseValue)
+                EnergyCost.SetThisTurn(0);
+            else
+                card.EnergyCost.AddThisTurn((int)DynamicVars["EnergyReduction"].BaseValue * -1);
+        }
     }
 
     protected override void OnUpgrade()
