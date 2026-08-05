@@ -10,7 +10,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 
 public class Cryoseism() : PicklerFrigilCard(0,
-    CardType.Skill, CardRarity.Rare,
+    CardType.Skill, CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -22,7 +22,7 @@ public class Cryoseism() : PicklerFrigilCard(0,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<VulnerablePower>(2)
+        new PowerVar<VulnerablePower>(1)
     ];
     
     protected override async Task OnPlay(
