@@ -13,7 +13,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
 [Pool(typeof(PicklerFrigilCardPool))]
 public class Hailstrike() : PicklerFrigilCard(-1,
-    CardType.Attack, CardRarity.Uncommon,
+    CardType.Attack, CardRarity.Common,
     TargetType.RandomEnemy)
 {
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
