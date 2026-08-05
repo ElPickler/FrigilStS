@@ -13,8 +13,6 @@ public class BrokenSpear() : PicklerFrigilCard(1,
     CardType.Power, CardRarity.Rare,
     TargetType.Self)
 {
-    public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
-    
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get
