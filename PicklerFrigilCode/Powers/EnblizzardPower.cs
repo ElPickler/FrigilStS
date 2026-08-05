@@ -14,6 +14,8 @@ public class EnblizzardPower: PicklerFrigilPower
     
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
+    public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/Enblizzard.png";
+    public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/Enblizzard.png";
 
     public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
         Creature target, CardModel? cardSource)
