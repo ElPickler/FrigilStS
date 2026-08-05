@@ -23,8 +23,6 @@ public class Quartz() : AbstractGem(-1,
         }
     }
     
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
-    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new ("Accumulate", 10),
         new PowerVar<MetabolizingQuartzPower>(4)

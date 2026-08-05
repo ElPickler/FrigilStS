@@ -29,8 +29,6 @@ public class Diamond() : AbstractGem(-1,
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<MetabolizingDiamondPower>(16)
     ];
-    
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
 
     protected override void OnUpgrade()
     {

@@ -31,8 +31,6 @@ public class Opal() : AbstractGem(-1,
         new PowerVar<HypothermiaPower>( 3M),
         new PowerVar<MetabolizingOpalPower>(1)
     ];
-    
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
 
     protected override void OnUpgrade()
     {

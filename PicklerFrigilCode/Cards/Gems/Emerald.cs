@@ -30,8 +30,6 @@ public class Emerald() : AbstractGem(-1,
         new CardsVar(3),
         new PowerVar<MetabolizingEmeraldPower>(2)
     ];
-    
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
 
     protected override void OnUpgrade()
     {

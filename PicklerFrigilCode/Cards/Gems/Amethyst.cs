@@ -19,8 +19,6 @@ public class Amethyst() : AbstractGem(-1,
         new EnergyVar(1),
         new PowerVar<EnergyNextTurnPower>(1)
     ];
-    
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
 
     protected override void OnUpgrade()
     {
