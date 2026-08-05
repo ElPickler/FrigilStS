@@ -17,8 +17,6 @@ public class Topaz() : AbstractGem(-1,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [new GoldVar(5)];
-    
-    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Unplayable];
 
     protected override void OnUpgrade()
     {
