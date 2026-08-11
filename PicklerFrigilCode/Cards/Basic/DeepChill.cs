@@ -14,15 +14,15 @@ public class DeepChill() : PicklerFrigilCard(0,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<WeakPower>( 1M),
-        new PowerVar<HypothermiaPower>( 1M)
+        new PowerVar<HypothermiaPower>( 2M)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get
         {
-            yield return HoverTipFactory.FromPower < WeakPower>();
-            yield return HoverTipFactory.FromPower < HypothermiaPower>();
+            yield return HoverTipFactory.FromPower <WeakPower>();
+            yield return HoverTipFactory.FromPower <HypothermiaPower>();
         }
     }
     
@@ -39,7 +39,6 @@ public class DeepChill() : PicklerFrigilCard(0,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Weak.UpgradeValueBy(1M);
         DynamicVars["HypothermiaPower"].UpgradeValueBy(1);
     }
 }
