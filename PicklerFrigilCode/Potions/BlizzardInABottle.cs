@@ -22,7 +22,7 @@ public class BlizzardInABottle : PicklerFrigilPotion
     override public string CustomPackedImagePath => "res://PicklerFrigil/images/potions/blizzard_in_a_bottle.png";
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>(4)
+        new PowerVar<HypothermiaPower>(8)
     ];
     
     public override IEnumerable<IHoverTip> ExtraHoverTips
