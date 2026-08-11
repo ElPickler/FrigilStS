@@ -17,7 +17,7 @@ public class Blizzard() : PicklerFrigilCard(1,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<WeakPower>(1),
-        new PowerVar<HypothermiaPower>(1)
+        new PowerVar<HypothermiaPower>(2)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
