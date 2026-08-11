@@ -1,13 +1,8 @@
 using BaseLib.Utils;
-using MegaCrit.Sts2.Core.Combat;
-using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
-using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
-using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
-using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models.Powers;
+using MegaCrit.Sts2.Core.Models;
 using PicklerFrigil.PicklerFrigilCode.Character;
 using PicklerFrigil.PicklerFrigilCode.Powers;
 
@@ -20,11 +15,6 @@ public class RadiantBismuth : PicklerFrigilRelic
     public override RelicRarity Rarity =>
         RelicRarity.Starter;
     
-    protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>(1M),
-        new ("Repeat", 4)
-    ];
-    
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get
@@ -33,16 +23,19 @@ public class RadiantBismuth : PicklerFrigilRelic
         }
     }
     
-    public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
+    public override decimal ModifyPowerAmountGivenMultiplicative(PowerModel power, Creature giver, decimal amount, Creature? target,
+        CardModel? cardSource) //One function to multiply the power amount when calculating the hypothermia amount
     {
-        if (Owner != player)
-            return;
+
+        if (target == null)
+            return 1;
+        if (giver != Owner.Creature)
+            return 1;
+        if (power is not HypothermiaPower)
+            return 1;
+        if (target.HasPower<HypothermiaPower>())
+            return 1;
         
-        Flash();
-        for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
-        {
-            Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(player.Creature.CombatState!.HittableEnemies);
-            if (enemy != null) await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue, Owner.Creature, null);
-        }
+        return 2;
     }
 }
