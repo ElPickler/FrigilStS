@@ -23,7 +23,7 @@ public class Enblizzard() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<EnblizzardPower>(1)
+        new PowerVar<EnblizzardPower>(2)
     ];
     
     protected override async Task OnPlay(
