@@ -8,12 +8,12 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Ancient;
 
-public class CrystalNeedles() : PicklerFrigilCard(2,
+public class CrystalNeedles() : PicklerFrigilCard(3,
     CardType.Attack, CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(3, ValueProp.Move),
+        new DamageVar(5, ValueProp.Move),
         new DynamicVar("Hypothermia", 1M),
         new DynamicVar("RepeatBase", 2M),
         new DynamicVar("RepeatMod", 0M),
