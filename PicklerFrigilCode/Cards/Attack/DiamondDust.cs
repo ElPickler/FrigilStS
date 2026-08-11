@@ -9,7 +9,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
-public class DiamondDust() : PicklerFrigilCard(2,
+public class DiamondDust() : PicklerFrigilCard(1,
     CardType.Attack, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
@@ -33,11 +33,6 @@ public class DiamondDust() : PicklerFrigilCard(2,
     {
         int flow = Owner.Creature.GetPowerAmount<FlowPower>();
         await PowerCmd.Remove<FlowPower>(Owner.Creature);
-        /*for (int i = 0; i < flow; i++)
-        {
-            await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        }
-        */
         await CommonActions.CardAttack(this, play.Target).WithHitCount(flow).Execute(choiceContext);
         
     }
