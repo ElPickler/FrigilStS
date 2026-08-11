@@ -24,7 +24,7 @@ public class LetItGo() : PicklerFrigilCard(2,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>( 2M)
+        new PowerVar<HypothermiaPower>( 4M)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -47,6 +47,6 @@ public class LetItGo() : PicklerFrigilCard(2,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["HypothermiaPower"].UpgradeValueBy(1);
+        DynamicVars["HypothermiaPower"].UpgradeValueBy(2);
     }
 }
