@@ -22,7 +22,7 @@ public class SleetStorm() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ("SleetStorm", 1)
+        new ("SleetStorm", 2)
     ];
     
     protected override async Task OnPlay(
