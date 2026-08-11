@@ -84,5 +84,11 @@ public class GemstoneCmd
         
         return false;
     }
-    
+
+    public static IEnumerable<CardModel> GetGemstone(int count, Player player)
+    {
+        IEnumerable<CardModel> gemstones = new List<CardModel>(CardFactory.GetDistinctForCombat(player, Gems, count, player.RunState.Rng.CombatCardGeneration));
+        
+        return  gemstones;
+    }
 }
