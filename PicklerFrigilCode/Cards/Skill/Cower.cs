@@ -13,6 +13,8 @@ public class Cower() : PicklerFrigilCard(1,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.AnyAlly)
 {
+    public override CardMultiplayerConstraint MultiplayerConstraint => CardMultiplayerConstraint.MultiplayerOnly;
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<WeakPower>( 1M),
         new PowerVar<VulnerablePower>( 1M)
