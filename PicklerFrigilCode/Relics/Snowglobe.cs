@@ -40,7 +40,7 @@ public class Snowglobe : PicklerFrigilRelic
         
         foreach (Creature enemy in Owner.Creature.CombatState!.HittableEnemies)
         {
-            await PowerCmd.Apply<HypothermiaPower>(new BlockingPlayerChoiceContext(), enemy, amount/2, Owner.Creature, null, false);
+            await PowerCmd.Apply<HypothermiaPower>(new BlockingPlayerChoiceContext(), enemy, amount, Owner.Creature, null, false);
         }
 
         _usedThisCombat = true;
