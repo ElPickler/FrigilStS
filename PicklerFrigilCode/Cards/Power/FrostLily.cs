@@ -24,7 +24,7 @@ public class FrostLily() : PicklerFrigilCard(2,
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<FrostLilyPower>(1),
-        new PowerVar<HypothermiaPower>(2)
+        new PowerVar<HypothermiaPower>(6)
     ];
     
     protected override async Task OnPlay(
@@ -40,6 +40,6 @@ public class FrostLily() : PicklerFrigilCard(2,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["HypothermiaPower"].UpgradeValueBy(1);
+        DynamicVars["HypothermiaPower"].UpgradeValueBy(2);
     }
 }
