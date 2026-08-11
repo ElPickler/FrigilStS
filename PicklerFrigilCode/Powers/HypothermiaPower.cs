@@ -1,4 +1,5 @@
 using BaseLib.Abstracts;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -44,6 +45,9 @@ public class HypothermiaPower : PicklerFrigilPower
         {
             DynamicVars["EffDamage"].BaseValue = Amount; 
             
+            if (amount < 0) //Powers should not apply if hypothermia is being removed
+                return;
+            
             //Snow Dancer functionality
             decimal snowDancer = applier.GetPowerAmount<SnowDancerPower>();
             if (snowDancer != 0)
@@ -58,5 +62,20 @@ public class HypothermiaPower : PicklerFrigilPower
                 await CreatureCmd.Damage(new ThrowingPlayerChoiceContext(), applier.CombatState!.HittableEnemies, amount * draconicFormAmount, ValueProp.Unpowered, Owner);
             }
         }
+    }
+
+    public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
+    {
+        double hypoReduction = Amount * 0.25;
+        
+        
+        if (side == CombatSide.Player)
+            return;
+        
+        if (hypoReduction < 1)
+            hypoReduction = 1;
+
+        await PowerCmd.ModifyAmount(choiceContext, this, (int)(0 - hypoReduction), Owner, null);
+        
     }
 }
