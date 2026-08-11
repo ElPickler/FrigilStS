@@ -24,7 +24,7 @@ public class DeathSpiral() : PicklerFrigilCard(1,
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<FlowPower>(5M),
+        new PowerVar<FlowPower>(4M),
         new PowerVar<VulnerablePower>(1M)
     ];
     
@@ -45,7 +45,6 @@ public class DeathSpiral() : PicklerFrigilCard(1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["FlowPower"].UpgradeValueBy(1);
-        DynamicVars["VulnerablePower"].UpgradeValueBy(1);
+        DynamicVars["FlowPower"].UpgradeValueBy(2);
     }
 }
