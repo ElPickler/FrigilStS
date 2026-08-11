@@ -13,11 +13,11 @@ public class FreeSkate() : PicklerFrigilCard(3,
     CardType.Skill, CardRarity.Rare,
     TargetType.Self)
 {
-    //FIXME: make cards not go below 0 cost
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new ("EnergyReduction", 1)
+        new ("EnergyReduction", 2),
+        new PowerVar<FreeSkatePower>(2)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -62,22 +62,13 @@ public class FreeSkate() : PicklerFrigilCard(3,
             }
         }
 
-        await PowerCmd.Apply<FreeSkatePower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
+        await PowerCmd.Apply<FreeSkatePower>(choiceContext, Owner.Creature, DynamicVars["FreeSkatePower"].BaseValue, Owner.Creature, this);
     }
     
-    public override async Task AfterCardGeneratedForCombat(CardModel card, Player? creator)
-    {
-        if (!card.EnergyCost.CostsX)
-        {
-            if (EnergyCost.Canonical < (int)DynamicVars["EnergyReduction"].BaseValue)
-                EnergyCost.SetThisTurn(0);
-            else
-                card.EnergyCost.AddThisTurn((int)DynamicVars["EnergyReduction"].BaseValue * -1);
-        }
-    }
+    
 
     protected override void OnUpgrade()
     {
-        DynamicVars["EnergyReduction"].UpgradeValueBy(1);
+        EnergyCost.UpgradeBy(-1);
     }
 }
