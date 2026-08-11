@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://biys63eaoigwo"]
+
+[ext_resource type="Texture2D" uid="uid://p3s27rkiav1l" path="res://PicklerFrigil/images/vfx/draconicformfog.png" id="1_5b76t"]
+[ext_resource type="Texture2D" uid="uid://bspwqpggkog2l" path="res://PicklerFrigil/images/vfx/draconicformwings.png" id="2_2oobn"]
+
+[sub_resource type="Curve" id="Curve_06wkf"]
+_data = [Vector2(0, 0), 0.0, 5.974155, 0, 0, Vector2(0.19366197, 0.5296671), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_4op0k"]
+curve = SubResource("Curve_06wkf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d0snl"]
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+emission_shape = 1
+emission_sphere_radius = 73.56
+angle_min = -179.99998
+angle_max = 180.00002
+spread = 180.0
+initial_velocity_min = 60.0
+initial_velocity_max = 120.0
+angular_velocity_min = -15.000016
+angular_velocity_max = 14.999984
+gravity = Vector3(0, 0, 0)
+damping_min = 0.8
+damping_max = 1.2
+scale_min = 0.39999998
+scale_max = 0.75
+alpha_curve = SubResource("CurveTexture_4op0k")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = -2.2351742e-08
+
+[node name="DraconicFormVfx" type="Node2D"]
+
+[node name="center_pivot" type="Node2D" parent="."]
+position = Vector2(0, -100)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="center_pivot"]
+texture = ExtResource("1_5b76t")
+lifetime = 12.0
+process_material = SubResource("ParticleProcessMaterial_d0snl")
+
+[node name="Sprite2D" type="Sprite2D" parent="center_pivot"]
+position = Vector2(-13, -5)
+scale = Vector2(0.6497696, 0.6497696)
+texture = ExtResource("2_2oobn")
