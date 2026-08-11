@@ -39,6 +39,8 @@ public class NeedleStorm() : PicklerFrigilCard(-1,
             return;
         if (Pile.Type != PileType.Hand)
             return;
+        if (fromHandDraw)
+            return;
         
         Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState!.HittableEnemies);
         if (enemy != null)
