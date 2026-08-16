@@ -35,7 +35,7 @@ public class TwinNeedle() : PicklerFrigilCard(1,
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).WithHitCount(DynamicVars["Repeat"].IntValue).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play).WithHitCount(DynamicVars["Repeat"].IntValue).Execute(choiceContext);
     }
     
     public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,

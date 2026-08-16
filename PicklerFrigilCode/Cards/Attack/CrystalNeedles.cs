@@ -31,7 +31,7 @@ public class CrystalNeedles() : PicklerFrigilCard(3,
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-       await CommonActions.CardAttack(this, play.Target).WithHitCount(DynamicVars["RepeatTotal"].IntValue).Execute(choiceContext);
+       await CommonActions.CardAttack(this, play).WithHitCount(DynamicVars["RepeatTotal"].IntValue).Execute(choiceContext);
     }
     
     protected override void OnUpgrade()

@@ -33,7 +33,7 @@ public class PowderSnow() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).WithHitCount(DynamicVars["Repeat"].IntValue).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play).WithHitCount(DynamicVars["Repeat"].IntValue).Execute(choiceContext);
     }
 
     public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,

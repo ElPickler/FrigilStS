@@ -11,7 +11,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 
-public class LetItGo() : PicklerFrigilCard(2,
+public class LetItGo() : PicklerFrigilCard(1,
     CardType.Skill, CardRarity.Rare,
     TargetType.Self)
 {

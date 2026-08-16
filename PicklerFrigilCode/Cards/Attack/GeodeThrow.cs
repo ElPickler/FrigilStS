@@ -31,7 +31,7 @@ public class GeodeThrow() : PicklerFrigilCard(0,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play).Execute(choiceContext);
         await GemstoneCmd.GenerateGemstone(Owner, DynamicVars["Gems"].IntValue);
     }
 

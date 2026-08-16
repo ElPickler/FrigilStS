@@ -33,7 +33,7 @@ public class DiamondDust() : PicklerFrigilCard(1,
     {
         int flow = Owner.Creature.GetPowerAmount<FlowPower>();
         await PowerCmd.Remove<FlowPower>(Owner.Creature);
-        await CommonActions.CardAttack(this, play.Target).WithHitCount(flow).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play).WithHitCount(flow).Execute(choiceContext);
         
     }
 

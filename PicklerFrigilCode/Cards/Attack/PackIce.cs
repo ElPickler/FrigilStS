@@ -37,7 +37,7 @@ public class PackIce() : PicklerFrigilCard(1,
             return;
         await CardCmd.Exhaust(choiceContext, card);
         
-        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play).Execute(choiceContext);
     }
 
     protected override void OnUpgrade()

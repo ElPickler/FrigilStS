@@ -23,7 +23,7 @@ public class GemSlam() : PicklerFrigilCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play, play.Target,DynamicVars.CalculatedDamage.BaseValue, DynamicVars.CalculatedDamage.Props).WithHitFx("vfx/vfx_heavy_blunt", tmpSfx: "heavy_attack.mp3").WithHitVfxSpawnedAtBase().Execute(choiceContext);
+        await CommonActions.CardAttack(this, play).WithHitFx("vfx/vfx_heavy_blunt", tmpSfx: "heavy_attack.mp3").WithHitVfxSpawnedAtBase().Execute(choiceContext);
     }
 
     protected override void OnUpgrade()

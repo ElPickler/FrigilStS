@@ -24,7 +24,7 @@ public class AnkleChomp() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play).Execute(choiceContext);
         if(play.Target != null) await PowerCmd.Apply<AnkleChompPower>(choiceContext, play.Target, DynamicVars["AnkleChompPower"].BaseValue , Owner.Creature, this);
     }
 

@@ -18,7 +18,7 @@ public class Cascade() : PicklerFrigilCard(1,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(8, ValueProp.Move),
-        new DynamicVar("Falloff", 4M),
+        new DamageVar("Falloff", 4M, ValueProp.Move),
         
     ];
     
@@ -40,11 +40,11 @@ public class Cascade() : PicklerFrigilCard(1,
         {
             if (enemy != play.Target)
             {
-                await CommonActions.CardAttack(this, enemy, DynamicVars["Falloff"].BaseValue).Execute(choiceContext);
+                await CommonActions.CardAttack(this, play, play.Target, DynamicVars["Falloff"].BaseValue, ValueProp.Move).Execute(choiceContext);
             }
             else
             {
-                await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+                await CommonActions.CardAttack(this, play).Execute(choiceContext);
             }
         }
     }

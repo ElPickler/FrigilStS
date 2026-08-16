@@ -30,7 +30,7 @@ public class FrostPlate() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play, play.Target, DynamicVars.Damage.BaseValue, ValueProp.Move).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play).Execute(choiceContext);
         await CommonActions.CardBlock(this, play);
     }
 

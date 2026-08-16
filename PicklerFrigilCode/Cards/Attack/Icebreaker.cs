@@ -38,7 +38,7 @@ public class Icebreaker() : PicklerFrigilCard(0,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play).Execute(choiceContext);
 
         if (play.Target != null) await PowerCmd.Remove<HypothermiaPower>(play.Target);
     }

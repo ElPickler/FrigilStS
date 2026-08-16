@@ -30,7 +30,7 @@ public class IcicleKick() : PicklerFrigilCard(1,
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await CommonActions.CardAttack(this, play, play.Target, DynamicVars.Damage.BaseValue, ValueProp.Move).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play).Execute(choiceContext);
         await PowerCmd.Apply<FlowPower>(choiceContext, Owner.Creature, DynamicVars["FlowPower"].BaseValue,
             Owner.Creature, this);
     }
