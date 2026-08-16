@@ -14,7 +14,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
 
-public class FrozenMaiden() : PicklerFrigilCard(2,
+public class FrozenMaiden() : PicklerFrigilCard(3,
     CardType.Attack, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
@@ -26,7 +26,7 @@ public class FrozenMaiden() : PicklerFrigilCard(2,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(12, ValueProp.Move),
+        new DamageVar(18, ValueProp.Move),
         new PowerVar<HypothermiaPower>(0)
     ];
     
