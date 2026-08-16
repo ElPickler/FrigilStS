@@ -14,7 +14,7 @@ public class DeepChill() : PicklerFrigilCard(0,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<WeakPower>( 1M),
-        new PowerVar<HypothermiaPower>( 2M)
+        new PowerVar<HypothermiaPower>( 1M)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
