@@ -17,23 +17,19 @@ public class QuickLash() : PicklerFrigilCard(1,
 {
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(7, ValueProp.Move),
-        new CardsVar(1),
-        new ("Repeat", 1M)
+        new DamageVar(5, ValueProp.Move),
+        new CardsVar(2),
     ];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
-        {
-            await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
-        }
+        await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
         await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, Owner);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(1M);
+        DynamicVars.Damage.UpgradeValueBy(2M);
         DynamicVars.Cards.UpgradeValueBy(1M);
     }
 }
