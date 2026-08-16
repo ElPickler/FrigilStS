@@ -34,12 +34,6 @@ public class PiercingCold() : PicklerFrigilCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        /*for (int i = 0; i < DynamicVars["Repeat"].BaseValue; i++)
-        {
-            Creature enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState!.HittableEnemies)!;
-            await CommonActions.CardAttack(this, enemy).Execute(choiceContext);
-        }*/
-        
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue).WithHitCount(DynamicVars["Repeat"].IntValue).FromCard(this, play).TargetingRandomOpponents(CombatState!).WithHitFx("vfx/vfx_attack_slash").Execute(choiceContext);
     }
 
