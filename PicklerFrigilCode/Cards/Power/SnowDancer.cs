@@ -21,7 +21,7 @@ public class SnowDancer() : PicklerFrigilCard(2,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<SnowDancerPower>(2M)
+        new PowerVar<SnowDancerPower>(1M)
     ];
     
     protected override async Task OnPlay(
@@ -33,6 +33,6 @@ public class SnowDancer() : PicklerFrigilCard(2,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["SnowDancerPower"].UpgradeValueBy(1);
+        EnergyCost.UpgradeBy(-1);
     }
 }
