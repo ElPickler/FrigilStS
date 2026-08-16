@@ -1,4 +1,6 @@
+using System.Globalization;
 using BaseLib.Abstracts;
+using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -13,7 +15,7 @@ using PicklerFrigil.PicklerFrigilCode.Cards;
 namespace PicklerFrigil.PicklerFrigilCode.Powers;
 
 
-public class HypothermiaPower : PicklerFrigilPower
+public class HypothermiaPower : PicklerFrigilPower, IHasSecondAmount
 {
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Counter;
@@ -24,7 +26,11 @@ public class HypothermiaPower : PicklerFrigilPower
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new ("EffDamage", 0) //Used for localization
     ];
+
+    private double _hypoReduction;
     
+    public string GetSecondAmount() => (0 - (int)_hypoReduction).ToString(CultureInfo.CurrentCulture);
+
     //Main functionality
    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
        CardPlay? cardPlay)
@@ -43,7 +49,10 @@ public class HypothermiaPower : PicklerFrigilPower
     {
         if (power == this && applier != null)
         {
-            DynamicVars["EffDamage"].BaseValue = Amount; 
+            DynamicVars["EffDamage"].BaseValue = Amount;
+
+            await CalculateReduction();
+            this.InvokeSecondAmountChanged();
             
             if (amount < 0) //Powers should not apply if hypothermia is being removed
                 return;
@@ -66,16 +75,22 @@ public class HypothermiaPower : PicklerFrigilPower
 
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
-        double hypoReduction = Amount * 0.25;
-        
-        
         if (side == CombatSide.Player)
             return;
         
-        if (hypoReduction < 1)
-            hypoReduction = 1;
-
-        await PowerCmd.ModifyAmount(choiceContext, this, (int)(0 - hypoReduction), Owner, null);
+        await PowerCmd.ModifyAmount(choiceContext, this, (int)(0 - _hypoReduction), Owner, null);
         
+    }
+
+    private Task CalculateReduction()
+    {
+        _hypoReduction = Amount * 0.33;
+        
+        if (_hypoReduction < 1)
+            _hypoReduction = 1;
+
+        FrigilMainFile.Logger.Info("Reduction is " + _hypoReduction);
+        
+        return Task.CompletedTask;
     }
 }
