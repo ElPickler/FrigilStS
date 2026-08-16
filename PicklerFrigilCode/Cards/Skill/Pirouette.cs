@@ -22,7 +22,7 @@ public class Pirouette() : PicklerFrigilCard(1,
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<FlowPower>(4),
+        new PowerVar<FlowPower>(2),
         new CardsVar(0)
     ];
     
