@@ -22,7 +22,7 @@ public class ColdFront() : PicklerFrigilCard(-1,
         }
     }
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>( 4M)
+        new PowerVar<HypothermiaPower>( 2M)
     ];
     
     protected override async Task OnPlay(
