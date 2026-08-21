@@ -13,7 +13,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
 
 public class PowderSnow() : PicklerFrigilCard(1,
-    CardType.Attack, CardRarity.Common,
+    CardType.Attack, CardRarity.Uncommon,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
