@@ -3,4 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://b65d72f1w752j" path="res://PicklerFrigil/images/character/temprestsite.png" id="1_fw20m"]
 
 [node name="Sprite2D" type="Sprite2D"]
+position = Vector2(12.000003, 5.999996)
+scale = Vector2(0.83966744, 0.83966744)
 texture = ExtResource("1_fw20m")
