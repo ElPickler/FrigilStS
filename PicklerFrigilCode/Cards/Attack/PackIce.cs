@@ -12,7 +12,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
 
   
 public class PackIce() : PicklerFrigilCard(1,
-    CardType.Attack, CardRarity.Uncommon,
+    CardType.Attack, CardRarity.Common,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
