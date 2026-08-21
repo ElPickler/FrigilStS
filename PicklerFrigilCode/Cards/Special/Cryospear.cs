@@ -46,7 +46,7 @@ public class Cryospear() : PicklerFrigilCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        AttackCommand attackCommand = await CommonActions.CardAttack(this, play.Target).Execute(choiceContext);
+        AttackCommand attackCommand = await CommonActions.CardAttack(this, play).Execute(choiceContext);
 
         Decimal blockMult = Owner.Creature.GetPowerAmount<ReformationPower>();
         if (blockMult > 0)
