@@ -12,7 +12,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Gems;
 
 [Pool(typeof(TokenCardPool))]
 public class Amethyst() : AbstractGem(-1,
-    CardType.Status, CardRarity.Token,
+    CardType.Status, CardRarity.Status,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [

@@ -15,7 +15,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Gems;
 
 [Pool(typeof(TokenCardPool))]
 public class Opal() : AbstractGem(-1,
-    CardType.Status, CardRarity.Token,
+    CardType.Status, CardRarity.Status,
     TargetType.AllEnemies)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips

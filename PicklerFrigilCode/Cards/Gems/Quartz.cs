@@ -12,7 +12,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Gems;
 
 
 public class Quartz() : AbstractGem(-1,
-    CardType.Status, CardRarity.Token,
+    CardType.Status, CardRarity.Status,
     TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
