@@ -9,7 +9,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Power;
 
 
-public class Metabolize() : PicklerFrigilCard(2,
+public class Metabolize() : PicklerFrigilCard(1,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
@@ -33,6 +33,6 @@ public class Metabolize() : PicklerFrigilCard(2,
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
+        DynamicVars["MetabolizePower"].UpgradeValueBy(1);
     }
 }
