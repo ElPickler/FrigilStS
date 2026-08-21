@@ -6,9 +6,7 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
-using PicklerFrigil.PicklerFrigilCode.Cards;
 using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Attack;
@@ -51,6 +49,8 @@ public class Icebreaker() : PicklerFrigilCard(0,
     private static decimal IcebreakerDamage(CardModel card, Creature creature)
     {
         if (creature == null)
+            return 0;
+        if (!creature.HasPower<HypothermiaPower>())
             return 0;
         decimal hypoAmount = creature.GetPowerAmount<HypothermiaPower>();
         if (card.IsUpgraded)
