@@ -10,7 +10,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 
 public class SpinParry() : PicklerFrigilCard(1,
-    CardType.Skill, CardRarity.Uncommon,
+    CardType.Skill, CardRarity.Common,
     TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -23,7 +23,7 @@ public class SpinParry() : PicklerFrigilCard(1,
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new ("Accumulate", 7M),
-        new BlockVar(7, ValueProp.Move)
+        new BlockVar(6, ValueProp.Move)
     ];
     
     protected override async Task OnPlay(
@@ -37,6 +37,6 @@ public class SpinParry() : PicklerFrigilCard(1,
     protected override void OnUpgrade()
     {
         DynamicVars["Accumulate"].UpgradeValueBy(3);
-        DynamicVars.Block.UpgradeValueBy(3);
+        DynamicVars.Block.UpgradeValueBy(2);
     }
 }
