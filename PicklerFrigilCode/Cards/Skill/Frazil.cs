@@ -11,7 +11,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 
 public class Frazil() : PicklerFrigilCard(-1,
-    CardType.Skill, CardRarity.Common,
+    CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
