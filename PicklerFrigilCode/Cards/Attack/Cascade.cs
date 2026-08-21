@@ -40,7 +40,7 @@ public class Cascade() : PicklerFrigilCard(1,
         {
             if (enemy != play.Target)
             {
-                await CommonActions.CardAttack(this, play, play.Target, DynamicVars["Falloff"].BaseValue, ValueProp.Move).Execute(choiceContext);
+                await CommonActions.CardAttack(this, play, enemy, DynamicVars["Falloff"].BaseValue, ValueProp.Move).Execute(choiceContext);
             }
             else
             {
