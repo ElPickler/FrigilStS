@@ -44,7 +44,7 @@ public class Gemsense() : PicklerFrigilCard(1,
             return c.Tags.Contains(GemTag);
         }
         
-        await GemstoneCmd.GenerateGemstone(Owner, (int) DynamicVars["Gems"].BaseValue, PileType.Draw);
+        await GemstoneCmd.GenerateGemstone(Owner, (int) DynamicVars["Gems"].BaseValue, PileType.Discard);
     }
 
     protected override void OnUpgrade()
