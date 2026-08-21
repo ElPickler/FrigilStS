@@ -8,7 +8,7 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Power;
 
 
-public class SnowDancer() : PicklerFrigilCard(2,
+public class SnowDancer() : PicklerFrigilCard(3,
     CardType.Power, CardRarity.Uncommon,
     TargetType.Self)
 {
@@ -21,7 +21,7 @@ public class SnowDancer() : PicklerFrigilCard(2,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<SnowDancerPower>(1M)
+        new PowerVar<SnowDancerPower>(2M)
     ];
     
     protected override async Task OnPlay(
