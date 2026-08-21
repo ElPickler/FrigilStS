@@ -32,7 +32,7 @@ public class ShimmeringCyclone() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        await CommonActions.CardAttack(this, play).WithHitCount((int) ((CalculatedVar) DynamicVars["CalculatedHits"]).Calculate(play.Target)).FromCard(this, play).Targeting(play.Target!).Execute(choiceContext);
+        await CommonActions.CardAttack(this, play).WithHitCount((int) ((CalculatedVar) DynamicVars["CalculatedHits"]).Calculate(play.Target)).Execute(choiceContext);
     }
 
     protected override void OnUpgrade()
