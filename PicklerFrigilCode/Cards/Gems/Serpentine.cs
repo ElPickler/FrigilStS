@@ -12,7 +12,7 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Gems;
 
 
 public class Serpentine() : AbstractGem(-1,
-    CardType.Status, CardRarity.Token,
+    CardType.Status, CardRarity.Status,
     TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -24,7 +24,7 @@ public class Serpentine() : AbstractGem(-1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<PoisonPower>( 4M),
+        new PowerVar<PoisonPower>( 6M),
     ];
     
     protected override async Task OnPlay(
