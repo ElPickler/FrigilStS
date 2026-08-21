@@ -24,7 +24,7 @@ public class ExtractSpear() : PicklerFrigilCard(0,
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new ("Multiplier", 2)
+        new ("Multiplier", 3)
     ];
     
     protected override async Task OnPlay(
