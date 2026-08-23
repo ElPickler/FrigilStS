@@ -1,11 +1,7 @@
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
-using MegaCrit.Sts2.Core.Models.Powers;
-using PicklerFrigil.PicklerFrigilCode.Cards;
 using PicklerFrigil.PicklerFrigilCode.Cards.Special;
 using PicklerFrigil.PicklerFrigilCode.Relics;
 
@@ -25,6 +21,7 @@ public class SaltRock() : AbstractGem(-1,
         }
     }
     */
+    
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
