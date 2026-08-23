@@ -27,7 +27,7 @@ public class DeepPiercePower: PicklerFrigilPower
         {
             if (cardSource is Cryospear)
             {
-                return Amount;
+                return Amount / 100M;
             }
         }
         return 1;

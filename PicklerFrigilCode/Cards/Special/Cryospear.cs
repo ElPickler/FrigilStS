@@ -3,9 +3,12 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Powers;
@@ -18,7 +21,11 @@ public class Cryospear() : PicklerFrigilCard(2,
     TargetType.AnyEnemy)
 {
     private Decimal _currentDamage = 0M;
-    //private AttackCommand attackCommand;
+    
+    public override TargetType TargetType
+    {
+        get => !HasDeepPierce() ? TargetType.AnyEnemy : TargetType.AllEnemies;
+    }
     
     private Decimal CurrentDamage
     {
@@ -33,9 +40,10 @@ public class Cryospear() : PicklerFrigilCard(2,
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
-        get { 
+        get
+        {
             yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower < HypothermiaPower>(); 
+            yield return HoverTipFactory.FromPower <HypothermiaPower>(); 
         }
     }
     
@@ -56,9 +64,8 @@ public class Cryospear() : PicklerFrigilCard(2,
 
         if (Owner.HasPower<EndothermiaPower>())
             await PowerCmd.Apply<AccumulateNextTurnPower>(choiceContext, Owner.Creature,
-                // ReSharper disable once PossibleLossOfFraction
                 attackCommand.Results.SelectMany(r => r).Sum(r => r.TotalDamage + r.OverkillDamage) *
-                Owner.Creature.GetPowerAmount<EndothermiaPower>() / 100, Owner.Creature, this);
+                Owner.Creature.GetPowerAmount<EndothermiaPower>() / 100M, Owner.Creature, this);
     }
     
 
@@ -77,5 +84,12 @@ public class Cryospear() : PicklerFrigilCard(2,
     public decimal GetDamage()
     {
         return DynamicVars.Damage.BaseValue;
+    }
+
+    private bool HasDeepPierce()
+    {
+        if (!IsMutable || Owner == null!)
+            return false;
+        return Owner.HasPower<DeepPiercePower>();
     }
 }

@@ -23,8 +23,8 @@ public class DeepPierce() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ("Accumulate", 5M),
-        new PowerVar<DeepPiercePower>(1M)
+        new ("Accumulate", 8M),
+        new PowerVar<DeepPiercePower>(50M)
     ];
     
     protected override async Task OnPlay(
@@ -32,20 +32,11 @@ public class DeepPierce() : PicklerFrigilCard(1,
         CardPlay play)
     {
         await AccumulateCmd.Accumulate(choiceContext, DynamicVars["Accumulate"].BaseValue, Owner, this);
-        if (Owner.Creature.GetPowerAmount<DeepPiercePower>() == 0)
-        {
-            await PowerCmd.Apply<DeepPiercePower>(choiceContext, Owner.Creature, DynamicVars["DeepPiercePower"].BaseValue + 1,
-                Owner.Creature, this);
-        }
-        else
-        {
-            await PowerCmd.Apply<DeepPiercePower>(choiceContext, Owner.Creature, DynamicVars["DeepPiercePower"].BaseValue,
-                Owner.Creature, this);
-        }
+        await PowerCmd.Apply<DeepPiercePower>(choiceContext, Owner.Creature, DynamicVars["DeepPiercePower"].BaseValue, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Accumulate"].UpgradeValueBy(3);
+        DynamicVars["Accumulate"].UpgradeValueBy(4);
     }
 }
