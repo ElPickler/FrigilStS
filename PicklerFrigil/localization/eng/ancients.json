@@ -48,10 +48,31 @@
   "DARV.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1.char": "[i][font_size=14]...Kobold.[/font_size][/i]",
   "DARV.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1.next": "Continue",
   "DARV.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-2.ancient": "My mistake! Let's build you a hoard befitting a dragon, eh?",
+
+  "DARV.talk.PICKLERFRIGIL-PICKLER_FRIGIL.1-0r.ancient": "The [sine]kobold[/sine] is back! Wanna take a look at my collection?",
+  
+  
+  "OROBAS.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-0.ancient": "New friend?! Small friend?! Cute friend?!",
+  "OROBAS.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-0.next": "Friend?",
+  "OROBAS.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1.ancient": "I- Sure?",
+  "OROBAS.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1.next": "Friend!",
+  "OROBAS.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-2.ancient": "New friend!! Gift for new friend!",
+  
+  "OROBAS.talk.PICKLERFRIGIL-PICKLER_FRIGIL.1-0r.ancient": "Small friend is back!!",
+
+  "OROBAS.talk.PICKLERFRIGIL-PICKLER_FRIGIL.2-0r.ancient": "Blue friend! So cold!!",
+  
   
   "TANX.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-0.ancient": "LIZARD!! WHERE IS YOUR WEAPON!!",
   "TANX.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-0.next": "Respond",
   "TANX.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1.char": "I've gotten this far without one.",
   "TANX.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1.next": "Continue",
-  "TANX.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-2.ancient": "WHAT!!"
+  "TANX.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-2.ancient": "WHAT!!",
+
+  
+  "NONUPEIPE.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-0.ancient": "Diminutive creature, you've fought long to arrive.\nApproach, and receive of me my blessings to climb higher.",
+  "NONUPEIPE.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-0.next": "Next",
+  "NONUPEIPE.talk.PICKLERFRIGIL-PICKLER_FRIGIL.0-1.char": "If you insist...",
+
+  "NONUPEIPE.talk.PICKLERFRIGIL-PICKLER_FRIGIL.1-0r.ancient": "You return. Be not discouraged, as within you flows the blood of dragons."
 }
