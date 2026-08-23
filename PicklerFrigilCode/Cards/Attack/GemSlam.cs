@@ -1,6 +1,7 @@
 using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
@@ -13,6 +14,14 @@ public class GemSlam() : PicklerFrigilCard(2,
     CardType.Attack, CardRarity.Rare,
     TargetType.AnyEnemy)
 {
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get
+        {
+            yield return HoverTipFactory.FromKeyword(GemstoneKeyword);
+        }
+    }
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(11M),
         new ExtraDamageVar(2M),
