@@ -22,12 +22,13 @@ public class IceAge() : PicklerFrigilCard(-1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>( 8M)
+        new PowerVar<HypothermiaPower>( 6M)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [
         CardKeyword.Ethereal,
-        CardKeyword.Unplayable
+        CardKeyword.Unplayable,
+        CardKeyword.Innate
     ];
     
     protected override async Task OnPlay(
@@ -37,7 +38,7 @@ public class IceAge() : PicklerFrigilCard(-1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["HypothermiaPower"].UpgradeValueBy(4);
+        DynamicVars["HypothermiaPower"].UpgradeValueBy(2);
     }
     
     public override async Task AfterCardDrawn(
