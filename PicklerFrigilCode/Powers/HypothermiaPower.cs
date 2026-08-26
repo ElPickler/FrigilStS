@@ -24,7 +24,7 @@ public class HypothermiaPower : PicklerFrigilPower, IHasSecondAmount
     public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/picklerfrigil-hypothermia_power.png";
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ("EffDamage", 0) //Used for localization
+        new ("EffDamage", 0) //Used for localization. Was more important when the damage calc was more complex, just haven't bothered to remove it.
     ];
 
     private double _hypoReduction;
@@ -88,8 +88,6 @@ public class HypothermiaPower : PicklerFrigilPower, IHasSecondAmount
         
         if (_hypoReduction < 1)
             _hypoReduction = 1;
-
-        FrigilMainFile.Logger.Info("Reduction is " + _hypoReduction);
         
         return Task.CompletedTask;
     }
