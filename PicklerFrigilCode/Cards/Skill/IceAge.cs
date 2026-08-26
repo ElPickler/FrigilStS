@@ -22,7 +22,7 @@ public class IceAge() : PicklerFrigilCard(-1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>( 6M)
+        new PowerVar<HypothermiaPower>( 5M)
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [
