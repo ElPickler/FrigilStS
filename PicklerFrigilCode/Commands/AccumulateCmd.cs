@@ -38,7 +38,7 @@ public static class AccumulateCmd
             return Array.Empty<Cryospear>();
         
             //Accumulate behavior on varying spear counts
-        List<Cryospear> spears = GetCryospears(player, false).ToList();
+        List<Cryospear> spears = GetCryospears(player, false, false).ToList();
         //For no spears, create one and move on
         if (spears.Count == 0)
         {
@@ -75,9 +75,10 @@ public static class AccumulateCmd
         return spears;
     }
     
-    private static IEnumerable<Cryospear> GetCryospears(
+    public static IEnumerable<Cryospear> GetCryospears(
         Player player,
-        bool includeExhausted
+        bool includeExhausted,
+        bool includeShattered
         )
     {
         return player.PlayerCombatState!.AllCards.Where<CardModel>((Func<CardModel, bool>) (c =>
@@ -87,7 +88,7 @@ public static class AccumulateCmd
             if (includeExhausted)
                 return true;
             if (c is ShatteredSpear)
-                return false;
+                return includeShattered;
             CardPile? pile = c.Pile;
             return pile == null || pile.Type != PileType.Exhaust;
         })).OfType<Cryospear>();
@@ -95,7 +96,7 @@ public static class AccumulateCmd
     
     private static void IncreaseSpearDamage(Decimal amount, Player player)
     {
-        List<Cryospear> list = GetCryospears(player, false).ToList<Cryospear>();
+        List<Cryospear> list = GetCryospears(player, false, false).ToList<Cryospear>();
         foreach (Cryospear card in list)
         {
             card.AddDamage(amount);
@@ -108,7 +109,7 @@ public static class AccumulateCmd
     public static decimal GetSpearDamage(Player player, AbstractModel? source)
     {
         decimal damage = 0;
-        List<Cryospear> spears = GetCryospears(player, false).ToList();
+        List<Cryospear> spears = GetCryospears(player, false, false).ToList();
         Cryospear mainspear = spears[0];
         foreach(Cryospear spear in spears)
         {
