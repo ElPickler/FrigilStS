@@ -191,7 +191,7 @@
   "PICKLERFRIGIL-SHIMMERING_CYCLONE.title": "Shimmering Cyclone",
   "PICKLERFRIGIL-ENBLIZZARD.description": "Select an ally. Their next attack applies {EnblizzardPower:diff()} [gold]Hypothermia[/gold] on hit.",
   "PICKLERFRIGIL-ENBLIZZARD.title": "Enblizzard",
-  "PICKLERFRIGIL-BROKEN_SPEAR.description": "Cryospear deals 50% damage.\nCryospear now costs {Energy:energyIcons()}.\nWhenever you play Cryospear, add {BrokenSpearPower:diff()} {BrokenSpearPower:plural:Shattered Spear|Shattered Spears} to your [gold]Hand[/gold] with the same damage.",
+  "PICKLERFRIGIL-BROKEN_SPEAR.description": "Cryospear deals 50% damage.\nCryospear now costs {Energy:energyIcons()}.\nWhenever you play Cryospear, add {BrokenSpearPower:diff()} {BrokenSpearPower:plural:Shattered Spear|Shattered Spears} to your [gold]Hand[/gold] with the same base damage.",
   "PICKLERFRIGIL-BROKEN_SPEAR.title": "Broken Spear",
   "PICKLERFRIGIL-SHATTERED_SPEAR.description": "[gold]Icy[/gold].\nDeal {Damage:diff()} damage.\nMost effects that affect Cryospear also affect this card.",
   "PICKLERFRIGIL-SHATTERED_SPEAR.title": "Shattered Spear",
