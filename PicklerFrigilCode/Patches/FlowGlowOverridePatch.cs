@@ -25,6 +25,33 @@ public class FlowGlowOverridePatch
                 return;
             if (card.Type != CardType.Skill)
                 return;
+            
+            if (card.GainsBlock)
+                __instance.CardNode.CardHighlight.Modulate = new Color(0.09f, 0.77f, 0.43f);
+            else
+                __instance.CardNode.CardHighlight.Modulate = new Color(0.22f, 0.44f, 0.33f);
+        }
+    }
+
+    [HarmonyPatch(typeof(NHandCardHolder), nameof(NHandCardHolder.Flash))]
+    internal static class FrigilNHandCardHolderFlashHandOutlinePatch
+    {
+        [HarmonyPostfix]
+        public static void Postfix(NHandCardHolder __instance)
+        {
+            if (__instance.CardNode == null)
+                return;
+            CardModel? card = __instance.CardNode.Model;
+            
+            if (AccessTools.Field(typeof(NHandCardHolder), "_flash")?.GetValue(__instance) is not Control flash ||
+                !GodotObject.IsInstanceValid(flash) || card == null || !card.CanPlay() || card.ShouldGlowGold || card.ShouldGlowRed)
+                return;
+            
+            if (!card.Owner.Creature.HasPower<FlowPower>())
+                return;
+            if (card.Type != CardType.Skill)
+                return;
+            
             if (card.GainsBlock)
                 __instance.CardNode.CardHighlight.Modulate = new Color(0.09f, 0.77f, 0.43f);
             else
