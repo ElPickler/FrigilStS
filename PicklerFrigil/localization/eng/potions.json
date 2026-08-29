@@ -2,5 +2,7 @@
   "PICKLERFRIGIL-BLIZZARD_IN_A_BOTTLE.description": "Apply [blue]8[/blue] [gold]Hypothermia[/gold].",
   "PICKLERFRIGIL-BLIZZARD_IN_A_BOTTLE.title": "Blizzard In A Bottle",
   "PICKLERFRIGIL-BAG_OF_ROCKS.description": "Create [blue]3[/blue] [gold]Gemstones[/gold].\nChoose one to [gold]Exhaust[/gold].\nAdd the rest to the [gold]Discard Pile[/gold].",
-  "PICKLERFRIGIL-BAG_OF_ROCKS.title": "Bag Of Rocks"
+  "PICKLERFRIGIL-BAG_OF_ROCKS.title": "Bag Of Rocks",
+  "PICKLERFRIGIL-LIVING_LIQUID.description": "At the start of each turn, gain [blue]6[/blue] [gold]Flow[/gold]. \nThis amount decreases by 1 each turn.",
+  "PICKLERFRIGIL-LIVING_LIQUID.title": "Living Liquid"
 }

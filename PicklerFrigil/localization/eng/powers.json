@@ -121,5 +121,8 @@
   "PICKLERFRIGIL-ENBLIZZARD_POWER.title": "Enblizzard",
   "PICKLERFRIGIL-BROKEN_SPEAR_POWER.description": "Cryospear deals 50% less damage.\nOn playing Cryospear, create a Shattered Spear in hand with the same damage.",
   "PICKLERFRIGIL-BROKEN_SPEAR_POWER.smartDescription": "Cryospear deals 50% less damage.\nOn playing Cryospear, create {Amount:plural:a Shattered Spear|{Amount} Shattered Spears} in hand with the same damage.",
-  "PICKLERFRIGIL-BROKEN_SPEAR_POWER.title": "Broken Spear"
+  "PICKLERFRIGIL-BROKEN_SPEAR_POWER.title": "Broken Spear",
+  "PICKLERFRIGIL-LIVING_LIQUID_POWER.description": "At the start of each turn, gain [blue]6[/blue] [gold]Flow[/gold].\nThis amount decreases by 1 each turn.",
+  "PICKLERFRIGIL-LIVING_LIQUID_POWER.smartDescription": "At the start of each turn, gain [blue]{Amount}[/blue] [gold]Flow[/gold].\nThis amount decreases by 1 each turn.",
+  "PICKLERFRIGIL-LIVING_LIQUID_POWER.title": "Living Liquid"
 }
