@@ -16,7 +16,7 @@ public class BagOfRocks : PicklerFrigilPotion
     public override PotionUsage Usage => PotionUsage.CombatOnly;
     public override TargetType TargetType => TargetType.Self;
     
-    override public string CustomPackedImagePath => "res://PicklerFrigil/images/potions/bag_of_rocks.png";
+    public override string CustomPackedImagePath => "res://PicklerFrigil/images/potions/bag_of_rocks.png";
 
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new ("Gems", 3)

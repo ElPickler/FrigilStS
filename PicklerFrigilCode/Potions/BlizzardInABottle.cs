@@ -19,7 +19,7 @@ public class BlizzardInABottle : PicklerFrigilPotion
     public override PotionUsage Usage => PotionUsage.CombatOnly;
     public override TargetType TargetType => TargetType.AnyEnemy;
     
-    override public string CustomPackedImagePath => "res://PicklerFrigil/images/potions/blizzard_in_a_bottle.png";
+    public override string CustomPackedImagePath => "res://PicklerFrigil/images/potions/blizzard_in_a_bottle.png";
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<HypothermiaPower>(8)

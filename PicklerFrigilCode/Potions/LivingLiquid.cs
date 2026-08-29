@@ -16,6 +16,8 @@ public class LivingLiquid : PicklerFrigilPotion
     public override PotionUsage Usage => PotionUsage.CombatOnly;
     public override TargetType TargetType => TargetType.AnyPlayer;
     
+    public override string CustomPackedImagePath => "res://PicklerFrigil/images/potions/living_liquid.png";
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<LivingLiquidPower>(6)
     ];
