@@ -22,21 +22,21 @@ public class SpinParry() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new ("Accumulate", 7M),
-        new BlockVar(6, ValueProp.Move)
+        new ("Accumulate", 8M),
+        new BlockVar(4, ValueProp.Move)
     ];
     
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        await CommonActions.CardBlock(this, play);
         await AccumulateCmd.Accumulate(choiceContext, DynamicVars["Accumulate"].BaseValue, Owner, this);
         await CommonActions.CardBlock(this, play);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Accumulate"].UpgradeValueBy(3);
-        DynamicVars.Block.UpgradeValueBy(2);
+        DynamicVars.Block.UpgradeValueBy(1);
     }
 }
