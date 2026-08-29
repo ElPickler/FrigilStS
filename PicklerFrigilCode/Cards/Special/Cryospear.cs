@@ -3,13 +3,11 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
-using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.CardPools;
+using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Powers;
 
@@ -22,11 +20,8 @@ public class Cryospear() : PicklerFrigilCard(2,
 {
     private Decimal _currentDamage = 0M;
     
-    public override TargetType TargetType
-    {
-        get => !HasDeepPierce() ? TargetType.AnyEnemy : TargetType.AllEnemies;
-    }
-    
+    public override TargetType TargetType => !HasDeepPierce() ? TargetType.AnyEnemy : TargetType.AllEnemies;
+
     private Decimal CurrentDamage
     {
         set
@@ -47,7 +42,6 @@ public class Cryospear() : PicklerFrigilCard(2,
         }
     }
     
-    protected override HashSet<CardTag> CanonicalTags => [IcyTag];
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(0, ValueProp.Move)];
     
     protected override async Task OnPlay(
