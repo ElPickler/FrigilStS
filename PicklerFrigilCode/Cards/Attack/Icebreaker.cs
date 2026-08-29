@@ -29,7 +29,7 @@ public class Icebreaker() : PicklerFrigilCard(0,
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CalculationBaseVar(0M),
         new ExtraDamageVar(1M),
-        new CalculatedDamageVar(ValueProp.Move).WithMultiplier((card, target) => IcebreakerDamage(card, target))
+        new CalculatedDamageVar(ValueProp.Move).WithMultiplier(IcebreakerDamage)
     ];
     
     protected override async Task OnPlay(
@@ -43,10 +43,10 @@ public class Icebreaker() : PicklerFrigilCard(0,
 
     protected override void OnUpgrade()
     {
-        //Upgrade baked into IcebreakerDamage
+        //Upgrade baked into IcebreakerDamage, since the function needs to be static
     }
 
-    private static decimal IcebreakerDamage(CardModel card, Creature creature)
+    private static decimal IcebreakerDamage(CardModel card, Creature? creature)
     {
         if (creature == null)
             return 0;
