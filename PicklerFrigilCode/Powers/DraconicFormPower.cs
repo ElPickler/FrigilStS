@@ -17,7 +17,7 @@ public class DraconicFormPower: PicklerFrigilPower
     public override async Task BeforePowerAmountChanged(PowerModel power, decimal amount, Creature target, Creature? applier,
         CardModel? cardSource)
     {
-        if (power is HypothermiaPower)
+        if (power is HypothermiaPower && applier == Owner)
             Flash();
     }
 }
