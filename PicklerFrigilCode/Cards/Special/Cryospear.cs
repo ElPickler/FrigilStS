@@ -33,14 +33,6 @@ public class Cryospear() : PicklerFrigilCard(2,
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Retain, CardKeyword.Exhaust];
     
-    protected override IEnumerable<IHoverTip> ExtraHoverTips
-    {
-        get
-        {
-            yield return HoverTipFactory.FromKeyword(IcyKeyword); 
-            yield return HoverTipFactory.FromPower <HypothermiaPower>(); 
-        }
-    }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [new DamageVar(0, ValueProp.Move)];
     
