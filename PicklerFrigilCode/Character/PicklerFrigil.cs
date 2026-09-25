@@ -7,7 +7,6 @@ using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
-using PicklerFrigil.Cards.Basic;
 using PicklerFrigil.PicklerFrigilCode.Cards.Basic;
 using PicklerFrigil.PicklerFrigilCode.Relics;
 
