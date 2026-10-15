@@ -3,12 +3,12 @@
   "PICKLERFRIGIL-ICYKEYWORD.description": "Attacks deal additional damage equal to the target's [gold]Hypothermia[/gold].",
   "PICKLERFRIGIL-ICY_KEYWORD.description": "Attacks deal additional damage equal to the target's [gold]Hypothermia[/gold].",
   "PICKLERFRIGIL-ICY_KEYWORD.title": "Icy",
-  "PICKLERFRIGIL-ACCUMULATEKEYWORD.description": "Move any existing [gold]Cryospears[/gold] to hand and combine them.\nCreate new [gold]Cryospear[/gold] or strengthen existing [gold]Cryospear[/gold].",
+  "PICKLERFRIGIL-ACCUMULATEKEYWORD.description": "Move existing [gold]Cryospear[/gold] to hand and combine duplicates.\nCreate new [gold]Cryospear[/gold] or strengthen existing [gold]Cryospear[/gold].",
   "PICKLERFRIGIL-ACCUMULATEKEYWORD.title": "Accumulate",
-  "PICKLERFRIGIL-ACCUMULATE_KEYWORD.description": "Create or move any existing Cryospears to hand.\nIncrease Cryospear damage by value.\nCombine duplicate Cryospears.",
+  "PICKLERFRIGIL-ACCUMULATE_KEYWORD.description": "Move existing [gold]Cryospear[/gold] to hand and combine duplicates.\nCreate new [gold]Cryospear[/gold] or strengthen existing [gold]Cryospear[/gold]",
   "PICKLERFRIGIL-ACCUMULATE_KEYWORD.title": "Accumulate",
-  "PICKLERFRIGIL-GEMSTONE_KEYWORD.description": "Generated Status cards which have benefits when Exhausted.",
+  "PICKLERFRIGIL-GEMSTONE_KEYWORD.description": "Unplayable Status cards generated during combat which have benefits when Exhausted.",
   "PICKLERFRIGIL-GEMSTONE_KEYWORD.title": "Gemstone",
-  "PICKLERFRIGIL-GEMSTONEKEYWORD.description": "Generated Status cards which have benefits when Exhausted.",
+  "PICKLERFRIGIL-GEMSTONEKEYWORD.description": "Unplayable Status cards generated during combat which have benefits when Exhausted.",
   "PICKLERFRIGIL-GEMSTONEKEYWORD.title": "Gemstone"
 }
