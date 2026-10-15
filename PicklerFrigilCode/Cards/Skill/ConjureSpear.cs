@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.GameInfo.Objects;
 using PicklerFrigil.PicklerFrigilCode.Cards.Special;
 using PicklerFrigil.PicklerFrigilCode.Commands;
+using PicklerFrigil.PicklerFrigilCode.Powers;
 
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
@@ -17,7 +18,8 @@ public class ConjureSpear() : PicklerFrigilCard(1
     TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DynamicVar("Accumulate", 14M)
+        new ("Accumulate", 10M),
+        new PowerVar<ConjureFrostPower>(1)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -34,10 +36,12 @@ public class ConjureSpear() : PicklerFrigilCard(1
         CardPlay play)
     {
         await AccumulateCmd.Accumulate(choiceContext, DynamicVars["Accumulate"].BaseValue, Owner, this);
+        await PowerCmd.Apply<ConjureFrostPower>(choiceContext, Owner.Creature, DynamicVars["ConjureFrostPower"].BaseValue, Owner.Creature, this);
 
-        if (Enchantment == null)
+        //Old Enchantment implementation
+        /*if (Enchantment == null)
             return;
-        
+
         List<Cryospear> spears = AccumulateCmd.GetCryospears(Owner, false, true).ToList();
         foreach (Cryospear spear in spears)
         {
@@ -45,6 +49,7 @@ public class ConjureSpear() : PicklerFrigilCard(1
             EnchantmentModel enchantment = Enchantment.CanonicalInstance.ToMutable();
             CardCmd.Enchant(enchantment, spear, Enchantment.Amount);
         }
+        */
     }
 
     protected override void OnUpgrade()
