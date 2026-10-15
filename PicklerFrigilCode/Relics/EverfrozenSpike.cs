@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Cards;
@@ -19,6 +20,14 @@ public class EverfrozenSpike() : PicklerFrigilRelic
         RelicRarity.Rare;
 
     private const int Hypothermia = 2;
+    
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get
+        {
+            yield return HoverTipFactory.FromKeyword(PicklerFrigilCard.IcyKeyword);
+        }
+    }
     
     public override async Task AfterDamageGiven(PlayerChoiceContext choiceContext, Creature? dealer, DamageResult result, ValueProp props,
         Creature target, CardModel? cardSource)
