@@ -62,7 +62,8 @@ public class GlisteningAmethyst : PicklerFrigilRelic
             return;
         if (power is not HypothermiaPower)
             return;
-        
+
+        Flash();
         Status = RelicStatus.Disabled;
     }
 }
