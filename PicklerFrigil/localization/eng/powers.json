@@ -41,8 +41,8 @@
   "PICKLERFRIGIL-FRAZIL_POWER.description": "When hit by an attack, deal [gold]Icy[/gold] damage back.",
   "PICKLERFRIGIL-FRAZIL_POWER.smartDescription": "When hit by an attack, deal [blue]{Amount}[/blue] [gold]Icy[/gold] damage back.",
   "PICKLERFRIGIL-FRAZIL_POWER.title": "Frazil",
-  "PICKLERFRIGIL-DEEP_PIERCE_POWER.description": "Cryospear damage is doubled.",
-  "PICKLERFRIGIL-DEEP_PIERCE_POWER.smartDescription": "Cryospear damage is multiplied by [blue]{Amount}[/blue].",
+  "PICKLERFRIGIL-DEEP_PIERCE_POWER.description": "Cryospear damages all enemies.",
+  "PICKLERFRIGIL-DEEP_PIERCE_POWER.smartDescription": "Cryospear damages all enemies{Amount:plural:| [blue]{Amount}[/blue] times}.",
   "PICKLERFRIGIL-DEEP_PIERCE_POWER.title": "Hail of Spears",
   "PICKLERFRIGIL-SLIP_UNDER_POWER.description": "Strength is temporarily reduced.",
   "PICKLERFRIGIL-SLIP_UNDER_POWER.smartDescription": "Strength is temporarily reduced by [blue]{Amount}[/blue].",
@@ -124,5 +124,8 @@
   "PICKLERFRIGIL-BROKEN_SPEAR_POWER.title": "Broken Spear",
   "PICKLERFRIGIL-LIVING_LIQUID_POWER.description": "At the start of each turn, gain [blue]6[/blue] [gold]Flow[/gold].\nThis amount decreases by 1 each turn.",
   "PICKLERFRIGIL-LIVING_LIQUID_POWER.smartDescription": "At the start of each turn, gain [blue]{Amount}[/blue] [gold]Flow[/gold].\nThis amount decreases by 1 each turn.",
-  "PICKLERFRIGIL-LIVING_LIQUID_POWER.title": "Living Liquid"
+  "PICKLERFRIGIL-LIVING_LIQUID_POWER.title": "Living Liquid",
+  "PICKLERFRIGIL-CONJURE_FROST_POWER.description": "Cryospears benefit from [gold]Hypothermia[/gold] this turn.",
+  "PICKLERFRIGIL-CONJURE_FROST_POWER.smartDescription": "Cryospears benefit from [gold]Hypothermia[/gold] {Amount:plural:|{Amount} times} this turn.",
+  "PICKLERFRIGIL-CONJURE_FROST_POWER.title": "Conjure Frost"
 }
