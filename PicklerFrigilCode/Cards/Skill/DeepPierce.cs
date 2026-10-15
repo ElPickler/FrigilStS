@@ -18,13 +18,15 @@ public class DeepPierce() : PicklerFrigilCard(1,
     {
         get
         {
+            yield return HoverTipFactory.FromKeyword(AccumulateKeyword);
             yield return HoverTipFactory.FromCard<Cryospear>();
+            
         }
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new ("Accumulate", 8M),
-        new PowerVar<DeepPiercePower>(50M)
+        new PowerVar<DeepPiercePower>(1M)
     ];
     
     protected override async Task OnPlay(

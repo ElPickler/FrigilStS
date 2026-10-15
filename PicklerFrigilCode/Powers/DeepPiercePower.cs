@@ -20,19 +20,6 @@ public class DeepPiercePower: PicklerFrigilPower
     public override string CustomPackedIconPath => "res://PicklerFrigil/images/powers/deeppierce.png";
     public override string CustomBigIconPath => "res://PicklerFrigil/images/powers/big/deeppierce.png";
 
-    public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource,
-        CardPlay? cardPlay)
-    {
-        if (dealer == Owner)
-        {
-            if (cardSource is Cryospear)
-            {
-                return Amount / 100M;
-            }
-        }
-        return 1;
-    }
-
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side == CombatSide.Player)
