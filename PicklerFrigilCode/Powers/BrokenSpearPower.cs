@@ -23,10 +23,10 @@ public class BrokenSpearPower: PicklerFrigilPower
     {
         if (creator != Owner.Player)
             return;
-        if (card is not Cryospear)
+        if (card is not ShatteredSpear)
             return;
         
-        card.EnergyCost.SetCustomBaseCost(1);
+        card.EnergyCost.SetCustomBaseCost(0);
     }
 
     public override async Task AfterCardPlayed(PlayerChoiceContext choiceContext, CardPlay cardPlay)
@@ -45,20 +45,20 @@ public class BrokenSpearPower: PicklerFrigilPower
         for (int i = 0; i < Amount; i++)
         {
             ShatteredSpear spear = CombatState.CreateCard<ShatteredSpear>(Owner.Player!);
-            spear.setDamage(damage);
+            spear.setDamage(damage/2);
             spears.Add(spear);
         }
 
         await CardPileCmd.AddGeneratedCardsToCombat(spears, PileType.Hand, Owner.Player);
     }
 
-    public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer,
+    /*public override decimal ModifyDamageMultiplicative(Creature? target, decimal amount, ValueProp props, Creature? dealer,
         CardModel? cardSource, CardPlay? cardPlay)
     {
+        if (cardSource is not ShatteredSpear)
+            return 1;
         if (dealer != Owner)
             return 1;
-        if (cardSource is not Cryospear)
-            return 1;
         return 0.5M;
-    }
+    }*/
 }

@@ -7,6 +7,8 @@ namespace PicklerFrigil.PicklerFrigilCode.Cards.Special;
 
 public class ShatteredSpear : Cryospear
 {
+    protected override int CanonicalEnergyCost => 0;
+
     public void setDamage(decimal damage)
     {
         DynamicVars.Damage.BaseValue = damage;
