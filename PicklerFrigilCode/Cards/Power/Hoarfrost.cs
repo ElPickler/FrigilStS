@@ -22,7 +22,7 @@ public class Hoarfrost() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HoarfrostPower>(7M)
+        new PowerVar<HoarfrostPower>(6M)
     ];
     
     protected override async Task OnPlay(
