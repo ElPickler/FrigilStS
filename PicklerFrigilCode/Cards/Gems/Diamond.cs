@@ -18,14 +18,6 @@ public class Diamond() : AbstractGem(-1,
     CardType.Status, CardRarity.Status,
     TargetType.Self)
 {
-    protected override IEnumerable<IHoverTip> ExtraHoverTips
-    {
-        get
-        {
-            yield return HoverTipFactory.FromPower <MetabolizingDiamondPower>();
-        }
-    }
-    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new PowerVar<MetabolizingDiamondPower>(16)
     ];

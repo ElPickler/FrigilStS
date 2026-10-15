@@ -18,14 +18,6 @@ public class Emerald() : AbstractGem(-1,
     CardType.Status, CardRarity.Status,
     TargetType.Self)
 {
-    protected override IEnumerable<IHoverTip> ExtraHoverTips
-    {
-        get
-        {
-            yield return HoverTipFactory.FromPower <MetabolizingEmeraldPower>();
-        }
-    }
-    
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new CardsVar(3),
         new PowerVar<MetabolizingEmeraldPower>(2)

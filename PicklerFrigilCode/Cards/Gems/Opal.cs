@@ -23,7 +23,6 @@ public class Opal() : AbstractGem(-1,
         get
         {
             yield return HoverTipFactory.FromPower<HypothermiaPower>();
-            yield return HoverTipFactory.FromPower<MetabolizingOpalPower>();
         }
     }
     
