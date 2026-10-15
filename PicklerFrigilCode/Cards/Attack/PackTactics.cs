@@ -27,6 +27,8 @@ public class PackTactics() : PicklerFrigilCard(0,
     {
         if (cardPlay.Card.Owner == Owner)
             return;
+        if (cardPlay.Card.Type != CardType.Attack)
+            return;
         if (cardPlay.Card is PackTactics)
             return;
 
