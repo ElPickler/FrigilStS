@@ -15,7 +15,8 @@ public class DiveKick() : PicklerFrigilCard(1,
     TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(5, ValueProp.Move)
+        new DamageVar(5, ValueProp.Move),
+        new CardsVar(1)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips
@@ -31,12 +32,15 @@ public class DiveKick() : PicklerFrigilCard(1,
         CardPlay play)
     {
         await CommonActions.CardAttack(this, play).Execute(choiceContext);
-        decimal flow = Owner.Creature.GetPowerAmount<FlowPower>();
-        await CardPileCmd.Draw(choiceContext, flow, Owner);
+        int draw = DynamicVars.Cards.IntValue;
+        if (Owner.Creature.HasPower<FlowPower>())
+            draw += 1;
+        await CardPileCmd.Draw(choiceContext, draw, Owner);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(2m);
+        DynamicVars.Damage.UpgradeValueBy(2);
+        DynamicVars.Cards.UpgradeValueBy(1);
     }
 }
