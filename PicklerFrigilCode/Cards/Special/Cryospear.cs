@@ -4,17 +4,15 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Commands.Builders;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.CardPools;
-using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.ValueProps;
 using PicklerFrigil.PicklerFrigilCode.Powers;
 
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Special;
 
 [Pool(typeof(TokenCardPool))]
-public class Cryospear() : PicklerFrigilCard(2,
+public class Cryospear() : PicklerFrigilCard(1,
     CardType.Attack, CardRarity.Token,
     TargetType.AnyEnemy)
 {
@@ -40,7 +38,7 @@ public class Cryospear() : PicklerFrigilCard(2,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
-        AttackCommand attackCommand = await CommonActions.CardAttack(this, play).Execute(choiceContext);
+        AttackCommand attackCommand = await CommonActions.CardAttack(this, play).WithHitCount(GetHitCount()).Execute(choiceContext);
 
         Decimal blockMult = Owner.Creature.GetPowerAmount<ReformationPower>();
         if (blockMult > 0)
@@ -77,5 +75,18 @@ public class Cryospear() : PicklerFrigilCard(2,
         if (!IsMutable || Owner == null!)
             return false;
         return Owner.HasPower<DeepPiercePower>();
+    }
+
+    private int GetHitCount()
+    {
+        if (!HasDeepPierce()) return 1;
+        
+        var count = Owner.Creature.GetPowerAmount<DeepPiercePower>();
+        if (count < 1)
+        {
+            count = 1;
+        }
+
+        return count;
     }
 }
