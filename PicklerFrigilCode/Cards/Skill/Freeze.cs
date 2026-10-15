@@ -10,7 +10,7 @@ using PicklerFrigil.PicklerFrigilCode.Cards;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 
-public class Freeze() : PicklerFrigilCard(1,
+public class Freeze() : PicklerFrigilCard(0,
     CardType.Skill, CardRarity.Uncommon,
     TargetType.Self)
 {
@@ -37,6 +37,6 @@ public class Freeze() : PicklerFrigilCard(1,
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-1);
+        AddKeyword(CardKeyword.Retain);
     }
 }
