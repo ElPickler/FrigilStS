@@ -11,10 +11,12 @@ using PicklerFrigil.PicklerFrigilCode.Powers;
 namespace PicklerFrigil.PicklerFrigilCode.Cards.Skill;
 
 
-public class LetItGo() : PicklerFrigilCard(1,
+public class LetItGo() : PicklerFrigilCard(-1,
     CardType.Skill, CardRarity.Rare,
     TargetType.Self)
 {
+    protected override bool HasEnergyCostX => true;
+    
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get
@@ -24,7 +26,7 @@ public class LetItGo() : PicklerFrigilCard(1,
     }
     
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new PowerVar<HypothermiaPower>( 4M)
+        new PowerVar<HypothermiaPower>( 1M)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
@@ -33,6 +35,12 @@ public class LetItGo() : PicklerFrigilCard(1,
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        decimal count= ResolveEnergyXValue();
+        if(count <= 0) return;
+        
+        DynamicVars["HypothermiaPower"].BaseValue = count;
+        
+        
         CardSelectorPrefs prefs = new CardSelectorPrefs(SelectionScreenPrompt, 0, 99);
         List<CardModel> list = (await CardSelectCmd.FromHand(choiceContext, Owner, prefs, null, this)).ToList();
 
