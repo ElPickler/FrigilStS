@@ -169,7 +169,7 @@
   "PICKLERFRIGIL-PANIC.selectionScreenPrompt": "Choose cards to [gold]Exhaust[/gold].",
   "PICKLERFRIGIL-CRYOSEISM.description": "Randomly [gold]Exhaust[/gold] {Exhaust:diff()} Status {Exhaust:plural:card|cards} from anywhere in your deck.\nAdd {Gemstones:diff()} [gold]{Gemstones:plural:Gemstone|Gemstones}[/gold] to your [gold]Discard pile[/gold].",
   "PICKLERFRIGIL-CRYOSEISM.title": "Cryoseism",
-  "PICKLERFRIGIL-METABOLIZE.description": "Whenever an [gold]Unplayable[/gold] card is [gold]Exhausted[/gold], draw {MetabolizePower:diff()} cards.",
+  "PICKLERFRIGIL-METABOLIZE.description": "Whenever an [gold]Unplayable[/gold] card is [gold]Exhausted[/gold], draw {MetabolizePower:diff()} {MetabolizePower:plural:card|cards}.",
   "PICKLERFRIGIL-METABOLIZE.title": "Metabolize",
   "PICKLERFRIGIL-ELEGANT_POISE.description": "Whenever you gain [gold]Flow[/gold] from a card, other players gain {ElegantPoisePower:diff()}% as much.",
   "PICKLERFRIGIL-ELEGANT_POISE.title": "Elegant Poise",
