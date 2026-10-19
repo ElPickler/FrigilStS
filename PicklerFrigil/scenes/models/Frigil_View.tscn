@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnvevh1ngcp1i"]
+
+[ext_resource type="PackedScene" uid="uid://cffncltb5ogyr" path="res://PicklerFrigil/scenes/models/Frigil/Frigil_Imported.tscn" id="1_t5571"]
+
+[node name="FrigilView" type="Node3D"]
+
+[node name="Frigil" parent="." instance=ExtResource("1_t5571")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03027162, 1.0956148)
+projection = 1
+size = 1.1
+
+[editable path="Frigil"]
