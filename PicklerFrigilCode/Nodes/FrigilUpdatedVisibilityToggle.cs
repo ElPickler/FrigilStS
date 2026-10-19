@@ -1,8 +1,8 @@
 using Godot;
-using System;
-using PicklerFrigil.PicklerFrigilCode;
 
-public partial class FrigilUpdatedVisibilityToggle : AnimatedSprite2D
+namespace PicklerFrigil.PicklerFrigilCode.Nodes;
+
+public partial class FrigilUpdatedVisibilityToggle : SubViewportContainer
 {
 	public override void _Ready()
 	{
