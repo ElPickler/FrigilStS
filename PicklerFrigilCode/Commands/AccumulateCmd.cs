@@ -1,10 +1,15 @@
+using BaseLib.Audio;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 using PicklerFrigil.PicklerFrigilCode.Cards.Special;
 using PicklerFrigil.PicklerFrigilCode.Relics;
 
@@ -36,13 +41,16 @@ public static class AccumulateCmd
         if (CombatManager.Instance.IsOverOrEnding)
             return Array.Empty<Cryospear>();
         
+        
+        
             //Accumulate behavior on varying spear counts
         List<Cryospear> spears = GetCryospears(player, false, false).ToList();
+        
         //For no spears, create one and move on
         if (spears.Count == 0)
         {
             Cryospear spear = player.Creature.CombatState!.CreateCard<Cryospear>(player);
-            CardPileAddResult combat = await CardPileCmd.AddGeneratedCardToCombat((CardModel) spear, PileType.Hand, player);
+            CardPileAddResult combat = await CardPileCmd.AddGeneratedCardToCombat(spear, PileType.Hand, player);
             spears.Add(spear);
             spear = null!;
         }
@@ -68,9 +76,9 @@ public static class AccumulateCmd
                 }
             }
         }
-        
         IncreaseSpearDamage(accumulateAmount, player);
-
+        ModAudio.PlaySound("res://PicklerFrigil/audio/FrigilAccumulate.ogg");
+        
         return spears;
     }
     
@@ -99,10 +107,11 @@ public static class AccumulateCmd
         foreach (Cryospear card in list)
         {
             card.AddDamage(amount);
-            //card.AfterForged();
-            //ForgeCmd.PlayCombatRoomForgeVfx(player, (CardModel) card);
+
+            //Little smithy sparkles :3
+            NRun.Instance!.GlobalUi.AboveTopBarVfxContainer.AddChildSafely(NCardSmithVfx.Create(NCombatRoom.Instance!.Ui.Hand.GetCard(card)!, false)!);
+            NRun.Instance.GlobalUi.CardPreviewContainer.AddChildSafely(NCardSmithVfx.Create(NCombatRoom.Instance.Ui.Hand.GetCard(card)!, false)!);
         }
-        //ForgeCmd.PreviewSovereignBlade((IReadOnlyCollection<Cryospear>) list);
     }
 
     public static decimal GetSpearDamage(Player player, AbstractModel? source)
@@ -116,4 +125,10 @@ public static class AccumulateCmd
         }
         return damage;
     }
+
+
+    /*private static void PreviewCryospear(Cryospear card)
+    {
+        NRun.Instance!.GlobalUi.CardPreviewContainer.AddChildSafely((Godot.Node) NCardSmithVfx.Create(NCombatRoom.Instance.Ui.Hand.GetCard(card), false));
+    }*/
 }
