@@ -23,8 +23,9 @@ public class FrostPlate() : PicklerFrigilCard(1,
         }
     }
     
+    public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
     protected override HashSet<CardTag> CanonicalTags => [IcyTag];
-    
+
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new DamageVar(3, ValueProp.Move),
         new BlockVar(6, ValueProp.Move)
@@ -36,12 +37,6 @@ public class FrostPlate() : PicklerFrigilCard(1,
     {
         await CommonActions.CardAttack(this, play).Execute(choiceContext);
         await CommonActions.CardBlock(this, play);
-
-        if (!Owner.Creature.HasPower<FlowPower>())
-            return;
-        
-        // ReSharper disable once PossibleLossOfFraction
-        await PowerCmd.ModifyAmount(choiceContext, Owner.Creature.GetPower<FlowPower>()!, Owner.Creature.GetPowerAmount<FlowPower>()/-2, Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
