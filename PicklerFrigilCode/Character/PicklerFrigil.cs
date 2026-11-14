@@ -4,7 +4,10 @@ using BaseLib.Patches.UI;
 using BaseLib.Utils.NodeFactories;
 using PicklerFrigil.PicklerFrigilCode.Extensions;
 using Godot;
+using MegaCrit.Sts2.Core.Animation;
+using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Entities.Characters;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Models;
 using PicklerFrigil.PicklerFrigilCode.Cards.Basic;
@@ -50,9 +53,55 @@ public class PicklerFrigil : CustomCharacterModel
         ModelDb.Relic<GlisteningAmethyst>()
     ];
     
-    //Animation Delays
+    //Animation
     public override float AttackAnimDelay => 0.1f;
     public override float CastAnimDelay => 0.1f;
+
+
+    /*public override CreatureAnimator? SetupAnimationState(MegaSprite controller)
+    {
+        CreatureAnimator creatureAnimator = base.SetupCustomAnimationStates(controller)!;
+        AnimState lowHpLoop = new AnimState("low_health_loop", true);
+        creatureAnimator.AddAnyState("low_health_loop", lowHpLoop);
+        return creatureAnimator;
+    }*/
+    
+    
+    
+    public override CreatureAnimator GenerateAnimator(MegaSprite controller, Creature creature)
+    {
+        AnimState idleAnimState = new AnimState("idle", true);
+        AnimState lowHealthAnimState = new AnimState("low_health_loop", true);
+        
+        AnimState deadAnimState = new AnimState("die", false);
+        AnimState hitAnimState = new AnimState("hurt")
+        {
+            NextState = idleAnimState
+        };
+        AnimState attackAnimState = new AnimState("attack")
+        {
+            NextState = idleAnimState
+        };
+        AnimState castAnimState = new AnimState("cast")
+            {
+                NextState = idleAnimState
+            };
+        AnimState relaxedAnimState = new AnimState("relaxed_loop", true);
+        relaxedAnimState.AddBranch("Idle", idleAnimState);
+
+        
+        
+        CreatureAnimator creatureAnimator = new CreatureAnimator(IsLowHealth(creature) ? lowHealthAnimState : idleAnimState, controller);
+        creatureAnimator.AddAnyState("Idle", idleAnimState, (Func<bool>) (() => !IsLowHealth(creature)));
+        creatureAnimator.AddAnyState("Idle", lowHealthAnimState, (Func<bool>) (() => IsLowHealth(creature)));
+        creatureAnimator.AddAnyState("Dead", deadAnimState);
+        creatureAnimator.AddAnyState("Hit", hitAnimState);
+        creatureAnimator.AddAnyState("Attack", attackAnimState);
+        creatureAnimator.AddAnyState("Cast", castAnimState);
+        creatureAnimator.AddAnyState("Relaxed", relaxedAnimState);
+        return creatureAnimator;
+    }
+
 
     //Pools
     public override CardPoolModel CardPool => ModelDb.CardPool<PicklerFrigilCardPool>();
