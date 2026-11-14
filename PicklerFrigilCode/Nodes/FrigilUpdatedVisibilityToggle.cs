@@ -2,7 +2,7 @@ using Godot;
 
 namespace PicklerFrigil.PicklerFrigilCode.Nodes;
 
-public partial class FrigilUpdatedVisibilityToggle : SubViewportContainer
+public partial class FrigilUpdatedVisibilityToggle : AnimatedSprite2D
 {
 	public override void _Ready()
 	{
