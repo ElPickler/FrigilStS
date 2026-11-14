@@ -49,7 +49,7 @@ public class LetItGo() : PicklerFrigilCard(-1,
             await CardCmd.Exhaust(choiceContext, c);
             
             Creature? enemy = Owner.RunState.Rng.CombatTargets.NextItem(CombatState!.HittableEnemies);
-            if(enemy != null) await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, DynamicVars["HypothermiaPower"].BaseValue , Owner.Creature, this);
+            if(enemy != null) await PowerCmd.Apply<HypothermiaPower>(choiceContext, enemy, count, Owner.Creature, this);
         }
     }
 
