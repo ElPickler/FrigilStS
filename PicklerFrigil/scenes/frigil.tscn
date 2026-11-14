@@ -15,6 +15,7 @@
 unique_name_in_owner = true
 
 [node name="CharBox" type="Control" parent="Visuals"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -32,174 +33,131 @@ offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
-script = ExtResource("2_cs247")
 
 [node name="SubViewport" type="SubViewport" parent="Visuals/CharBox/SubViewportContainer"]
 own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(200, 200)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="FrigilView" parent="Visuals/CharBox/SubViewportContainer/SubViewport" instance=ExtResource("2_byfhc")]
 
 [node name="Skeleton3D" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature" index="0"]
-bones/0/position = Vector3(0, 0, 0)
-bones/1/scale = Vector3(1, 1, 1)
-bones/2/rotation = Quaternion(8.332595e-32, 1.9825412e-16, 1.9825412e-16, 1)
-bones/2/scale = Vector3(1, 1, 1)
-bones/3/rotation = Quaternion(-0.7114256, 9.619157e-19, 9.619156e-19, 0.7027614)
-bones/4/rotation = Quaternion(-0.7126091, 1.2265252e-18, 1.2265253e-18, 0.70156133)
-bones/5/rotation = Quaternion(0.79906416, 2.1717037e-07, 2.8415025e-07, 0.6012458)
-bones/6/rotation = Quaternion(0.05202239, 2.8259622e-10, 3.6937045e-08, 0.99864596)
-bones/7/rotation = Quaternion(0.995792, -1.7695877e-08, 7.142442e-07, 0.09164292)
-bones/8/rotation = Quaternion(0.29215145, -6.7653945e-09, 2.2753323e-07, 0.95637214)
-bones/9/rotation = Quaternion(0.36706504, -4.5831844e-13, 2.6254554e-07, 0.9301953)
-bones/10/rotation = Quaternion(-0.8405208, 3.2374893e-17, 3.3959036e-17, 0.54177934)
-bones/10/scale = Vector3(1, 0.99999994, 0.9999999)
-bones/11/rotation = Quaternion(-0.22235012, 1.1622513e-07, -2.65062e-08, 0.9749669)
-bones/11/scale = Vector3(1, 1, 0.99999994)
-bones/12/rotation = Quaternion(0.06743697, -1.18902555e-07, 8.036409e-09, 0.9977236)
-bones/13/rotation = Quaternion(0.40683052, 2.5972251e-14, -1.1578533e-14, 0.91350365)
-bones/14/rotation = Quaternion(0.992824, -1.2350218e-16, -1.2350223e-16, 0.119584695)
-bones/14/scale = Vector3(1, 1, 0.99999994)
-bones/15/rotation = Quaternion(0.9950127, -9.939452e-17, -9.939251e-17, -0.09974835)
-bones/15/scale = Vector3(1, 0.99999994, 0.9999966)
-bones/16/rotation = Quaternion(-0.62103623, -1.8068417e-17, -1.8068422e-17, 0.7837819)
-bones/17/rotation = Quaternion(-0.5883126, 9.639663e-08, -7.0132316e-08, 0.80863357)
-bones/18/rotation = Quaternion(0.043744925, -2.3819038e-07, 5.422854e-15, 0.99904275)
-bones/19/rotation = Quaternion(-0.010157692, 1.19203165e-07, 1.21087e-09, 0.99994844)
-bones/20/rotation = Quaternion(-4.9597638e-08, 0.7539423, 0.65694064, -5.692106e-08)
-bones/21/rotation = Quaternion(-0.44860128, 1.0654122e-07, -1.2121433e-07, 0.893732)
-bones/22/position = Vector3(3.253531e-15, 0.14623667, -3.7252903e-09)
-bones/22/rotation = Quaternion(-0.7165627, -4.426359e-14, -2.7903985e-07, 0.6975227)
-bones/23/position = Vector3(-2.6414943e-15, 0.15196225, -7.450581e-09)
-bones/23/rotation = Quaternion(0.7502862, 7.486779e-14, 2.9217225e-07, 0.6611132)
-bones/24/rotation = Quaternion(0.9955608, -2.0615785e-16, -2.0615816e-16, -0.09412072)
-bones/24/scale = Vector3(1, 0.99999994, 0.99998164)
-bones/25/rotation = Quaternion(0.16330227, 1.2307205e-16, -2.2346164e-16, 0.9865761)
-bones/26/rotation = Quaternion(0.47259814, 1.2916572e-18, -3.7347764e-17, 0.88127804)
-bones/26/scale = Vector3(1, 1.0000211, 0.9999791)
-bones/27/position = Vector3(-2.2112935e-22, 0.28228158, 2.8100153e-06)
-bones/27/rotation = Quaternion(0.021163285, 3.9142417e-23, -4.697696e-18, 0.99977607)
-bones/29/position = Vector3(-1.08110706e-16, -0.24344365, -0.09370284)
-bones/30/rotation = Quaternion(1.3767878e-07, 0.7071068, -0.7071068, -1.3767878e-07)
-bones/31/rotation = Quaternion(1.3767878e-07, 0.7071068, -0.7071068, -1.3767878e-07)
+bones/0/position = Vector3(0, -0.013072861, 0.016693503)
+bones/1/scale = Vector3(1, 1.003717, 1)
+bones/2/rotation = Quaternion(0.005484125, 1.9933839e-16, 1.9716389e-16, 0.999985)
+bones/2/scale = Vector3(1, 0.9962831, 0.99999994)
+bones/3/rotation = Quaternion(-0.715269, 9.652894e-19, 9.527043e-19, 0.6988493)
+bones/8/rotation = Quaternion(0.78903705, 2.1242617e-07, 2.87659e-07, 0.6143458)
+bones/9/rotation = Quaternion(0.036902234, -1.4486801e-09, 3.69065e-08, 0.99931896)
+bones/10/rotation = Quaternion(0.9957452, -1.815009e-08, 7.142533e-07, 0.09214939)
+bones/11/rotation = Quaternion(0.35429886, 1.1684041e-08, 2.1672489e-07, 0.9351323)
+bones/13/rotation = Quaternion(-0.83508044, 3.2703783e-17, 3.362686e-17, 0.55012786)
+bones/14/rotation = Quaternion(-0.22520521, 1.15779244e-07, -2.8387497e-08, 0.9743115)
+bones/15/rotation = Quaternion(0.07874537, -1.1880377e-07, 9.384478e-09, 0.99689484)
+bones/16/rotation = Quaternion(0.47547114, 2.5025607e-14, -1.3431327e-14, 0.87973136)
+bones/17/scale = Vector3(1, 0.96117115, 0.99999994)
+bones/18/rotation = Quaternion(0.99275124, -1.0141737e-16, -9.7327606e-17, -0.12018794)
+bones/18/scale = Vector3(1, 0.98446846, 0.9999966)
+bones/20/rotation = Quaternion(-0.5722907, 9.775768e-08, -6.822234e-08, 0.82005084)
+bones/21/rotation = Quaternion(0.095503725, -2.3732886e-07, 2.664536e-15, 0.99542916)
+bones/22/rotation = Quaternion(-0.08208969, 1.1880697e-07, 9.785871e-09, 0.99662495)
+bones/24/rotation = Quaternion(-0.46303958, 1.0565972e-07, -1.2511563e-07, 0.88633764)
+bones/25/rotation = Quaternion(-0.7525613, -3.81917e-14, -2.9305826e-07, 0.65852237)
+bones/26/rotation = Quaternion(0.7942698, 4.9738052e-14, 3.0930005e-07, 0.60756534)
+bones/27/rotation = Quaternion(0.99334866, -2.3028634e-16, -2.1012037e-16, -0.11514541)
+bones/28/rotation = Quaternion(0.21554834, 1.1872862e-16, -2.7562873e-16, 0.97649324)
+bones/29/rotation = Quaternion(0.3935216, -7.335152e-18, -1.6577844e-17, 0.91931534)
+bones/34/position = Vector3(-1.08110706e-16, -0.24344365, -0.09985739)
 
 [node name="Eye_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="0"]
-transform = Transform3D(1, -2.7206572e-18, -1.6668308e-20, -1.666862e-20, -0.012252807, 0.99992484, -2.7206572e-18, -0.99992484, -0.012252807, 2.2098094e-17, 0.4305834, 0.01806216)
+transform = Transform3D(1, -2.7304266e-18, 1.4545746e-18, 1.4543815e-18, -0.0122117475, 0.99991196, -2.7124383e-18, -0.99992377, -0.012293577, 2.2311678e-17, 0.41751224, 0.035734992)
 
 [node name="Eye_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="1"]
-transform = Transform3D(1, -3.4690317e-18, -2.7101022e-20, -2.7100608e-20, -0.01562345, 0.999878, -3.4690317e-18, -0.999878, -0.01562345, 2.3050554e-17, 0.4384761, -0.11813492)
+transform = Transform3D(1, -3.475827e-18, 1.441264e-18, 1.4849023e-18, -0.0046147862, 0.9999761, -3.469119e-18, -0.9999885, -0.0046965247, 2.3277928e-17, 0.42690372, -0.10036764)
 
-[node name="Head_2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2098094e-17, 0.34086156, -4.9067632e-33)
-bone_name = "Head_2"
-bone_idx = 2
+[node name="HeadNormal" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="2"]
+transform = Transform3D(1, 1.6146566e-20, 1.4682919e-18, 1.4738109e-18, 0.011008852, 0.9999261, 0, -0.9999398, 0.010927319, 2.2407375e-17, 0.48268294, 0.018383943)
 
-[node name="Neck_2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="3"]
-transform = Transform3D(1, 3.9650825e-16, -3.9650825e-16, -3.9650825e-16, 1, 2.452613e-31, 3.9650825e-16, -8.804251e-32, 1, 0, 0.28512982, 0)
-bone_name = "Neck_2"
-bone_idx = 1
+[node name="HeadWince_2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="3"]
+transform = Transform3D(1, 0, -1.6146566e-20, 1.4738109e-18, 0, -0.011008852, 0, 0, 0.9999398, 2.2407375e-17, 0.48268294, 0.018383943)
 
-[node name="IdleHand_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="4"]
-transform = Transform3D(1, -3.9865427e-08, 7.8099333e-07, 2.0398971e-08, 0.99969125, 0.024913162, -7.8174304e-07, -0.024912357, 0.99968946, -8.572248e-09, 0.26152292, 0.08016154)
+[node name="HeadPain_2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="4"]
+transform = Transform3D(1, 0, -8.7422784e-08, -8.7416325e-08, 0, -0.9999261, -9.552966e-10, 0, -0.010927319, 2.2407375e-17, 0.48268294, 0.018383943)
 
-[node name="Arm_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="5"]
-transform = Transform3D(1, -4.143581e-08, 7.1493685e-07, -6.9222745e-07, 0.19987072, 0.97982377, -1.834942e-07, -0.9798219, 0.1998711, 1.5768656e-09, 0.19195831, 0.2594568)
-bone_name = "Arm.L"
-bone_idx = 7
+[node name="Neck_2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="5"]
+transform = Transform3D(1, 3.9798206e-16, -3.9650825e-16, -3.9650825e-16, 1.003717, 2.452613e-31, 3.9650825e-16, -8.836976e-32, 1, 0, 0.27205697, 0.016693503)
 
-[node name="Arm_Upper_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="6"]
-transform = Transform3D(1, 5.92172e-09, 7.152313e-07, 6.6515986e-07, -0.37534535, -0.9268848, 2.6297013e-07, 0.92688483, -0.37534535, 5.707109e-10, 0.25573286, 0.10197071)
-bone_name = "Arm_Upper.L"
-bone_idx = 6
+[node name="IdleHand_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="6"]
+transform = Transform3D(1, 6.247956e-08, 6.586515e-07, -3.4647698e-08, 0.9991123, -0.042167068, -6.6069964e-07, 0.042167425, 0.9991105, -3.4640877e-09, 0.2555679, 0.10281217)
 
-[node name="Hand_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="7"]
-transform = Transform3D(1, 5.902742e-11, 3.9461195e-11, -4.5104635e-11, 0.09863958, 0.99512315, 5.487802e-11, -0.99512315, 0.09863958, 1.4383312e-12, 0.039517142, -0.29409721)
-bone_name = "Hand.R"
-bone_idx = 13
+[node name="Arm_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="7"]
+transform = Transform3D(1, 1.922018e-09, 7.242494e-07, -7.1772934e-07, 0.13651632, 0.99063945, -9.69676e-08, -0.9906376, 0.13651657, -8.612551e-09, 0.19234955, 0.2807815)
 
-[node name="Arm_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="8"]
-transform = Transform3D(1, 1.0157208e-11, 7.021583e-11, -4.506262e-11, -0.67366976, 0.7390324, 5.483969e-11, -0.7390324, -0.67366976, -1.4793326e-15, 0.13501155, -0.18933749)
-bone_name = "Arm.R"
-bone_idx = 12
+[node name="Arm_Upper_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="8"]
+transform = Transform3D(1, -3.9309175e-08, 7.1417827e-07, 6.6516316e-07, -0.31599435, -0.9487608, 2.6297135e-07, 0.94876087, -0.31599435, -1.933569e-09, 0.24603985, 0.11957848)
 
-[node name="ArmUpper_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="9"]
-transform = Transform3D(1, -1.07308e-14, 2.3841858e-07, -1.5298295e-07, -0.76699173, 0.6416569, 1.8286511e-07, -0.64165694, -0.76699173, -1.0287405e-17, 0.2385591, -0.10271075)
+[node name="Hand_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="9"]
+transform = Transform3D(1, 1.3422369e-09, -2.8701792e-09, 2.3694888e-09, 0.284595, 0.95864755, 2.1035982e-09, -0.95864767, 0.2845951, 8.72344e-10, 0.033642903, -0.28319752)
 
-[node name="CloakFront_2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="10"]
-transform = Transform3D(1, -2.1569391e-16, -2.747699e-16, -2.747698e-16, -0.97139907, -0.2374531, -2.1569403e-16, 0.23745312, -0.971399, 0, 0.28512982, 0)
-bone_name = "CloakFront_2"
-bone_idx = 14
+[node name="Arm_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="10"]
+transform = Transform3D(1, 3.136467e-09, -4.4961723e-10, 2.3695321e-09, -0.6460627, 0.763284, 2.1035618e-09, -0.76328415, -0.64606273, 4.2774176e-10, 0.12522393, -0.17500004)
 
-[node name="CloakBack_2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="11"]
-transform = Transform3D(1, -2.1762607e-16, -1.7796412e-16, -1.7796914e-16, -0.98010045, 0.19850108, -2.176225e-16, -0.19850174, -0.9800972, 0, 0.28512982, 0)
-bone_name = "CloakBack_2"
-bone_idx = 15
+[node name="ArmUpper_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="11"]
+transform = Transform3D(1, 3.1683456e-09, 2.3839604e-07, -1.531248e-07, -0.75788736, 0.6523851, 1.8274436e-07, -0.65238523, -0.75788736, -1.03323536e-17, 0.22754234, -0.08692491)
 
-[node name="CloakBack" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D/CloakBack_2" index="0"]
-transform = Transform3D(-2.384194e-07, 1, -3.616034e-07, 0.19850227, 4.0173413e-07, 0.9801007, 0.98010397, 1.6189534e-07, -0.19850162, -0.9, 0.13853641, 0.0652347)
+[node name="CloakFront_2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="12"]
+transform = Transform3D(1, -2.0731877e-16, -2.747699e-16, -2.747698e-16, -0.9336808, -0.2374531, -2.1569403e-16, 0.22823308, -0.971399, 0, 0.27205697, 0.016693503)
 
-[node name="Foot_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="12"]
-transform = Transform3D(1, -1.7763568e-15, -5.684342e-14, 4.2632564e-14, -0.81923217, 0.5734618, -1.4210855e-14, -0.5734618, -0.8192322, -9.161048e-15, -0.19776607, -0.21052505)
-bone_name = "Foot.R"
-bone_idx = 19
+[node name="CloakBack_2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="13"]
+transform = Transform3D(1, -2.2126872e-16, -1.688653e-16, -1.7796919e-16, -0.9560268, 0.23863259, -2.1762243e-16, -0.23492704, -0.97110635, 0, 0.27205697, 0.016693503)
 
-[node name="RFoot" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D/Foot_R" index="0"]
-transform = Transform3D(0, 1, -1.1475055e-07, 0.5734625, 9.400731e-08, 0.81923175, 0.81923187, -6.5805146e-08, -0.57346237, -1.1, -0.3632702, 0.1089224)
+[node name="Foot_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="14"]
+transform = Transform3D(1, -8.881784e-14, -8.526513e-14, -2.842171e-14, -0.81975895, 0.57270837, -1.1368684e-13, -0.57270837, -0.819759, -1.5004538e-14, -0.19783503, -0.2104552)
 
-[node name="Leg_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="13"]
-transform = Transform3D(1, -4.6185278e-14, -2.3841866e-07, 1.4066356e-07, -0.8074136, 0.5899856, -1.9250248e-07, -0.5899856, -0.80741364, -4.2401525e-15, -0.111619234, -0.14757663)
-bone_name = "Leg.R"
-bone_idx = 18
+[node name="Leg_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="15"]
+transform = Transform3D(1, -7.1054274e-14, -2.384187e-07, 1.6668396e-07, -0.71500117, 0.699123, -1.7046972e-07, -0.69912297, -0.7150012, -7.430249e-15, -0.12154813, -0.13586238)
 
-[node name="RLeg" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D/Leg_R" index="0"]
-transform = Transform3D(2.384186e-07, 1, -2.5449725e-07, 0.5899829, 6.482217e-08, 0.8074159, 0.8074158, -3.4265193e-07, -0.5899829, -1, -0.254288, 0.11627802)
+[node name="Leg_Upper_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="16"]
+transform = Transform3D(1, -4.9714952e-14, 2.3841854e-07, -1.3123122e-07, -0.83488554, 0.55042344, 1.9905218e-07, -0.5504234, -0.8348856, 3.6594077e-18, 0.0034076292, -0.05348154)
 
-[node name="Leg_Upper_R" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="14"]
-transform = Transform3D(1, -2.8400486e-14, 2.3841854e-07, -1.2329932e-07, -0.8558918, 0.51715475, 2.0406051e-07, -0.51715475, -0.8558919, 3.6594077e-18, 0.01648049, -0.070175044)
+[node name="Foot_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="17"]
+transform = Transform3D(-1, -5.684342e-14, -3.894143e-07, -2.9938246e-07, -0.63948643, 0.76880217, -2.490253e-07, 0.76880205, 0.63948643, -2.6093485e-15, -0.19670361, 0.07230367)
 
-[node name="RLegUpper" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D/Leg_Upper_R" index="0"]
-transform = Transform3D(-1.1920928e-07, 1, 1.0788742e-07, 0.51715726, -3.0689854e-08, 0.8558904, 0.85589033, 1.5782484e-07, -0.5171573, -0.95, -0.11380938, 0.09360793)
+[node name="Leg_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="18"]
+transform = Transform3D(-1, -1.1368684e-13, -3.8941437e-07, 3.1870175e-07, -0.57463074, -0.81841254, -2.2376943e-07, -0.81841254, 0.5746307, 9.123902e-15, -0.109381445, 0.19667149)
 
-[node name="Foot_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="15"]
-transform = Transform3D(-1, 0, -3.8941448e-07, -2.993792e-07, -0.6394975, 0.7687932, -2.490296e-07, 0.7687931, 0.6394975, 1.8823054e-14, -0.19670278, 0.07230149)
+[node name="Leg_Upper_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="19"]
+transform = Transform3D(-1, 7.1054274e-14, -3.8941445e-07, -2.640814e-07, -0.73492366, 0.6781498, -2.861899e-07, 0.67814976, 0.7349237, 5.360105e-16, -0.0019086525, 0.09750113)
 
-[node name="LFoot" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D/Foot_L" index="0"]
-transform = Transform3D(1.7881408e-07, -1, 5.267632e-07, -0.76879513, 1.9939247e-07, 0.63949466, -0.6394965, -5.1932426e-07, -0.7687928, 1.3999999, -0.3554607, 0.17128955)
+[node name="Tail3" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="20"]
+transform = Transform3D(1, 5.687938e-18, -1.3156852e-17, 1.3647246e-17, -0.09642458, 0.9953183, 4.3796968e-18, -0.99534535, -0.09641075, -5.4932694e-17, -0.24353203, -0.099759765)
 
-[node name="Leg_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="16"]
-transform = Transform3D(-1, 0, -3.8941425e-07, 2.847287e-07, -0.68219346, -0.7311716, -2.6565584e-07, -0.7311716, 0.68219334, 1.3280198e-14, -0.09303514, 0.18341199)
+[node name="Tail2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="21"]
+transform = Transform3D(1, -2.2807699e-17, -4.527603e-18, -1.5145565e-17, -0.78672755, 0.6172987, -1.7653993e-17, -0.617295, -0.78670967, -5.1646868e-17, -0.13019074, -0.010828065)
 
-[node name="Leg_Upper_L" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="17"]
-transform = Transform3D(-1, 9.947598e-14, -3.8941448e-07, -2.7322588e-07, -0.71253914, 0.7016324, -2.7747302e-07, 0.70163226, 0.7125392, 5.360105e-16, 0.011164209, 0.080807626)
+[node name="Tail1" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="22"]
+transform = Transform3D(1, -5.05898e-16, -3.6440604e-16, -4.091205e-16, -0.973483, 0.22875486, -4.704784e-16, -0.22875905, -0.9734652, 9.2167524e-18, -0.013072861, 0.016693503)
 
-[node name="Tail3" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="18"]
-transform = Transform3D(1, 6.4932685e-19, -3.3291042e-19, 3.7984134e-19, -0.069677055, 0.9975481, 6.1108133e-19, -0.9975734, -0.06966624, -5.4052766e-17, -0.24344364, -0.09370331)
+[node name="BodyNormal" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6066557e-17, 0.10962762, 0.0909615)
 
-[node name="Tail2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="19"]
-transform = Transform3D(1, -6.3970085e-17, -3.722093e-17, -3.723586e-17, -0.8695074, 0.49391848, -6.397248e-17, -0.49391592, -0.8694892, -4.483681e-17, -0.11817652, -0.022546433)
+[node name="BodyForward_2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="24"]
+transform = Transform3D(1, 0, 0, 0, 0, 0, 0, 0, 1, -3.627134e-17, 0.10870537, 0.05932127)
 
-[node name="Tail1" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="20"]
-transform = Transform3D(1, -4.492928e-16, -3.7167165e-16, -3.7167782e-16, -0.98228246, 0.18740234, -4.492934e-16, -0.18740577, -0.98226446, 9.2167524e-18, 0, 0)
-
-[node name="Body_2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="21"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="Camera3D" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView" index="1"]
-current = true
+[node name="Body_2" parent="Visuals/CharBox/SubViewportContainer/SubViewport/FrigilView/Frigil/Armature/Skeleton3D" index="25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013072861, 0.016693503)
 
 [node name="AnimatedSpriteUnused" type="AnimatedSprite2D" parent="Visuals"]
-visible = false
 position = Vector2(22, -88)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("1_cs247")
 animation = &"idle_loop"
 autoplay = "idle_loop_new"
+script = ExtResource("2_cs247")
 
 [node name="AnimatedSpriteOld" type="AnimatedSprite2D" parent="Visuals"]
-visible = false
 position = Vector2(7, -88)
 scale = Vector2(0.5, 0.5)
 sprite_frames = ExtResource("2_3f3if")
