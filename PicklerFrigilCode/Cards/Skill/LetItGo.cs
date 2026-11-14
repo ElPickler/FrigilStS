@@ -39,6 +39,7 @@ public class LetItGo() : PicklerFrigilCard(-1,
         if(count <= 0) return;
         
         DynamicVars["HypothermiaPower"].BaseValue = count;
+        if (IsUpgraded) count =+ 1; //Upgrade Effect
         
         
         CardSelectorPrefs prefs = new CardSelectorPrefs(SelectionScreenPrompt, 0, 99);
@@ -55,6 +56,6 @@ public class LetItGo() : PicklerFrigilCard(-1,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["HypothermiaPower"].UpgradeValueBy(2);
+        //Upgrade is covered within OnPlay
     }
 }

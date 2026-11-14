@@ -159,7 +159,7 @@
   "PICKLERFRIGIL-RUBY_BLOOD.title": "Ruby Blood",
   "PICKLERFRIGIL-GRACEFUL_MOTION.description": "Each time you draw this card, [gold]Flow[/gold] gains are increased by {GracefulMotionPower:diff()}.",
   "PICKLERFRIGIL-GRACEFUL_MOTION.title": "Graceful Motion",
-  "PICKLERFRIGIL-LET_IT_GO.description": "Exhaust any number of cards in your hand.\nFor each card [gold]Exhausted[/gold] this way, apply X [gold]Hypothermia[/gold] to a random enemy.",
+  "PICKLERFRIGIL-LET_IT_GO.description": "Exhaust any number of cards in your hand.\nFor each card [gold]Exhausted[/gold] this way{IfUpgraded:show: + 1|}, apply X [gold]Hypothermia[/gold] to a random enemy.",
   "PICKLERFRIGIL-LET_IT_GO.title": "Let It Go",
   "PICKLERFRIGIL-LET_IT_GO.selectionScreenPrompt": "Choose cards to [gold]Exhaust[/gold].",
   "PICKLERFRIGIL-EXTRACT_SPEAR.description": "Remove ALL [gold]Hypothermia[/gold] from target.\n[gold]Accumulate[/gold] equal to [gold]Hypothermia[/gold] removed times {IfUpgraded:show:four|three}.",
